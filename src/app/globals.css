@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #2d3436;
+  --background: #f8f9fa;
+  --primary: #e30613; /* Swiss Red */
+  --secondary: #2d3436;
+  --accent: #0984e3;
+  --glass: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #f8f9fa;
+    --background: #1a1a1a;
+    --primary: #ff4d4d;
+    --secondary: #ecf0f1;
+    --accent: #74b9ff;
+    --glass: rgba(22, 22, 22, 0.7);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.glass-box {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.swiss-button {
+  @apply px-8 py-3 rounded-xl font-semibold transition-smooth hover-lift shadow-lg;
+  background-color: var(--primary);
+  color: white;
+}
+
+.swiss-button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 10px 20px -5px rgba(227, 6, 19, 0.4);
+}
+
+.nav-link {
+  @apply px-4 py-2 rounded-lg transition-smooth hover:bg-gray-200/50 dark:hover:bg-gray-800/50;
+}
