@@ -3,15 +3,15 @@ export const dictionaries = {
     title: "Swiss Digital Pact",
     subtitle: "Federal Popular Initiative",
     hero: {
-      title: "For a Sovereign Digital Switzerland",
-      description: "Protecting our constitution, securing our data, and ensuring Switzerland's independence in the digital age.",
-      cta: "Sign the Initiative",
-      learn: "Learn More",
-      watch: "Watch Vision Video"
+      title: "Secure the Digital Sovereignty of Switzerland",
+      description: "Our mission is to integrate digital security and independence into the Swiss Federal Constitution. Protecting our infrastructure, our data, and our direct democracy.",
+      cta: "Download Signature Form",
+      learn: "Read the Initiative",
+      watch: "Watch the Vision"
     },
     nav: {
       home: "Home",
-      initiative: "Initiative",
+      initiative: "The Initiative",
       sign: "Sign",
       support: "Support",
       contact: "Contact"
@@ -19,44 +19,44 @@ export const dictionaries = {
     common: {
       signCta: "Sign the Initiative Now",
       donateCta: "Support with Donation",
-      howToSign: "How to Sign",
+      howToSign: "4-Step Signing Guide",
       howToSupport: "How to Support",
-      contactUs: "Contact Us"
+      contactUs: "Contact the Committee"
     },
     initiative: {
       h: "Structural Change",
-      t: "Constitutional Amendment",
-      d: "Integrating digital sovereignty and security into the Swiss Federal Constitution.",
-      p1: "Digital sovereignty as a core state goal.",
-      p2: "Sovereign control over critical infra.",
-      p3: "Strict protection of personal data.",
-      p4: "Guarantee of digital inclusion."
+      t: "The Constitutional Article",
+      d: "The Swiss Digital Pact seeks to amend the Federal Constitution to explicitly safeguard our nation's digital independence.",
+      p1: "Right to Digital Integrity and Self-Determination.",
+      p2: "Sovereign control over critical national infrastructure.",
+      p3: "Mandatory technical independence from foreign states.",
+      p4: "Protection against illegal foreign data processing."
     },
     sign: {
-      h: "4 Steps to Participation",
-      step1: "Download",
-      step1d: "Save the PDF form onto your device.",
-      step2: "Print",
-      step2d: "Print it on a standard A4 sheet.",
-      step3: "Sign",
-      step3d: "Sign manually with a blue or black pen.",
-      step4: "Send",
-      step4d: "Mail it to our committee in Lausanne."
+      h: "Participate in Direct Democracy",
+      step1: "Download PDF",
+      step1d: "Save the official Swiss Digital Pact signature form.",
+      step2: "Print A4",
+      step2d: "The signature must be on a physical paper sheet.",
+      step3: "Sign Ink",
+      step3d: "Sign manually with a pen (blue or black ink).",
+      step4: "Mail it",
+      step4d: "Send by post to our office in Lausanne (no stamp needed)."
     }
   },
   fr: {
     title: "Pacte Numérique Suisse",
-    subtitle: "Initiative populaire fédérale",
+    subtitle: "Initiative Populaire Fédérale",
     hero: {
-      title: "Pour une Suisse numérique souveraine",
-      description: "Protéger notre constitution, sécuriser nos données et garantir l'indépendance de la Suisse à l'ère du numérique.",
-      cta: "Signer l'initiative",
-      learn: "En savoir plus",
+      title: "Garantir la Souveraineté Numérique de la Suisse",
+      description: "Notre mission est d'inscrire la sécurité et l'indépendance numériques dans la Constitution fédérale suisse. Protégeons nos infrastructures et nos données.",
+      cta: "Télécharger le formulaire",
+      learn: "Lire l'initiative",
       watch: "Voir la vision"
     },
     nav: {
       home: "Accueil",
-      initiative: "Initiative",
+      initiative: "L'Initiative",
       sign: "Signer",
       support: "Soutenir",
       contact: "Contact"
@@ -64,44 +64,44 @@ export const dictionaries = {
     common: {
       signCta: "Signer l'initiative maintenant",
       donateCta: "Soutenir par un don",
-      howToSign: "Comment signer",
-      howToSupport: "Comment soutenir",
-      contactUs: "Nous contacter"
+      howToSign: "Guide de signature",
+      howToSupport: "Comment nous soutenir",
+      contactUs: "Contacter le comité"
     },
     initiative: {
       h: "Changement Structurel",
-      t: "Amendement Constitutionnel",
-      d: "Intégrer la souveraineté et la sécurité numériques dans la Constitution fédérale.",
-      p1: "La souveraineté comme objectif d'État.",
-      p2: "Contrôle des infrastructures critiques.",
-      p3: "Protection stricte des données.",
-      p4: "Garantie de l'inclusion numérique."
+      t: "L'Article Constitutionnel",
+      d: "Le Pacte Numérique Suisse vise à modifier la Constitution fédérale pour garantir l'indépendance numérique de notre nation.",
+      p1: "Droit à l'intégrité numérique et à l'autodétermination.",
+      p2: "Contrôle souverain de l'infrastructure nationale critique.",
+      p3: "Indépendance technique obligatoire vis-à-vis des États tiers.",
+      p4: "Protection contre le traitement illicite de données étrangères."
     },
     sign: {
-      h: "4 Étapes pour Participer",
+      h: "Participer à la Démocratie Directe",
       step1: "Télécharger",
-      step1d: "Enregistrez le formulaire PDF.",
+      step1d: "Enregistrez le formulaire officiel du Pacte Numérique.",
       step2: "Imprimer",
-      step2d: "Imprimez-le sur une feuille A4.",
+      step2d: "La signature doit figurer sur une feuille de papier.",
       step3: "Signer",
-      step3d: "Signez à la main (stylo bleu ou noir).",
+      step3d: "Signez à la main avec un stylo (bleu ou noir).",
       step4: "Envoyer",
-      step4d: "Envoyez-le par la poste à Lausanne."
+      step4d: "Envoyez-le par la poste à Lausanne (sans affranchir)."
     }
   },
   de: {
     title: "Schweizer Digital-Pakt",
     subtitle: "Eidgenössische Volksinitiative",
     hero: {
-      title: "Für eine souveräne digitale Schweiz",
-      description: "Schutz unserer Verfassung, Sicherung unserer Daten und Gewährleistung der Schweizer Unabhängigkeit im digitalen Zeitalter.",
-      cta: "Initiative unterzeichnen",
-      learn: "Mehr erfahren",
+      title: "Die digitale Souveränität der Schweiz sichern",
+      description: "Unsere Mission ist die Verankerung digitaler Sicherheit und Unabhängigkeit in der Bundesverfassung. Zum Schutz unserer Infrastruktur und Daten.",
+      cta: "Formular herunterladen",
+      learn: "Zur Initiative",
       watch: "Vision ansehen"
     },
     nav: {
       home: "Startseite",
-      initiative: "Initiative",
+      initiative: "Die Initiative",
       sign: "Unterzeichnen",
       support: "Unterstützen",
       contact: "Kontakt"
@@ -109,44 +109,44 @@ export const dictionaries = {
     common: {
       signCta: "Initiative jetzt unterzeichnen",
       donateCta: "Mit Spende unterstützen",
-      howToSign: "Wie unterzeichnen",
+      howToSign: "Anleitung zur Unterschrift",
       howToSupport: "Wie unterstützen",
-      contactUs: "Kontaktiere uns"
+      contactUs: "Komitee kontaktieren"
     },
     initiative: {
       h: "Strukturwandel",
-      t: "Verfassungsänderung",
-      d: "Integration digitaler Souveränität und Sicherheit in die Bundesverfassung.",
-      p1: "Souveränität als Staatsziel.",
-      p2: "Kontrolle über kritische Infrastrukturen.",
-      p3: "Strenger Schutz persönlicher Daten.",
-      p4: "Garantie digitaler Teilhabe."
+      t: "Der Verfassungsartikel",
+      d: "Der Schweizer Digital-Pakt strebt eine Änderung der Bundesverfassung an, um die digitale Unabhängigkeit unserer Nation zu sichern.",
+      p1: "Recht auf digitale Integrität und Selbstbestimmung.",
+      p2: "Souveräne Kontrolle über kritische Infrastrukturen.",
+      p3: "Technische Unabhängigkeit von ausländischen Staaten.",
+      p4: "Schutz vor missbräuchlicher Datenverarbeitung im Ausland."
     },
     sign: {
-      h: "4 Schritte zur Teilnahme",
+      h: "Direkte Demokratie erleben",
       step1: "Download",
-      step1d: "PDF-Formular herunterladen.",
+      step1d: "Laden Sie das offizielle Unterschriftsformular herunter.",
       step2: "Drucken",
-      step2d: "Auf A4-Papier ausdrucken.",
+      step2d: "Die Unterschrift muss physisch auf A4-Papier erfolgen.",
       step3: "Unterschreiben",
-      step3d: "Handschriftlich (blau oder schwarz).",
+      step3d: "Händig unterschreiben (blauer oder schwarzer Stift).",
       step4: "Senden",
-      step4d: "Per Post an das Komitee senden."
+      step4d: "Per Post an unser Büro in Lausanne (portofrei)."
     }
   },
   it: {
     title: "Patto Digitale Svizzero",
-    subtitle: "Iniziativa popolare federale",
+    subtitle: "Iniziativa Popolare Federale",
     hero: {
-      title: "Per una Svizzera digitale sovrana",
-      description: "Proteggere la nostra costituzione, mettere in sicurezza i nostri dati e garantire l'indipendenza della Svizzera nell'era digitale.",
-      cta: "Firmare l'iniziativa",
-      learn: "Saperne di più",
+      title: "Assicurare la Sovranità Digitale della Svizzera",
+      description: "La nostra missione è integrare la sicurezza e l'indipendenza digitale nella Costituzione federale. Proteggiamo le nostre infrastrutture e i nostri dati.",
+      cta: "Scarica il modulo",
+      learn: "L'Iniziativa",
       watch: "Guarda la visione"
     },
     nav: {
       home: "Home",
-      initiative: "Iniziativa",
+      initiative: "L'Iniziativa",
       sign: "Firmare",
       support: "Sostieni",
       contact: "Contatto"
@@ -154,29 +154,29 @@ export const dictionaries = {
     common: {
       signCta: "Firma l'iniziativa ora",
       donateCta: "Sostieni con una donazione",
-      howToSign: "Come firmare",
+      howToSign: "Guida alla firma",
       howToSupport: "Come sostenere",
-      contactUs: "Contattaci"
+      contactUs: "Contatta il comitato"
     },
     initiative: {
       h: "Cambiamento Strutturale",
-      t: "Emendamento Costituzionale",
-      d: "Integrare sovranità e sicurezza digitale nella Costituzione federale.",
-      p1: "Sovranità come obiettivo statale.",
-      p2: "Controllo delle infrastrutture critiche.",
-      p3: "Protezione dei dati personali.",
-      p4: "Garanzia dell'inclusione digitale."
+      t: "L'Articolo Costituzionale",
+      d: "Il Patto Digitale Svizzero mira a modificare la Costituzione federale per garantire l'indipendenza digitale della nostra nazione.",
+      p1: "Diritto all'integrità digitale e autodeterminazione.",
+      p2: "Controllo sovrano sulle infrastrutture critiche nazionali.",
+      p3: "Indipendenza tecnica obbligatoria da stati esteri.",
+      p4: "Protezione dal trattamento illecito di dati all'estero."
     },
     sign: {
-      h: "4 Passi per Partecipare",
+      h: "Partecipa alla Democrazia Diretta",
       step1: "Scarica",
-      step1d: "Scarica il modulo PDF.",
+      step1d: "Salva il modulo ufficiale del Patto Digitale Svizzero.",
       step2: "Stampa",
-      step2d: "Stampalo su carta A4.",
+      step2d: "La firma deve essere apposta su un foglio di carta.",
       step3: "Firma",
-      step3d: "Firma a mano (penna blu o nera).",
+      step3d: "Firma a mano con una penna (inchiostro blu o nero).",
       step4: "Invia",
-      step4d: "Invialo per posta a Losanna."
+      step4d: "Invialo via posta a Losanna (invio gratuito)."
     }
   }
 };
