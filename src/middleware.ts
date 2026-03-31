@@ -6,7 +6,7 @@ const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // Check if pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -22,6 +22,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    '/((?!api|_next/static|_next/image|favicon.ico|hero.png|forms).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|swiss_digital_pact_hero_v5.png|forms).*)',
   ],
 };

@@ -61,11 +61,11 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
       <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 pb-12">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.png"
+            src="/swiss_digital_pact_hero_v5.png"
             alt="Swiss Digital Pact Hero"
             fill
             priority
-            className="object-cover object-center brightness-[0.5] transition-all duration-1000 scale-105"
+            className="object-cover object-center brightness-[0.5] transition-all duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background z-10" />
           <div className="absolute inset-0 bg-black/40 z-0" />
@@ -173,10 +173,10 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                    onClick={() => setIsVisionPlaying(true)}
                 >
                   <Image
-                    src="/hero.png"
+                    src="/swiss_digital_pact_hero_v5.png"
                     alt="Vision Poster"
                     fill
-                    className="object-cover object-center brightness-[0.35] group-hover:scale-110 transition-all duration-1000"
+                    className="object-cover object-center brightness-[0.35] group-hover:scale-105 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                      <div className="p-10 bg-white/10 backdrop-blur-3xl rounded-full group-hover:scale-110 transition-all duration-500 group-hover:bg-primary shadow-3xl border border-white/20 mb-8">
@@ -203,7 +203,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                    className="relative w-full h-full bg-zinc-950"
                 >
                    <Image
-                      src="/hero.png"
+                      src="/swiss_digital_pact_hero_v5.png"
                       alt="Movie Background"
                       fill
                       className="object-cover object-center brightness-[0.15] transition-all duration-1000"
