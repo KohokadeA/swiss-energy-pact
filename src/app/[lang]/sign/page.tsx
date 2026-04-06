@@ -18,7 +18,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
       title: dict.sign.step1,
       description: dict.sign.step1d,
       color: "bg-red-500",
-      link: "/forms/swiss-digital-pact-form.pdf"
+      link: "/signature_form.pdf"
     },
     {
       icon: Printer,
@@ -83,11 +83,11 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
           <p className="text-white/60 text-lg font-bold leading-relaxed max-w-xl">
              Download the PDF form now. Remember, only Swiss citizens with voting rights can legally participate.
           </p>
-          <Link href="#" className="swiss-button py-6 px-12 text-2xl font-black group-hover:scale-105 active:scale-95 transition-all shadow-[0_30px_60px_-12px_rgba(227,6,19,0.4)] flex items-center gap-4">
+          <Link href="/signature_form.pdf" download="Swiss_Digital_Pact_Signature_Form.pdf" className="swiss-button py-6 px-12 text-2xl font-black group-hover:scale-105 active:scale-95 transition-all shadow-[0_30px_60px_-12px_rgba(227,6,19,0.4)] flex items-center gap-4">
             <Download className="w-8 h-8" /> DOWNLOAD FORM
           </Link>
           <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-[3px] text-white/30">
-             <ArrowDown className="w-3 h-3" /> OFFICIAL PDF | 1.4 MB
+             <ArrowDown className="w-3 h-3" /> OFFICIAL PDF | 16 KB
           </div>
         </div>
 
