@@ -5,35 +5,58 @@ import { Landmark, CreditCard, QrCode, Heart, Coffee, ShieldCheck, ExternalLink,
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 export const metadata: Metadata = {
-  title: 'Support - Swiss Digital Pact',
-  description: 'Contribute to the Swiss Digital Pact movement. Your donations help us secure Switzerland\'s digital future.',
+  title: 'Soutenir - Pacte Numérique Suisse',
+  description: 'Contribuez au mouvement du Pacte Numérique Suisse. Vos dons nous aident à assurer l\'avenir numérique de la Suisse.',
 };
 
 export default function SupportPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
   
-  const donationOptions = [
+  const donationOptions = lang === 'en' ? [
     {
       icon: Landmark,
       title: "Bank Transfer",
-      description: "Support the initiative directly via our official association bank account. Best for zero-fee contributions.",
+      description: "Support the initiative directly via our association's bank account. Ideal for fee-free contributions.",
       details: "IBAN: CH76 0000 0000 0000 0000 0",
       cta: "Copy IBAN"
     },
     {
       icon: CreditCard,
       title: "Digital Payment",
-      description: "Secure one-click donation via Credit Card, Twint, or Apple Pay. Powered by Swiss secure payment gateways.",
+      description: "Secure one-click donation via Credit Card, Twint, or Apple Pay.",
       details: "Twint / Visa / Mastercard",
-      cta: "Donate Online",
+      cta: "Donate online",
       external: true
     },
     {
       icon: QrCode,
-      title: "QR-Invoice",
-      description: "Receive a physical QR-invoice by mail or download it digitally to pay via your preferred banking app.",
-      details: "Generate QR Bill",
-      cta: "Get QR Code"
+      title: "QR Bill",
+      description: "Receive a physical QR bill by mail or download it digitally.",
+      details: "Generate QR bill",
+      cta: "Get QR code"
+    }
+  ] : [
+    {
+      icon: Landmark,
+      title: "Virement Bancaire",
+      description: "Soutenez l'initiative directement via le compte bancaire de notre association. Idéal pour des contributions sans frais.",
+      details: "IBAN: CH76 0000 0000 0000 0000 0",
+      cta: "Copier l'IBAN"
+    },
+    {
+      icon: CreditCard,
+      title: "Paiement Numérique",
+      description: "Don sécurisé en un clic via Carte de Crédit, Twint ou Apple Pay.",
+      details: "Twint / Visa / Mastercard",
+      cta: "Faire un don en ligne",
+      external: true
+    },
+    {
+      icon: QrCode,
+      title: "Facture QR",
+      description: "Recevez une facture QR physique par courrier ou téléchargez-la numériquement.",
+      details: "Générer la facture QR",
+      cta: "Obtenir le code QR"
     }
   ];
 
@@ -43,13 +66,13 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
           <Heart className="w-4 h-4 flex-shrink-0" />
-          Support the Movement
+          {lang === 'en' ? "Support the movement" : "Soutenir le mouvement"}
         </div>
         <h1 className="text-5xl md:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter">
-           EVERY FRANC <br /> <span className="text-primary italic underline decoration-1 decoration-dashed underline-offset-[16px]">COUNTS</span>.
+           {lang === 'en' ? "Support a " : "Soutenir une voie "}<span className="text-primary italic underline decoration-1 decoration-dashed underline-offset-[16px]">suisse</span>{lang === 'en' ? " path" : ""}
         </h1>
         <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
-          We are 100% independent and citizen-funded. Your contribution helps us print forms and defend Swiss digital sovereignty.
+          {lang === 'en' ? '"This initiative champions smart security and smart sovereignty: open, demanding, and human. Your support helps bring this vision to the public debate."' : '"Cette initiative défend une sécurité smart et une souveraineté smart: ouvertes, exigeantes et humaines. Votre soutien permet de porter cette vision dans le débat public."'}
         </p>
       </header>
 
@@ -81,23 +104,23 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
                <ShieldCheck className="w-20 h-20 text-primary" />
             </div>
             <div className="flex flex-col gap-8 items-center lg:items-start text-center lg:text-left">
-               <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tighter italic">Total <span className="text-primary not-italic underline decoration-4 underline-offset-[16px]">Transparency</span>.</h2>
+               <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tighter italic">{lang === 'en' ? "Total" : "Une transparence"} <span className="text-primary not-italic underline decoration-4 underline-offset-[16px]">{lang === 'en' ? "transparency" : "totale"}</span>.</h2>
                <p className="text-white/60 text-xl font-medium leading-relaxed max-w-2xl">
-                  In accordance with Swiss transparency laws, we disclose all major contributions. We are an audited, non-partisan association.
+                  {lang === 'en' ? '“A societal project must also be exemplary in its governance.”' : '“Un projet de société doit aussi être exemplaire dans sa gouvernance.”'}
                </p>
                <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
                   <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[2px] text-white/40">
-                     <CheckCircle2 className="w-5 h-5 text-primary" /> Registered Association
+                     <CheckCircle2 className="w-5 h-5 text-primary" /> {lang === 'en' ? 'Registered Association' : 'Association Enregistrée'}
                   </div>
                   <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[2px] text-white/40">
-                     <CheckCircle2 className="w-5 h-5 text-primary" /> Swiss Bank Accounts
+                     <CheckCircle2 className="w-5 h-5 text-primary" /> {lang === 'en' ? 'Swiss Bank Accounts' : 'Comptes Bancaires Suisses'}
                   </div>
                   <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[2px] text-white/40">
-                     <CheckCircle2 className="w-5 h-5 text-primary" /> Yearly Audit (FINMA)
+                     <CheckCircle2 className="w-5 h-5 text-primary" /> {lang === 'en' ? 'Annual Audit (FINMA)' : 'Audit Annuel (FINMA)'}
                   </div>
                </div>
                <Link href="#" className="flex items-center gap-3 text-base font-black text-primary hover:gap-6 underline underline-offset-8 transition-all">
-                  Financial Records (PDF) <ExternalLink className="w-4 h-4"/>
+                  {lang === 'en' ? 'Financial Records (PDF)' : 'Dossiers Financiers (PDF)'} <ExternalLink className="w-4 h-4"/>
                </Link>
             </div>
          </div>
@@ -106,10 +129,10 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
       {/* Final Footer CTA */}
       <div className="flex flex-col items-center mt-20">
          <h4 className="text-3xl md:text-4xl font-black italic mb-10 text-center text-secondary dark:text-white max-w-4xl leading-tight">
-            "A sovereign digital future is a collective responsibility."
+            {lang === 'en' ? '"A sovereign digital future is a collective responsibility."' : '"Un avenir numérique souverain est une responsabilité collective."'}
          </h4>
          <Link href={`/${lang}/sign`} className="swiss-button px-10 py-4 font-black text-xl hover:scale-110 active:scale-95 transition-all shadow-xl flex items-center gap-4 group">
-            {dict.common.signCta} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
+            {lang === 'en' ? "Sign the initiative now" : "Signer l'initiative maintenant"} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
          </Link>
       </div>
     </div>

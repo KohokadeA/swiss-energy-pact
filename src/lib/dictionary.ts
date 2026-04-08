@@ -1,13 +1,13 @@
 export const dictionaries = {
   en: {
     title: "Swiss Digital Pact",
-    subtitle: "Federal Popular Initiative",
+    subtitle: "Swiss Federal Popular Initiative",
     hero: {
-      title: "Secure the Digital Sovereignty of Switzerland",
-      description: "Our mission is to integrate digital security and independence into the Swiss Federal Constitution. Protecting our infrastructure, our data, and our direct democracy.",
-      cta: "Download Signature Form",
-      learn: "Read the Initiative",
-      watch: "Watch the Vision"
+      title: "For a free, secure Switzerland in control of its digital destiny",
+      description: "Digital technology is already shaping our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with its own path: open, demanding, human, and sovereign.",
+      cta: "Read the initiative",
+      learn: "Download the signature sheet",
+      watch: "Our vision"
     },
     nav: {
       home: "Home",
@@ -48,11 +48,11 @@ export const dictionaries = {
     title: "Pacte Numérique Suisse",
     subtitle: "Initiative Populaire Fédérale",
     hero: {
-      title: "Garantir la Souveraineté Numérique de la Suisse",
-      description: "Notre mission est d'inscrire la sécurité et l'indépendance numériques dans la Constitution fédérale suisse. Protégeons nos infrastructures et nos données.",
-      cta: "Télécharger le formulaire",
-      learn: "Lire l'initiative",
-      watch: "Voir la vision"
+      title: "Pour une Suisse libre, sûre et maîtresse de son destin numérique",
+      description: "Le numérique façonne déjà notre vie quotidienne, notre économie, nos institutions et notre démocratie. La Suisse doit s'y engager avec sa propre ligne: ouverte, exigeante, humaine et souveraine.",
+      cta: "Lire l'initiative",
+      learn: "Télécharger la feuille de signatures",
+      watch: "Notre vision"
     },
     nav: {
       home: "Accueil",
@@ -182,4 +182,4 @@ export const dictionaries = {
 };
 
 export type Locale = keyof typeof dictionaries;
-export const getDictionary = (locale: Locale) => dictionaries[locale] || dictionaries.en;
+export const getDictionary = (locale: Locale) => dictionaries[locale] || dictionaries.fr;

@@ -8,37 +8,49 @@ import { Shield, ArrowRight, Download, Users, Database, Network, X, PlayCircle, 
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import { cn } from '@/lib/utils';
 
-// Vision Story Scenes - Moved outside to prevent re-renders and potential hook warnings
-const scenes = [
+// Vision Story Scenes
+const getScenes = (lang: string) => [
   {
-    t: "Strategic Sovereignty",
-    d: "Integrating digital security and independence directly into the Swiss Federal Constitution.",
+    t: "Art. 57a",
+    h: lang === 'en' ? "Digital Security" : "Sécurité Numérique",
+    d: lang === 'en' ? "The Confederation determines security rules for all public and private actors in the Swiss digital space." : "La Confédération détermine les règles de sécurité pour tous les acteurs publics et privés dans l'espace numérique suisse.",
     icon: Shield
   },
+  // {
+  //   t: lang === 'en' ? "Infrastructures" : "Infrastructures",
+  //   h: lang === 'en' ? "Critical" : "Critiques",
+  //   d: lang === 'en' ? "It protects its data and digital infrastructures and subsidiarily supports operators of critical infrastructures." : "Elle protège ses données et ses infrastructures numériques et soutient les opérateurs d'infrastructures critiques.",
+  //   icon: Network
+  // },
   {
-    t: "Data Sovereignty",
-    d: "Switzerland must become the ultimate safe haven for personal and state data globally.",
+    t: lang === 'en' ? "Integrity" : "Intégrité",
+    h: lang === 'en' ? "Digital" : "Numérique",
+    d: lang === 'en' ? "It guarantees the protection of personal data and the digital integrity of individuals." : "Elle garantit la protection des données personnelles et l'intégrité numérique des personnes.",
     icon: Database
   },
   {
-    t: "Independent Infrastructure",
-    d: "Securing national power grids and communication from foreign interference.",
-    icon: Network
-  },
-  {
-    t: "Digital Neutrality",
-    d: "Defending Switzerland's role as a trusted, neutral platform in the global tech landscape.",
+    t: lang === 'en' ? "Independence" : "Indépendance",
+    h: lang === 'en' ? "Strategic" : "Stratégique",
+    d: lang === 'en' ? "Infrastructures and services essential to the state remain independent of any foreign influence." : "Les infrastructures et services essentiels à l'Etat restent indépendants de toute influence étrangère.",
     icon: Globe
   },
   {
-    t: "Direct Democracy",
-    d: "Ensuring all digital governance tools remain under direct public oversight and control.",
-    icon: Landmark
+    t: lang === 'en' ? "Literacy" : "Littératie",
+    h: lang === 'en' ? "Digital" : "Numérique",
+    d: lang === 'en' ? "It encourages the development of data literacy and digital skills within society." : "Elle encourage le développement de la littératie des données et des compétences numériques au sein de la société.",
+    icon: Users
+  },
+  {
+    t: lang === 'en' ? "Anticipating" : "Anticiper",
+    h: lang === 'en' ? "Risks" : "Les Risques",
+    d: lang === 'en' ? "Maintain Switzerland among the most advanced and secure nations in the digital field." : "Maintenir la Suisse parmi les nations les plus avancées et sûres dans le domaine numérique.",
+    icon: Shield
   }
 ];
 
 export default function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
+  const scenes = getScenes(lang);
   const [isVisionPlaying, setIsVisionPlaying] = useState(false);
   const [visionScene, setVisionScene] = useState(0);
 
@@ -65,10 +77,10 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             alt="Swiss Digital Pact Hero"
             fill
             priority
-            className="object-cover object-center brightness-[0.5] transition-all duration-1000"
+            className="object-cover object-center brightness-[0.85] transition-all duration-1000"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background z-10" />
-          <div className="absolute inset-0 bg-black/40 z-0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90 z-10" />
+          <div className="absolute inset-0 bg-black/15 z-0" />
         </div>
 
         <div className="container mx-auto px-6 relative z-20 text-center animate-in fade-in zoom-in duration-1000">
@@ -79,7 +91,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                className="inline-flex items-center gap-3 px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-[10px] font-black tracking-widest uppercase shadow-2xl"
              >
                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-               Swiss Federal Popular Initiative
+               {dict.subtitle}
              </motion.div>
            </div>
 
@@ -111,10 +123,10 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              transition={{ delay: 0.4 }}
              className="flex flex-col sm:flex-row items-center justify-center gap-4"
            >
-             <Link href={`/${lang}/sign`} className="swiss-button px-10 py-5 text-xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] hover:scale-110 active:scale-95 transition-all flex items-center gap-4 group">
+             <Link href={`/${lang}/initiative`} className="swiss-button px-10 py-5 text-xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] hover:scale-110 active:scale-95 transition-all flex items-center gap-4 group">
                {dict.hero.cta.toUpperCase()} <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-smooth" />
              </Link>
-             <Link href={`/${lang}/initiative`} className="px-10 py-5 rounded-2xl font-black text-xl text-white border-2 border-white/30 hover:bg-white/10 active:scale-95 transition-all backdrop-blur-md">
+             <Link href={`/${lang}/sign`} className="px-10 py-5 rounded-2xl font-black text-xl text-white border-2 border-white/30 hover:bg-white/10 active:scale-95 transition-all backdrop-blur-md">
                {dict.hero.learn.toUpperCase()}
              </Link>
            </motion.div>
@@ -126,27 +138,29 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
          <div className="flex flex-col lg:flex-row gap-10 items-end mb-10">
             <div className="flex-1">
                <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary dark:text-white leading-[1] mb-5">
-                  The <span className="text-primary italic">Pillars</span> of our Pact.
+                  {lang === 'en' ? "The 6" : "Les 6"} <span className="text-primary italic">{lang === 'en' ? "pillars" : "piliers"}</span> {lang === 'en' ? "of the initiative" : "de l'initiative"}
                </h2>
                <p className="text-base text-gray-400 max-w-2xl leading-relaxed font-bold italic">
-                  Building a constitutional framework for an independent digital Switzerland.
+                  {lang === 'en' ? "Building a constitutional framework for an independent digital Switzerland." : "Construire un cadre constitutionnel pour une Suisse numérique indépendante."}
                </p>
             </div>
             <div className="lg:w-1/3 flex flex-col gap-4 p-5 bg-gray-50 dark:bg-zinc-900/50 rounded-[2rem] border border-gray-200 dark:border-white/5 group">
                <div className="flex items-center gap-3">
                   <Database className="w-7 h-7 text-primary" />
-                  <h3 className="text-lg font-black uppercase tracking-tighter">Strategic Autonomy</h3>
+                  <h3 className="text-lg font-black uppercase tracking-tighter">{lang === 'en' ? "Strategic Autonomy" : "Autonomie Stratégique"}</h3>
                </div>
-               <p className="text-[11px] text-gray-500 leading-relaxed font-bold italic">"Switzerland must remain the global safe haven for sensitive data."</p>
+               <p className="text-[11px] text-gray-500 leading-relaxed font-bold italic">{lang === 'en' ? '"Switzerland must remain the global haven for sensitive data."' : '"La Suisse doit rester le havre mondial pour les données sensibles."'}</p>
             </div>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-               { icon: Landmark, t: "Infrastructure", d: "Securing national grids from foreign interference." },
-               { icon: Network, t: "Independence", d: "Reducing critical dependence on foreign cloud providers." },
-               { icon: Globe, t: "Neutrality", d: "Defending Switzerland's role as a trusted, neutral platform." },
-               { icon: Users, t: "Democracy", d: "Ensuring digital governance remains under public oversight." }
+                { icon: Shield, t: lang === 'en' ? "Security" : "Sécurité", d: lang === 'en' ? "Clear rules to protect the Swiss digital space." : "Des règles claires pour protéger l'espace numérique suisse." },
+                { icon: Landmark, t: lang === 'en' ? "Infrastructures" : "Infrastructures", d: lang === 'en' ? "What keeps the country running must be protected as such." : "Ce qui fait tenir le pays doit être protégé comme tel." },
+                { icon: Database, t: lang === 'en' ? "Data & people" : "Données et personnes", d: lang === 'en' ? "Protecting data means protecting people." : "Protéger les données, c'est protéger les personnes." },
+                { icon: Globe, t: lang === 'en' ? "Sovereignty" : "Souveraineté", d: lang === 'en' ? "Open to the world, but never out of our hands." : "Ouverts au monde, mais jamais hors de nous-mêmes." },
+                { icon: Users, t: lang === 'en' ? "Skills" : "Compétences", d: lang === 'en' ? "Digital freedom is built through understanding." : "La liberté numérique se construit par la compréhension." },
+                { icon: Network, t: lang === 'en' ? "Anticipation" : "Anticipation", d: lang === 'en' ? "Invent here, develop here, make Switzerland shine." : "Inventer ici, développer ici, faire rayonner la Suisse." }
             ].map((f, i) => (
                <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-zinc-950 border border-gray-100 dark:border-white/5 hover:border-primary transition-all duration-500 group relative overflow-hidden">
                   <div className="w-12 h-12 bg-gray-100 dark:bg-white/5 group-hover:bg-primary/10 rounded-xl flex items-center justify-center mb-6 transition-all">
@@ -183,15 +197,15 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                         <PlayCircle className="w-20 h-20 text-white" />
                      </div>
                      <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter drop-shadow-2xl">
-                        WATCH THE <span className="text-primary italic">VISION</span>
+                        {lang === 'en' ? "WATCH THE " : "NOTRE "}<span className="text-primary italic">VISION</span>
                      </h2>
                   </div>
                   <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end text-white">
                      <div className="bg-black/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10">
-                        <p className="text-white/50 font-black text-[9px] uppercase tracking-[0.3em] mb-1">Authenticated Narrative</p>
-                        <p className="text-white/90 font-black text-lg tracking-tighter">Swiss Digital Sovereignty Foundation</p>
+                        <p className="text-white/50 font-black text-[9px] uppercase tracking-[0.3em] mb-1">{lang === 'en' ? "Authenticated narrative" : "Récit authentifié"}</p>
+                        <p className="text-white/90 font-black text-lg tracking-tighter">{lang === 'en' ? "Swiss Digital Sovereignty Foundation" : "Fondation pour la Souveraineté Numérique Suisse"}</p>
                      </div>
-                     <span className="px-6 py-2.5 bg-primary rounded-full font-black text-[10px] uppercase tracking-widest shadow-2xl">Explore</span>
+                     <span className="px-6 py-2.5 bg-primary rounded-full font-black text-[10px] uppercase tracking-widest shadow-2xl">{lang === 'en' ? "Explore" : "Explorer"}</span>
                   </div>
                 </motion.div>
               ) : (
@@ -202,37 +216,46 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                    exit={{ opacity: 0 }}
                    className="relative w-full h-full bg-zinc-950"
                 >
+                  {/* Cinematic Base Layer for Creativity */}
                    <Image
-                      src="/swiss_digital_pact_hero_v5.png"
-                      alt="Movie Background"
+                      src="/swiss_digital_sovereignty_cinematic_1775639965864.png"
+                      alt="Cinematic Background"
                       fill
-                      className="object-cover object-center brightness-[0.15] transition-all duration-1000"
+                      className="object-cover opacity-30 mix-blend-overlay"
                    />
 
-                   <div className="absolute inset-0 flex items-center justify-center p-12">
+                   <video
+                      src="/videoes/example_video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover brightness-[0.5] mix-blend-screen"
+                   />
+
+                   {/* COMMENTED OUT - Vision overlay captions (DO NOT DELETE)
+<div className="absolute inset-0 flex items-end justify-center pb-12 px-12 z-10">
                       <AnimatePresence mode="wait">
                          <motion.div
                             key={visionScene}
-                            initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-                            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                            exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-3xl text-center flex flex-col items-center gap-8"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.4 }}
+                            className="max-w-4xl text-center flex flex-col items-center"
                          >
-                            <div className="p-10 bg-primary/20 backdrop-blur-3xl rounded-[2.5rem] border border-primary/30 shadow-[0_0_100px_rgba(227,6,19,0.2)]">
-                               {scenes[visionScene] && React.createElement(scenes[visionScene].icon, { className: "w-20 h-20 text-primary" })}
-                            </div>
-                            <div className="flex flex-col gap-4">
-                               <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
-                                  {scenes[visionScene]?.t}
+                            <div className="bg-black/80 backdrop-blur-3xl px-8 py-5 rounded-2xl border border-white/10 shadow-3xl">
+                               <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-1">
+                                  {scenes[visionScene]?.t} <span className="text-primary">{scenes[visionScene]?.h || ""}</span>
                                </h3>
-                               <p className="text-lg md:text-2xl text-white/70 font-bold leading-relaxed max-w-xl">
+                               <p className="text-xs md:text-sm text-white/80 font-bold leading-relaxed max-w-xl">
                                   {scenes[visionScene]?.d}
                                 </p>
                             </div>
                          </motion.div>
                       </AnimatePresence>
                    </div>
+*/}
 
                    <div className="absolute top-8 right-8 z-40">
                       <button
@@ -249,16 +272,33 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                             <div key={i} className={cn("h-1.5 transition-all duration-700 rounded-full", visionScene === i ? "w-20 bg-primary" : "w-6 bg-white/10")} />
                          ))}
                       </div>
-                      <div className="flex items-center gap-6">
-                         <p className="text-white/30 font-black text-[9px] tracking-[0.3em] uppercase">Pillar {visionScene + 1} / {scenes.length}</p>
+                       <div className="flex items-center gap-6">
+                         <p className="text-white/30 font-black text-[9px] tracking-[0.3em] uppercase">{lang === 'en' ? "Pillar" : "Pilier"} {visionScene + 1} / {scenes.length}</p>
                          <button onClick={() => setVisionScene((prev) => (prev + 1) % scenes.length)} className="flex items-center gap-3 text-white font-black hover:text-primary transition-all uppercase tracking-[0.2em] text-[10px]">
-                            Next <ArrowRight className="w-5 h-5" />
+                            {lang === 'en' ? "Next" : "Suivant"} <ArrowRight className="w-5 h-5" />
                          </button>
                       </div>
                    </div>
                 </motion.div>
               )}
             </AnimatePresence>
+         </div>
+      </section>
+      {/* Notre Vision Section */}
+      <section className="container mx-auto px-6 py-12 text-center">
+         <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary dark:text-white leading-[1] mb-6">
+            {lang === 'en' ? "Our Vision" : "Notre vision"}
+         </h2>
+         <p className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto mb-10 italic">
+            {lang === 'en' ? '"We want a secure, sovereign, open, human, and ambitious Switzerland."' : '"Nous voulons une Suisse sûre, souveraine, ouverte, humaine et ambitieuse."'}
+         </p>
+         <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base font-black uppercase tracking-widest text-primary">
+            {(lang === 'en' ? ["secure", "sovereign", "open", "human", "ambitious"] : ["sûre", "souveraine", "ouverte", "humaine", "ambitieuse"]).map((word, i) => (
+               <React.Fragment key={word}>
+                  <span>{word}</span>
+                  {i < 4 && <span className="text-gray-300 dark:text-gray-700 mx-2">•</span>}
+               </React.Fragment>
+            ))}
          </div>
       </section>
 
@@ -271,18 +311,18 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                   <Download className="w-7 h-7" />
                </div>
                <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] flex flex-col">
-                  <span>JOIN THE</span>
-                  <span className="italic underline decoration-dashed underline-offset-4">INITIATIVE</span>
+                  <span>{lang === 'en' ? "JOIN THE" : "REJOIGNEZ"}</span>
+                  <span className="italic underline decoration-dashed underline-offset-4">{lang === 'en' ? "INITIATIVE" : "L'INITIATIVE"}</span>
                </h2>
                <p className="text-white/80 text-base max-w-lg mx-auto font-bold leading-relaxed drop-shadow-md">
-                  Join thousands of Swiss citizens in securing our digital future. Your signature carries the weight of constitutional change.
+                  {lang === 'en' ? "This initiative charts a clear course to protect people, strengthen the country, and prepare for the future. Your signature can pave the way." : "Cette initiative trace un cap clair pour protéger les personnes, renforcer le pays et préparer l'avenir. Votre signature peut ouvrir la voie."}
                </p>
                <div className="flex flex-col sm:flex-row gap-5 w-full justify-center mt-4">
                   <Link href={`/${lang}/sign`} className="px-12 py-5 bg-white text-primary rounded-xl font-black text-xl hover:scale-110 active:scale-95 transition-all shadow-xl">
-                    SIGN THE FORM
+                    {lang === 'en' ? "SIGN THE FORM" : "SIGNER LE FORMULAIRE"}
                   </Link>
                   <Link href={`/${lang}/support`} className="px-12 py-5 border-2 border-white/20 hover:bg-white/10 rounded-xl font-black text-xl transition-all backdrop-blur-2xl">
-                    SUPPORT US
+                    {lang === 'en' ? "SUPPORT US" : "NOUS SOUTENIR"}
                   </Link>
                </div>
             </div>

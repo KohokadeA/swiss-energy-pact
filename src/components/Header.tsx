@@ -2,16 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { Shield, Menu, X, Globe } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 const languages = [
-  { code: 'en', name: 'EN' },
   { code: 'fr', name: 'FR' },
   { code: 'de', name: 'DE' },
   { code: 'it', name: 'IT' },
+  { code: 'en', name: 'EN' },
 ];
 
 export const Header = ({ lang }: { lang: Locale }) => {
@@ -53,17 +53,26 @@ export const Header = ({ lang }: { lang: Locale }) => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href={`/${lang}`} className="flex items-center gap-3 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:rotate-12 transition-all duration-300">
-            <Shield className="w-6 h-6 text-white" />
+
+          {/* Logo container */}
+          <div className="bg-primary w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden group-hover:rotate-6 transition-all duration-300">
+            <img
+              src="/favicon.ico"
+              alt="logo"
+              className="w-full h-full object-cover"
+            />
           </div>
+
+          {/* Text */}
           <div className="flex flex-col">
             <span className="font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors">
               {dict.title.toUpperCase()}
             </span>
             <span className="text-[10px] uppercase font-medium text-gray-500 tracking-widest leading-none mt-1">
-              Popular Initiative
+              {dict.subtitle}
             </span>
           </div>
+
         </Link>
 
         {/* Desktop Navigation */}
@@ -83,9 +92,9 @@ export const Header = ({ lang }: { lang: Locale }) => {
               )}
             </Link>
           ))}
-          
+
           <div className="h-6 w-[1px] bg-gray-200 dark:bg-gray-800 mx-4" />
-          
+
           <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-900 p-1 rounded-lg">
             {languages.map((l) => (
               <Link
@@ -102,7 +111,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
           </div>
 
           <Link href={`/${lang}/sign`} className="ml-4 swiss-button flex items-center gap-2 py-2 px-6 text-sm">
-            Sign Now
+            {dict.common.signCta}
           </Link>
         </nav>
 
@@ -152,7 +161,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
               className="mt-4 swiss-button text-center py-4"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Sign the Initiative
+              {dict.common.signCta}
             </Link>
           </nav>
         </div>
