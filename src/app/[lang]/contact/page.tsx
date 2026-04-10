@@ -12,19 +12,136 @@ export const metadata: Metadata = {
 export default function ContactPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
 
+  const contactText = {
+    en: {
+      badge: "Direct Access",
+      title1: "LET'S ",
+      title2: "TALK",
+      desc: '"Do you have a question about the text, the collection of signatures, the committee, the campaign or the media? We answer you with clarity, in the spirit of this initiative: seriousness, openness and sense of the common good."',
+      formTitle: "Send a Request",
+      labelName: "Full Name",
+      labelEmail: "Email Address",
+      labelDept: "Select Department",
+      deptSupport: "General Support",
+      deptMedia: "Media and Press Relations",
+      deptRegional: "Regional Committees",
+      deptTechnical: "Technical Requests",
+      labelMessage: "Your Message",
+      messagePlaceholder: "How can our committee help you?",
+      sendBtn: "Send Message",
+      officeTitle: "Technical Office",
+      labelMail: "Official Email",
+      labelPhone: "Media Line",
+      labelAddress: "Committee Address",
+      labelAccess: "Accessibility",
+      accessHours: "Mon-Fri: 09:00 - 18:00 (Swiss Time)",
+      labelMediaKit: "Media Kit",
+      mediaKitDesc: "Download resources",
+      secureTitle: "Secure Requests",
+      secureDesc: "Data is encrypted according to Swiss protection laws.",
+      socialTitle: "Social Sovereignty"
+    },
+    fr: {
+      badge: "Accès Direct",
+      title1: "PARLONS-",
+      title2: "EN",
+      desc: '"Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l’esprit de cette initiative: sérieux, ouverture et sens du bien commun."',
+      formTitle: "Envoyer une Demande",
+      labelName: "Nom Complet",
+      labelEmail: "Adresse Email",
+      labelDept: "Sélectionner le Département",
+      deptSupport: "Support Général",
+      deptMedia: "Relations Médias et Presse",
+      deptRegional: "Comités Régionaux",
+      deptTechnical: "Demandes Techniques",
+      labelMessage: "Votre Message",
+      messagePlaceholder: "Comment notre comité peut-il vous aider ?",
+      sendBtn: "Envoyer le Message",
+      officeTitle: "Bureau Technique",
+      labelMail: "Email Officiel",
+      labelPhone: "Ligne Média",
+      labelAddress: "Adresse du Comité",
+      labelAccess: "Accessibilité",
+      accessHours: "Lun-Ven: 09:00 - 18:00 (Heure Suisse)",
+      labelMediaKit: "Kit Média",
+      mediaKitDesc: "Télécharger les ressources",
+      secureTitle: "Demandes Sécurisées",
+      secureDesc: "Les données sont chiffrées selon les lois suisses de protection.",
+      socialTitle: "Souveraineté Sociale"
+    },
+    de: {
+      badge: "Direkter Zugang",
+      title1: "SPRECHEN WIR ",
+      title2: "DARÜBER",
+      desc: '"Haben Sie eine Frage zum Text, zur Unterschriftensammlung, zum Komitee, zur Kampagne oder zu den Medien? Wir antworten Ihnen mit Klarheit, ganz im Geist dieser Initiative: Seriosität, Offenheit und Sinn für das Gemeinwohl."',
+      formTitle: "Anfrage senden",
+      labelName: "Vollständiger Name",
+      labelEmail: "E-Mail-Adresse",
+      labelDept: "Abteilung auswählen",
+      deptSupport: "Allgemeine Unterstützung",
+      deptMedia: "Medien- und Pressearbeit",
+      deptRegional: "Regionalkomitees",
+      deptTechnical: "Technische Anfragen",
+      labelMessage: "Ihre Nachricht",
+      messagePlaceholder: "Wie kann unser Komitee Ihnen helfen?",
+      sendBtn: "Nachricht senden",
+      officeTitle: "Technisches Büro",
+      labelMail: "Offizielle E-Mail",
+      labelPhone: "Medien-Hotline",
+      labelAddress: "Adresse des Komitees",
+      labelAccess: "Erreichbarkeit",
+      accessHours: "Mo-Fr: 09:00 - 18:00 (Schweizer Zeit)",
+      labelMediaKit: "Media-Kit",
+      mediaKitDesc: "Ressourcen herunterladen",
+      secureTitle: "Sichere Anfragen",
+      secureDesc: "Daten werden gemäss den Schweizer Datenschutzgesetzen verschlüsselt.",
+      socialTitle: "Soziale Souveränität"
+    },
+    it: {
+      badge: "Accesso Diretto",
+      title1: "PARLIAMONE",
+      title2: "ORA",
+      desc: '"Avete una domanda sul testo, sulla raccolta delle firme, sul comitato, sulla campagna o sui media? Vi rispondiamo con chiarezza, nello spirito di questa iniziativa: serietà, apertura e senso del bene comune."',
+      formTitle: "Invia una richiesta",
+      labelName: "Nome completo",
+      labelEmail: "Indirizzo e-mail",
+      labelDept: "Seleziona dipartimento",
+      deptSupport: "Supporto generale",
+      deptMedia: "Relazioni con i media e la stampa",
+      deptRegional: "Comitati regionali",
+      deptTechnical: "Richieste tecniche",
+      labelMessage: "Il tuo messaggio",
+      messagePlaceholder: "Come può aiutarvi il nostro comitato?",
+      sendBtn: "Invia messaggio",
+      officeTitle: "Ufficio Tecnico",
+      labelMail: "E-mail ufficiale",
+      labelPhone: "Linea media",
+      labelAddress: "Indirizzo del Comitato",
+      labelAccess: "Accessibilità",
+      accessHours: "Lun-Ven: 09:00 - 18:00 (Ora svizzera)",
+      labelMediaKit: "Kit Media",
+      mediaKitDesc: "Scarica le risorse",
+      secureTitle: "Richieste sicure",
+      secureDesc: "I dati sono crittografati secondo le leggi svizzere sulla protezione.",
+      socialTitle: "Sovranità sociale"
+    }
+  };
+
+  const t = contactText[lang] || contactText.fr;
+
   return (
     <div className="container mx-auto px-6 py-16 max-w-7xl overflow-hidden min-h-screen">
       <header className="mb-20 text-center max-w-4xl mx-auto relative animate-in fade-in duration-1000">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
           <MessageCircle className="w-4 h-4 flex-shrink-0" />
-          {lang === 'en' ? "Direct Access" : "Accès Direct"}
+          {t.badge}
         </div>
         <h1 className="text-5xl md:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter italic font-serif">
-           {lang === 'en' ? "LET'S " : "PARLONS-"}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{lang === 'en' ? "TALK" : "EN"}</span>.
+           {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
         </h1>
         <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
-          {lang === 'en' ? '"Do you have a question about the text, the collection of signatures, the committee, the campaign or the media? We answer you with clarity, in the spirit of this initiative: seriousness, openness and sense of the common good."' : '"Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l’esprit de cette initiative: sérieux, ouverture et sens du bien commun."'}
+          {t.desc}
         </p>
       </header>
 
@@ -34,11 +151,11 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
         {/* Contact Form Section - Premium Design */}
         <section className="animate-in slide-in-from-left duration-1000">
           <div className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 lg:p-16 rounded-[3rem] shadow-xl shadow-gray-200/50 dark:shadow-none transition-all duration-700 hover:-translate-y-4 hover:shadow-4xl hover:border-primary/20 relative">
-            <h2 className="text-3xl font-black mb-10 tracking-tight">{lang === 'en' ? "Send a Request" : "Envoyer une Demande"}</h2>
+            <h2 className="text-3xl font-black mb-10 tracking-tight">{t.formTitle}</h2>
             <form className="space-y-8 group/form">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{lang === 'en' ? "Full Name" : "Nom Complet"}</label>
+                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelName}</label>
                   <input 
                     type="text" 
                     placeholder="Muster Peter" 
@@ -46,7 +163,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{lang === 'en' ? "Email Address" : "Adresse Email"}</label>
+                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelEmail}</label>
                   <input 
                     type="email" 
                     placeholder="p.muster@email.ch" 
@@ -55,22 +172,22 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                 </div>
               </div>
               <div className="space-y-3">
-                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{lang === 'en' ? "Select Department" : "Sélectionner le Département"}</label>
+                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelDept}</label>
                 <div className="relative group/select">
                    <select className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold appearance-none text-sm">
-                     <option>{lang === 'en' ? "General Support" : "Support Général"}</option>
-                     <option>{lang === 'en' ? "Media and Press Relations" : "Relations Médias et Presse"}</option>
-                     <option>{lang === 'en' ? "Regional Committees" : "Comités Régionaux"}</option>
-                     <option>{lang === 'en' ? "Technical Requests" : "Demandes Techniques"}</option>
+                     <option>{t.deptSupport}</option>
+                     <option>{t.deptMedia}</option>
+                     <option>{t.deptRegional}</option>
+                     <option>{t.deptTechnical}</option>
                    </select>
                    <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 rotate-90" />
                 </div>
               </div>
               <div className="space-y-3">
-                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{lang === 'en' ? "Your Message" : "Votre Message"}</label>
+                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelMessage}</label>
                 <textarea 
                   rows={4} 
-                  placeholder={lang === 'en' ? "How can our committee help you?" : "Comment notre comité peut-il vous aider ?"} 
+                  placeholder={t.messagePlaceholder} 
                   className="w-full px-6 py-5 rounded-[2rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 resize-none text-sm"
                 />
               </div>
@@ -78,7 +195,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                 type="submit" 
                 className="swiss-button w-full flex items-center justify-center gap-3 py-6 text-xl font-black group-hover/form:bg-primary transition-all shadow-lg active:scale-95"
               >
-                {lang === 'en' ? "Send Message" : "Envoyer le Message"} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
+                {t.sendBtn} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
               </button>
             </form>
           </div>
@@ -88,12 +205,12 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
         <section className="flex flex-col gap-16 animate-in slide-in-from-right duration-1000 lg:sticky top-24">
           <div className="flex flex-col gap-16">
             <div>
-               <h2 className="text-3xl font-black mb-12 tracking-tight">{lang === 'en' ? "Technical Office" : "Bureau Technique"}</h2>
+               <h2 className="text-3xl font-black mb-12 tracking-tight">{t.officeTitle}</h2>
                <ul className="space-y-10">
                  {[
-                   { icon: Mail, label: lang === 'en' ? "Official Email" : "Email Officiel", value: "info@swissdigitalpact.ch" },
-                   { icon: Phone, label: lang === 'en' ? "Media Line" : "Ligne Média", value: "+41 22 000 00 00" },
-                   { icon: MapPin, label: lang === 'en' ? "Committee Address" : "Adresse du Comité", value: "CP 456, 1000 Lausanne" },
+                   { icon: Mail, label: t.labelMail, value: "info@swissdigitalpact.ch" },
+                   { icon: Phone, label: t.labelPhone, value: "+41 22 000 00 00" },
+                   { icon: MapPin, label: t.labelAddress, value: "CP 456, 1000 Lausanne" },
                  ].map((item, idx) => (
                    <li key={idx} className="flex items-start gap-6 group">
                      <div className="w-14 h-14 bg-primary group-hover:bg-primary-dark rounded-[1.5rem] flex items-center justify-center text-white transition-all shadow-xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6">
@@ -112,16 +229,16 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                <div className="flex flex-col gap-3 p-6 bg-gray-100 dark:bg-black/60 rounded-[2.5rem] border border-gray-200 dark:border-gray-900 group hover:border-primary transition-all">
                   <div className="flex items-center gap-3 text-primary">
                     <Clock className="w-5 h-5" />
-                    <span className="font-black uppercase text-[9px] tracking-[4px]">{lang === 'en' ? "Accessibility" : "Accessibilité"}</span>
+                    <span className="font-black uppercase text-[9px] tracking-[4px]">{t.labelAccess}</span>
                   </div>
-                  <p className="text-gray-500 font-bold text-xs leading-relaxed">{lang === 'en' ? "Mon-Fri: 09:00 - 18:00 (Swiss Time)" : "Lun-Ven: 09:00 - 18:00 (Heure Suisse)"}</p>
+                  <p className="text-gray-500 font-bold text-xs leading-relaxed">{t.accessHours}</p>
                </div>
                <div className="flex flex-col gap-3 p-6 bg-gray-100 dark:bg-black/60 rounded-[2.5rem] border border-gray-200 dark:border-gray-900 group hover:border-primary transition-all">
                   <div className="flex items-center gap-3 text-primary">
                     <ExternalLink className="w-5 h-5" />
-                    <span className="font-black uppercase text-[9px] tracking-[4px]">{lang === 'en' ? "Media Kit" : "Kit Média"}</span>
+                    <span className="font-black uppercase text-[9px] tracking-[4px]">{t.labelMediaKit}</span>
                   </div>
-                  <p className="text-gray-500 font-bold text-xs">{lang === 'en' ? "Download resources" : "Télécharger les ressources"} &rarr;</p>
+                  <p className="text-gray-500 font-bold text-xs">{t.mediaKitDesc} &rarr;</p>
                </div>
             </div>
 
@@ -129,8 +246,8 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-1000 -z-10" />
                <ShieldCheck className="w-12 h-12 text-primary flex-shrink-0" />
                <div className="flex flex-col">
-                  <h4 className="text-lg font-black">{lang === 'en' ? "Secure Requests" : "Demandes Sécurisées"}</h4>
-                  <p className="text-white/40 text-xs font-medium leading-relaxed">{lang === 'en' ? "Data is encrypted according to Swiss protection laws." : "Les données sont chiffrées selon les lois suisses de protection."}</p>
+                  <h4 className="text-lg font-black">{t.secureTitle}</h4>
+                  <p className="text-white/40 text-xs font-medium leading-relaxed">{t.secureDesc}</p>
                </div>
             </div>
           </div>
@@ -138,7 +255,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       </div>
 
       <div className="mt-20 py-16 border-t border-gray-100 dark:border-gray-800 text-center flex flex-col items-center gap-8">
-         <h3 className="text-3xl font-black">{lang === 'en' ? "Social Sovereignty" : "Souveraineté Sociale"}</h3>
+         <h3 className="text-3xl font-black">{t.socialTitle}</h3>
          <div className="flex gap-6">
             {[Twitter, Instagram, Facebook].map((Icon, idx) => (
               <Link key={idx} href="#" className="p-6 bg-gray-100 dark:bg-zinc-900 hover:bg-primary transition-all duration-500 rounded-[2rem] group border border-gray-200 dark:border-gray-800">

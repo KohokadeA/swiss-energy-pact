@@ -4,7 +4,7 @@ export const dictionaries = {
     subtitle: "Swiss Federal Popular Initiative",
     hero: {
       title: "For a free, secure Switzerland in control of its digital destiny",
-      description: "Digital technology is already shaping our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with its own path: open, demanding, human, and sovereign.",
+      description: "Digital technology already shapes our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with it on its own terms: open, demanding, human-centered, and sovereign.",
       cta: "Read the initiative",
       learn: "Download the signature sheet",
       watch: "Our vision"
@@ -42,6 +42,33 @@ export const dictionaries = {
       step3d: "Sign manually with a pen (blue or black ink).",
       step4: "Mail it",
       step4d: "Send by post to our office in Lausanne (no stamp needed)."
+    },
+    pactDetails: {
+      s1: {
+        title: "Introduction",
+        text: "In December 2025, the Federal Chancellery was contacted regarding the launch of a federal popular initiative entitled “For the Digital Security of Switzerland”. The initiative proposes a new article in the Federal Constitution to ensure digital security and sovereignty."
+      },
+      s2: {
+        title: "Why this Initiative?",
+        text: "Switzerland relies extensively on digital systems. Cyber threats are increasing globally. We need a clear constitutional foundation to remain autonomous and resilient."
+      },
+      s3: {
+        title: "Impact",
+        confederation: "Enables the Confederation to assume responsibilities and coordinates federal/cantonal authorities.",
+        population: "Strengthens data protection and encourages digital skills across society."
+      },
+      s5: {
+        title: "Constitutional Article Art. 57a",
+        text: "The Confederation determines security rules, protects critical infrastructure, and guarantees digital integrity of individuals."
+      },
+      s6: {
+        title: "Committee Membership",
+        text: "Being a member is a support in principle, entails no financial commitment or operational responsibility."
+      },
+      s7: {
+        title: "Process & Timeline",
+        steps: ["Preparation", "Signature Collection (100k signatures / 18 months)", "Validation", "Federal Review", "Popular Vote"]
+      }
     }
   },
   fr: {
@@ -87,17 +114,44 @@ export const dictionaries = {
       step3d: "Signez à la main avec un stylo (bleu ou noir).",
       step4: "Envoyer",
       step4d: "Envoyez-le par la poste à Lausanne (sans affranchir)."
+    },
+    pactDetails: {
+      s1: {
+        title: "Introduction",
+        text: "En décembre 2025, la Chancellerie fédérale a été contactée pour le lancement de l'initiative « Pour la sécurité numérique de la Suisse ». Elle propose un nouvel article constitutionnel pour garantir la souveraineté numérique."
+      },
+      s2: {
+        title: "Pourquoi ?",
+        text: "La Suisse dépend des systèmes numériques. Les menaces croissent. Une base constitutionnelle est nécessaire pour rester autonome et crédible."
+      },
+      s3: {
+        title: "Impact",
+        confederation: "Permet à la Confédération d'assumer ses responsabilités et de coordonner les autorités.",
+        population: "Renforce la protection des données et encourage les compétences numériques."
+      },
+      s5: {
+        title: "Article Constitutionnel Art. 57a",
+        text: "La Confédération fixe les règles de sécurité, protège les infrastructures critiques et garantit l'intégrité numérique."
+      },
+      s6: {
+        title: "Membre du Comité",
+        text: "Être membre est un soutien de principe, sans engagement financier ni responsabilité opérationnelle."
+      },
+      s7: {
+        title: "Le Processus",
+        steps: ["Préparation", "Récolte des signatures (100k / 18 mois)", "Validation", "Examen fédéral", "Votation populaire"]
+      }
     }
   },
   de: {
     title: "Schweizer Digital-Pakt",
     subtitle: "Eidgenössische Volksinitiative",
     hero: {
-      title: "Die digitale Souveränität der Schweiz sichern",
-      description: "Unsere Mission ist die Verankerung digitaler Sicherheit und Unabhängigkeit in der Bundesverfassung. Zum Schutz unserer Infrastruktur und Daten.",
-      cta: "Formular herunterladen",
-      learn: "Zur Initiative",
-      watch: "Vision ansehen"
+      title: "Für eine freie, sichere Schweiz, die ihr digitales Schicksal selbst bestimmt",
+      description: "Die Digitalisierung prägt bereits unseren Alltag, unsere Wirtschaft, unsere Institutionen und unsere Demokratie. Die Schweiz muss sich mit eigener Haltung engagieren: offen, anspruchsvoll, menschlich und souverän.",
+      cta: "Initiative lesen",
+      learn: "Unterschriftenbogen herunterladen",
+      watch: "Unsere Vision"
     },
     nav: {
       home: "Startseite",
@@ -129,20 +183,47 @@ export const dictionaries = {
       step2: "Drucken",
       step2d: "Die Unterschrift muss physisch auf A4-Papier erfolgen.",
       step3: "Unterschreiben",
-      step3d: "Händig unterschreiben (blauer oder schwarzer Stift).",
+      step3d: "Von Hand unterschreiben (blauer oder schwarzer Stift).",
       step4: "Senden",
       step4d: "Per Post an unser Büro in Lausanne (portofrei)."
+    },
+    pactDetails: {
+      s1: {
+        title: "Einführung",
+        text: "Im Dezember 2025 wurde die Bundeskanzlei bezüglich der Initiative «Für die digitale Sicherheit der Schweiz» kontaktiert. Sie schlägt einen neuen Verfassungsartikel vor."
+      },
+      s2: {
+        title: "Warum diese Initiative?",
+        text: "Die Schweiz ist auf digitale Systeme angewiesen. Cyberbedrohungen nehmen weltweit zu. Es braucht eine klare Verfassungsgrundlage."
+      },
+      s3: {
+        title: "Auswirkungen",
+        confederation: "Ermöglicht dem Bund, seine Verantwortung wahrzunehmen und die Koordination zu stärken.",
+        population: "Stärkt den Datenschutz und fördert digitale Kompetenzen in der Gesellschaft."
+      },
+      s5: {
+        title: "Verfassungsartikel Art. 57a",
+        text: "Der Bund legt Sicherheitsregeln fest, schützt kritische Infrastrukturen und garantiert die digitale Integrität."
+      },
+      s6: {
+        title: "Mitgliedschaft im Komitee",
+        text: "Die Mitgliedschaft ist eine grundsätzliche Unterstützung, ohne finanzielle oder operative Verpflichtungen."
+      },
+      s7: {
+        title: "Prozess & Zeitplan",
+        steps: ["Vorbereitung", "Unterschriftensammlung (100k / 18 Monate)", "Validierung", "Prüfung durch den Bund", "Volksabstimmung"]
+      }
     }
   },
   it: {
     title: "Patto Digitale Svizzero",
     subtitle: "Iniziativa Popolare Federale",
     hero: {
-      title: "Assicurare la Sovranità Digitale della Svizzera",
-      description: "La nostra missione è integrare la sicurezza e l'indipendenza digitale nella Costituzione federale. Proteggiamo le nostre infrastrutture e i nostri dati.",
-      cta: "Scarica il modulo",
-      learn: "L'Iniziativa",
-      watch: "Guarda la visione"
+      title: "Per una Svizzera libera, sicura e padrona del suo destino digitale",
+      description: "Il digitale plasma già la nostra vita quotidiana, la nostra economia, le nostre istituzioni e la nostra democrazia. La Svizzera deve impegnarsi con la propria linea: aperta, esigente, umana e sovrana.",
+      cta: "Leggi l'iniziativa",
+      learn: "Scarica il foglio firme",
+      watch: "La nostra visione"
     },
     nav: {
       home: "Home",
@@ -177,9 +258,36 @@ export const dictionaries = {
       step3d: "Firma a mano con una penna (inchiostro blu o nero).",
       step4: "Invia",
       step4d: "Invialo via posta a Losanna (invio gratuito)."
+    },
+    pactDetails: {
+      s1: {
+        title: "Introduzione",
+        text: "Nel dicembre 2025, la Cancelleria federale è stata contattata per il lancio dell'iniziativa «Per la sicurezza digitale della Svizzera». Propone un nuovo articolo costituzionale."
+      },
+      s2: {
+        title: "Perché questa iniziativa?",
+        text: "La Svizzera dipende dai sistemi digitali. Le minacce informatiche aumentano globale. Serve una base costituzionale chiara."
+      },
+      s3: {
+        title: "Impatto",
+        confederation: "Permette alla Confederazione di assumersi le proprie responsabilità e coordinare le autorità.",
+        population: "Rafforza la protezione dei dati e incoraggia le competenze digitali nella società."
+      },
+      s5: {
+        title: "Articolo Costituzionale Art. 57a",
+        text: "La Confederazione stabilisce le regole di sicurezza, protegge le infrastrutture critiche e garantisce l'integrità digitale."
+      },
+      s6: {
+        title: "Membro del Comitato",
+        text: "Essere membri significa sostenere l'iniziativa, senza impegni finanziari o responsabilità operative."
+      },
+      s7: {
+        title: "Processo e Cronologia",
+        steps: ["Preparazione", "Raccolta firme (100k / 18 mesi)", "Validazione", "Esame federale", "Votazione popolare"]
+      }
     }
   }
-};
+} as const;
 
 export type Locale = keyof typeof dictionaries;
 export const getDictionary = (locale: Locale) => dictionaries[locale] || dictionaries.fr;

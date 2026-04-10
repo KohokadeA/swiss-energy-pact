@@ -7,39 +7,46 @@ import { type Locale, getDictionary } from '@/lib/dictionary';
 export const Footer = ({ lang }: { lang: Locale }) => {
   const dict = getDictionary(lang);
 
-  const footerTexts = lang === 'en' ? {
-    description: "Ensuring Switzerland's digital sovereignty through direct democracy. Neutral, citizen-funded, and essential for our future.",
-    legal: "Legal",
-    privacy: "Privacy Policy",
-    terms: "Terms & Conditions",
-    mediaKit: "Press & Media Kit",
-    copyright: `© ${new Date().getFullYear()} Swiss Digital Pact Committee`,
-    madeFor: "Designed for Switzerland"
-  } : lang === 'de' ? {
-    description: "Die digitale Souveränität der Schweiz durch direkte Demokratie sichern. Neutral, bürgerfinanziert und für unsere Zukunft unverzichtbar.",
-    legal: "Rechtliches",
-    privacy: "Datenschutzrichtlinie",
-    terms: "Allgemeine Geschäftsbedingungen",
-    mediaKit: "Presse- und Medienkit",
-    copyright: `© ${new Date().getFullYear()} Komitee des Schweizer Digital-Pakts`,
-    madeFor: "Für die Schweiz gemacht"
-  } : lang === 'it' ? {
-    description: "Garantire la sovranità digitale della Svizzera attraverso la democrazia diretta. Neutrale, finanziato dai cittadini e essenziale per il nostro futuro.",
-    legal: "Legale",
-    privacy: "Politica sulla privacy",
-    terms: "Termini e condizioni",
-    mediaKit: "Kit Stampa e Media",
-    copyright: `© ${new Date().getFullYear()} Comitato del Patto Digitale Svizzero`,
-    madeFor: "Progettato per la Svizzera"
-  } : {
-    description: "Garantir la souveraineté numérique de la Suisse par la démocratie directe. Neutre, financée par les citoyens et essentielle pour notre avenir.",
-    legal: "Légal",
-    privacy: "Politique de confidentialité",
-    terms: "Conditions générales",
-    mediaKit: "Kit Presse et Média",
-    copyright: `© ${new Date().getFullYear()} Comité du Pacte Numérique Suisse`,
-    madeFor: "Conçu pour la Suisse"
+  const footerTextsMap = {
+    en: {
+      description: "Ensuring Switzerland's digital sovereignty through direct democracy. Neutral, citizen-funded, and essential for our future.",
+      legal: "Legal",
+      privacy: "Privacy Policy",
+      terms: "Terms & Conditions",
+      mediaKit: "Press & Media Kit",
+      copyright: `© ${new Date().getFullYear()} Swiss Digital Pact Committee`,
+      madeFor: "Designed for Switzerland"
+    },
+    de: {
+      description: "Die digitale Souveränität der Schweiz durch direkte Demokratie sichern. Neutral, bürgerfinanziert und für unsere Zukunft unverzichtbar.",
+      legal: "Rechtliches",
+      privacy: "Datenschutzrichtlinie",
+      terms: "Allgemeine Geschäftsbedingungen",
+      mediaKit: "Presse- und Medienkit",
+      copyright: `© ${new Date().getFullYear()} Komitee des Schweizer Digital-Pakts`,
+      madeFor: "Für die Schweiz gemacht"
+    },
+    it: {
+      description: "Garantire la sovranità digitale della Svizzera attraverso la democrazia diretta. Neutrale, finanziato dai cittadini e essenziale per il nostro futuro.",
+      legal: "Legale",
+      privacy: "Politica sulla privacy",
+      terms: "Termini e condizioni",
+      mediaKit: "Kit Stampa e Media",
+      copyright: `© ${new Date().getFullYear()} Comitato del Patto Digitale Svizzero`,
+      madeFor: "Progettato per la Svizzera"
+    },
+    fr: {
+      description: "Garantir la souveraineté numérique de la Suisse par la démocratie directe. Neutre, financée par les citoyens et essentielle pour notre avenir.",
+      legal: "Légal",
+      privacy: "Politique de confidentialité",
+      terms: "Conditions générales",
+      mediaKit: "Kit Presse et Média",
+      copyright: `© ${new Date().getFullYear()} Comité du Pacte Numérique Suisse`,
+      madeFor: "Conçu pour la Suisse"
+    }
   };
+
+  const footerTexts = footerTextsMap[lang] || footerTextsMap.fr;
 
   return (
     <footer className="bg-secondary text-white dark:bg-black py-8 mb-0 relative overflow-hidden border-t border-white/5">

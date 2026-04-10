@@ -68,7 +68,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
             <span className="font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors">
               {dict.title.toUpperCase()}
             </span>
-            <span className="text-[10px] uppercase font-medium text-gray-500 tracking-widest leading-none mt-1">
+            <span className="text-[10px] uppercase font-medium text-gray tracking-widest leading-none mt-1">
               {dict.subtitle}
             </span>
           </div>
