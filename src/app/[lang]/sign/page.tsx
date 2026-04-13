@@ -1,13 +1,10 @@
+'use client';
+
 import React from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Download, Printer, PenTool, Send, AlertTriangle, FileCheck, Landmark, ShieldCheck, ArrowDown, ChevronRight, Scale } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
-
-export const metadata: Metadata = {
-  title: 'Sign the Initiative - Swiss Digital Pact',
-  description: 'Physical signature process for the Swiss Digital Pact. Follow our 4-step guide to participate.',
-};
 
 export default function SignPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
@@ -126,19 +123,40 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
       </header>
 
       {/* Steps Visualizer */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full mb-24 relative">
+      <motion.div 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2
+            }
+          }
+        }}
+        className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full mb-24 relative"
+      >
         <div className="hidden lg:block absolute top-[20%] left-[10%] right-[10%] h-1 border-t-4 border-dashed border-gray-100 dark:border-gray-800 -z-10" />
         {steps.map((step, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white dark:bg-zinc-900/40 p-10 rounded-[3rem] border border-gray-50 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:border-primary/20 relative">
+          <motion.div 
+            key={idx}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+            }}
+            className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white dark:bg-zinc-900/40 p-10 rounded-[3rem] border border-gray-50 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:border-primary/20 relative"
+          >
             <div className="absolute top-0 right-0 p-4 font-black text-5xl text-gray-100/30 dark:text-gray-800/20 leading-none select-none group-hover:text-primary/10 transition-all">0{idx + 1}</div>
             <div className={`w-16 h-16 ${step.color} text-white rounded-2xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
               <step.icon className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-black mb-4 leading-tight">{step.title}</h3>
             <p className="text-gray-500 dark:text-gray-400 text-xs font-bold leading-relaxed">{step.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Main Action Block */}
       <div className="w-full bg-secondary dark:bg-zinc-900 p-12 lg:p-24 rounded-[4rem] text-white flex flex-col lg:flex-row items-center gap-16 shadow-3xl relative overflow-hidden group">

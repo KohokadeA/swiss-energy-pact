@@ -1,13 +1,10 @@
+'use client';
+
 import React from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Landmark, CreditCard, QrCode, Heart, Coffee, ShieldCheck, ExternalLink, ArrowRight, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
-
-export const metadata: Metadata = {
-  title: 'Soutenir - Pacte Numérique Suisse',
-  description: 'Contribuez au mouvement du Pacte Numérique Suisse. Vos dons nous aident à assurer l\'avenir numérique de la Suisse.',
-};
+import Magnetic from '@/components/Magnetic';
 
 export default function SupportPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
@@ -218,9 +215,11 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
              <div className="bg-gray-100 dark:bg-black p-5 rounded-2xl mb-8 font-mono text-[9px] uppercase font-black tracking-widest border-2 border-dashed border-gray-200 dark:border-gray-800 break-words group-hover:border-primary/20 transition-all">
                 {option.details}
              </div>
-             <button className="swiss-button w-full py-5 flex items-center justify-center gap-3 text-base font-black group-hover:bg-primary shadow-lg group-hover:scale-105 active:scale-95 transition-all">
-               {option.cta} {option.external ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
-             </button>
+             <Magnetic>
+               <button className="swiss-button w-full py-5 flex items-center justify-center gap-3 text-base font-black group-hover:bg-primary shadow-lg active:scale-95 transition-all">
+                 {option.cta} {option.external ? <ExternalLink className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+               </button>
+             </Magnetic>
           </div>
         ))}
       </div>
@@ -301,9 +300,11 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
          <h4 className="text-3xl md:text-4xl font-black italic mb-10 text-center text-secondary dark:text-white max-w-4xl leading-tight">
             {finalCta[lang].title}
          </h4>
-         <Link href={`/${lang}/sign`} className="swiss-button px-10 py-4 font-black text-xl hover:scale-110 active:scale-95 transition-all shadow-xl flex items-center gap-4 group">
-            {finalCta[lang].btn} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
-         </Link>
+         <Magnetic>
+           <Link href={`/${lang}/sign`} className="swiss-button px-12 py-6 font-black text-2xl shadow-[0_20px_50px_rgba(227,6,19,0.3)] group">
+              {finalCta[lang].btn} <ArrowRight className="w-8 h-8 group-hover:translate-x-3 transition-smooth" />
+           </Link>
+         </Magnetic>
       </div>
     </div>
   );

@@ -1,17 +1,15 @@
-import React from 'react';
-import type { Metadata } from 'next';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ShieldAlert, Fingerprint, Lock, Server, Cpu, Globe2, FileText, ChevronRight, Landmark, Link as LinkIcon, ArrowRight, ShieldCheck, Database, Scale, Network } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'L\'Initiative - Pacte Numérique Suisse',
-  description: 'Propositions spécifiques et modification constitutionnelle dans l\'initiative du Pacte Numérique Suisse.',
-};
+import { cn } from '@/lib/utils';
 
 export default function InitiativePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
+  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
 
   const articleText = {
     fr: `"Art. 57a : Pour la sécurité numérique de la Suisse\n1 La Confédération détermine les règles de sécurité pour tous les acteurs publics et privés dans l’espace numérique de la Suisse et en assure l’application.\n2 Elle protège ses données et ses infrastructures numériques et soutient subsidiairement les opérateurs d’infrastructures critiques.\n3 Elle garantit la protection des données personnelles et l’intégrité numérique des personnes.\n4 Elle garantit que les infrastructures, les services et les ressources numériques et informationnelles essentiels pour l’État, l’économie et la société soient en toute circonstance indépendants de toute influence contraire à ses intérêts.\n5 Elle encourage le développement de la littératie des données et des compétences numériques de la société.\n6 Elle prend, en coordination avec les acteurs académiques et économiques, des dispositions permettant d’anticiper les risques et les opportunités et ainsi de maintenir la Suisse parmi les nations les plus avancées et sûres dans le domaine numérique."`,
@@ -277,15 +275,28 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
             {structuralText[lang].items.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col gap-1 p-5 rounded-2xl bg-gray-50/50 dark:bg-black/20 border border-gray-50 dark:border-gray-800 transition-all hover:bg-white dark:hover:bg-zinc-900 group cursor-default"
+                onMouseEnter={() => setHoveredPoint(idx)}
+                onMouseLeave={() => setHoveredPoint(null)}
+                className={cn(
+                  "flex flex-col gap-1 p-5 rounded-2xl transition-all duration-500 border cursor-default group",
+                  hoveredPoint === idx
+                    ? "bg-white dark:bg-zinc-900 border-primary/30 shadow-2xl scale-[1.02] ring-4 ring-primary/5"
+                    : "bg-gray-50/50 dark:bg-black/20 border-gray-50 dark:border-gray-800"
+                )}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary shrink-0 group-hover:scale-150 transition-all" />
-                  <span className="text-lg font-black text-secondary dark:text-white">
+                  <div className={cn(
+                    "w-2 h-2 rounded-full transition-all duration-500 shrink-0",
+                    hoveredPoint === idx ? "bg-primary scale-150" : "bg-primary/40"
+                  )} />
+                  <span className={cn(
+                    "text-lg font-black transition-colors duration-500",
+                    hoveredPoint === idx ? "text-primary" : "text-secondary dark:text-white"
+                  )}>
                     {item.t}
                   </span>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 font-bold text-xs ml-5">
+                <p className="text-gray-500 dark:text-gray-400 font-bold text-xs ml-5 leading-relaxed">
                   "{item.d}"
                 </p>
               </div>
@@ -318,13 +329,26 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
           </div>
           <h2 className="text-3xl font-black tracking-tight text-center">{articleTitle[lang]}</h2>
           <div className="p-8 rounded-[2rem] bg-white/5 border border-white/10 font-serif italic text-xl leading-relaxed text-gray-300 shadow-inner whitespace-pre-wrap">
-             {articleText[lang]}
+             {articleText[lang].replace(/^"|"$/g, '').split('\n').map((line, idx) => (
+               <div
+                 key={idx}
+                 onMouseEnter={() => idx > 0 && setHoveredPoint(idx - 1)}
+                 onMouseLeave={() => setHoveredPoint(null)}
+                 className={cn(
+                   "transition-all duration-500 rounded-xl px-4 py-2 -mx-4",
+                   idx > 0 ? "cursor-help" : "mb-4 text-white not-italic font-black border-b border-white/5 pb-4",
+                   hoveredPoint === idx - 1 ? "text-primary bg-white/5 translate-x-4" : "opacity-80 hover:opacity-100"
+                 )}
+               >
+                 {line}
+               </div>
+             ))}
           </div>
-          <div className="text-center mt-2">
+          {/* <div className="text-center mt-2">
             <p className="text-gray-400 text-xs italic">
               {disclaimerText[lang]}
             </p>
-          </div>
+          </div> */}
           <div className="flex justify-between items-center px-4 mt-4">
              <span className="text-[10px] uppercase font-black tracking-widest text-primary">{proposalText[lang]}</span>
              <Link href="#" className="flex items-center gap-2 text-[10px] uppercase font-black tracking-widest text-white/40 hover:text-white transition-all">{downloadText[lang]} <LinkIcon className="w-3 h-3"/></Link>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, ArrowRight, Download, Users, Database, Network, X, PlayCircle, Globe, Landmark } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
+import Magnetic from '@/components/Magnetic';
 import { cn } from '@/lib/utils';
 
 // Vision Story Scenes
@@ -267,14 +268,18 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0, y: 15 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.4 }}
-             className="flex flex-col sm:flex-row items-center justify-center gap-4"
+             className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-12"
            >
-             <Link href={`/${lang}/initiative`} className="swiss-button px-10 py-5 text-xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] hover:scale-110 active:scale-95 transition-all flex items-center gap-4 group">
-               {dict.hero.cta.toUpperCase()} <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-smooth" />
-             </Link>
-             <Link href={`/${lang}/sign`} className="px-10 py-5 rounded-2xl font-black text-xl text-white border-2 border-white/30 hover:bg-white/10 active:scale-95 transition-all backdrop-blur-md">
-               {dict.hero.learn.toUpperCase()}
-             </Link>
+             <Magnetic>
+               <Link href={`/${lang}/initiative`} className="swiss-button px-12 py-6 text-2xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] group">
+                 {dict.hero.cta.toUpperCase()} <ArrowRight className="w-10 h-10 group-hover:translate-x-3 transition-smooth" />
+               </Link>
+             </Magnetic>
+             <Magnetic>
+               <Link href={`/${lang}/sign`} className="px-12 py-6 rounded-[2rem] font-black text-xl text-white border-2 border-white/20 hover:bg-white/10 hover:border-white transition-all backdrop-blur-xl">
+                 {dict.hero.learn.toUpperCase()}
+               </Link>
+             </Magnetic>
            </motion.div>
         </div>
       </section>

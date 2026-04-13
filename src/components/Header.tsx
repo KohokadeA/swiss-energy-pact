@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
+import Magnetic from '@/components/Magnetic';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 const languages = [
@@ -47,8 +48,10 @@ export const Header = ({ lang }: { lang: Locale }) => {
   return (
     <header
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-smooth',
-        isScrolled ? 'bg-white/90 dark:bg-black/80 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+        'fixed top-0 left-0 right-0 z-50 transition-smooth scroll-blur',
+        isScrolled 
+          ? 'bg-white/80 dark:bg-black/70 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] py-3 border-b border-white/10' 
+          : 'bg-transparent py-6'
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -110,9 +113,11 @@ export const Header = ({ lang }: { lang: Locale }) => {
             ))}
           </div>
 
-          <Link href={`/${lang}/sign`} className="ml-4 swiss-button flex items-center gap-2 py-2 px-6 text-sm">
-            {dict.common.signCta}
-          </Link>
+          <Magnetic>
+            <Link href={`/${lang}/sign`} className="ml-4 swiss-button flex items-center gap-2 py-2 px-6 text-sm">
+              {dict.common.signCta}
+            </Link>
+          </Magnetic>
         </nav>
 
         {/* Mobile Toggle */}

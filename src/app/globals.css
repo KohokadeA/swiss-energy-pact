@@ -31,30 +31,82 @@ body {
 
 .glass-box {
   background: var(--glass);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
+/* Premium Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Ambient Animated Orbs */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.15;
+  animation: orb-float 20s infinite alternate ease-in-out;
+}
+
+@keyframes orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10vw, 15vh) scale(1.2); }
+  66% { transform: translate(-5vw, 20vh) scale(0.9); }
+  100% { transform: translate(5vw, -10vh) scale(1.1); }
+}
+
 .transition-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .swiss-button {
-  @apply px-8 py-3 rounded-xl font-semibold transition-smooth hover-lift shadow-lg;
+  @apply px-8 py-4 rounded-xl font-black transition-smooth hover-lift shadow-[0_20px_40px_-15px_rgba(227,6,19,0.3)] flex items-center justify-center gap-3 overflow-hidden relative;
   background-color: var(--primary);
   color: white;
 }
 
+.swiss-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.swiss-button:hover::after {
+  transform: translateX(100%);
+}
+
 .swiss-button:hover {
   filter: brightness(1.1);
-  box-shadow: 0 10px 20px -5px rgba(227, 6, 19, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(227, 6, 19, 0.5);
 }
 
 .nav-link {
-  @apply px-4 py-2 rounded-lg transition-smooth hover:bg-gray-200/50 dark:hover:bg-gray-800/50;
+  @apply px-4 py-2 rounded-lg transition-smooth hover:bg-white/10 hover:backdrop-blur-md border border-transparent hover:border-white/10;
+}
+
+/* Scroll Blur Effect */
+.scroll-blur {
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 0.3s ease;
+}
+
+.scroll-blur.scrolled {
+  backdrop-filter: blur(12px);
+  @apply bg-white/80 dark:bg-zinc-900/80 border-b border-white/5;
 }
