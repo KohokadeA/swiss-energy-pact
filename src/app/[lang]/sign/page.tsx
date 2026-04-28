@@ -107,20 +107,22 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
   const t = content[lang] || content['fr'];
 
   return (
-    <div className="container mx-auto px-6 py-16 max-w-7xl overflow-hidden min-h-screen">
+    <div className="container mx-auto px-6 pt-32 pb-16 lg:pt-40 max-w-7xl overflow-hidden min-h-screen">
       <header className="text-center max-w-4xl mx-auto mb-20 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-100/50 dark:bg-red-900/20 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
           <ShieldCheck className="w-4 h-4 flex-shrink-0" />
           {dict.common.howToSign}
         </div>
-        <h1 className="text-5xl md:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter italic font-serif">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-tight tracking-tight">
            {t.title}
         </h1>
-        <p className="text-xl text-gray-500 dark:text-gray-400 font-bold leading-relaxed max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-3xl mx-auto">
           {t.desc}
         </p>
       </header>
+
+
 
       {/* Steps Visualizer */}
       <motion.div 
@@ -206,9 +208,9 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
            <div className="w-16 h-16 bg-white dark:bg-zinc-900 text-primary rounded-[1.5rem] flex items-center justify-center shadow-lg group-hover:scale-110 transition-all border border-gray-100 dark:border-gray-800">
              <Landmark className="w-8 h-8" />
            </div>
-           <div className="text-3xl lg:text-4xl font-black text-secondary dark:text-gray-200 tracking-tighter leading-tight italic font-serif">
+           <div className="text-3xl lg:text-4xl font-black text-secondary dark:text-gray-200 tracking-tight leading-tight">
              {t.comm}<br />
-             <span className="not-italic text-gray-400 font-bold">CP 456, 1000 Lausanne</span>
+             <span className="text-gray-500 dark:text-gray-400 font-semibold text-2xl">CP 456, 1000 Lausanne</span>
            </div>
            <Link href={`/${lang}/contact`} className="px-8 py-3 bg-gray-200 dark:bg-gray-800 rounded-2xl font-black uppercase text-[9px] tracking-widest hover:bg-primary hover:text-white transition-all transition-smooth">
              {t.questions} <ChevronRight className="w-4 h-4 inline ml-2"/>

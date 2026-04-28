@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from "next/image";
-import { Mail, MapPin, Phone, Shield, ExternalLink, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Shield, ExternalLink, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 export const Footer = ({ lang }: { lang: Locale }) => {
@@ -10,6 +10,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
   const footerTextsMap = {
     en: {
       description: "Ensuring Switzerland's digital sovereignty through direct democracy. Neutral, citizen-funded, and essential for our future.",
+      explore: "Explore",
       legal: "Legal",
       privacy: "Privacy Policy",
       terms: "Terms & Conditions",
@@ -19,6 +20,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
     },
     de: {
       description: "Die digitale Souveränität der Schweiz durch direkte Demokratie sichern. Neutral, bürgerfinanziert und für unsere Zukunft unverzichtbar.",
+      explore: "Entdecken",
       legal: "Rechtliches",
       privacy: "Datenschutzrichtlinie",
       terms: "Allgemeine Geschäftsbedingungen",
@@ -28,6 +30,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
     },
     it: {
       description: "Garantire la sovranità digitale della Svizzera attraverso la democrazia diretta. Neutrale, finanziato dai cittadini e essenziale per il nostro futuro.",
+      explore: "Esplora",
       legal: "Legale",
       privacy: "Politica sulla privacy",
       terms: "Termini e condizioni",
@@ -37,6 +40,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
     },
     fr: {
       description: "Garantir la souveraineté numérique de la Suisse par la démocratie directe. Neutre, financée par les citoyens et essentielle pour notre avenir.",
+      explore: "Explorer",
       legal: "Légal",
       privacy: "Politique de confidentialité",
       terms: "Conditions générales",
@@ -58,21 +62,26 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           <Link href={`/${lang}`} className="flex items-center gap-3 group">
 
           {/* Logo container */}
-          <div className="bg-primary w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden group-hover:rotate-6 transition-all duration-300">
+          <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300">
             <img
-              src="/favicon.ico"
-              alt="logo"
-              className="w-full h-full object-cover"
+              src="/new_logo.png"
+              alt="Swiss Digital Pact Logo"
+              className="w-full h-full object-contain"
             />
           </div>
 
           {/* Text */}
           <div className="flex flex-col">
-            <span className="font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors">
+            <span className="font-bold text-lg lg:text-xl tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap">
               {dict.title.toUpperCase()}
             </span>
-            <span className="text-[10px] uppercase font-medium text-gray-500 tracking-widest leading-none mt-1">
-              {dict.subtitle}
+            <span className="text-[9px] uppercase font-medium text-gray-500 tracking-[0.1em] leading-snug mt-1 max-w-[250px]">
+              {dict.subtitle.split(':').map((part, i, arr) => (
+                <React.Fragment key={i}>
+                  {part.trim()}{i < arr.length - 1 ? ':' : ''}
+                  {i < arr.length - 1 && <br />}
+                </React.Fragment>
+              ))}
             </span>
           </div>
 
@@ -81,7 +90,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
             {footerTexts.description}
           </p>
           <div className="flex gap-4">
-            {[Twitter, Instagram, Facebook].map((Icon, idx) => (
+            {[Linkedin, Instagram, Facebook].map((Icon, idx) => (
               <Link key={idx} href="#" className="p-2.5 bg-white/5 hover:bg-primary transition-all rounded-xl group border border-white/5">
                 <Icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
               </Link>
@@ -90,8 +99,8 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         </div>
 
         <div className="lg:pl-12">
-          <h3 className="font-black text-[10px] uppercase tracking-[4px] mb-6 text-primary">Navigation</h3>
-          <ul className="flex flex-col gap-3 text-gray-400 text-xs font-black uppercase tracking-wider">
+          <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">{footerTexts.explore}</h3>
+          <ul className="flex flex-col gap-3 text-gray-400 text-xs font-bold uppercase tracking-wider">
             <li><Link href={`/${lang}`} className="hover:text-white transition-colors">{dict.nav.home}</Link></li>
             <li><Link href={`/${lang}/initiative`} className="hover:text-white transition-colors">{dict.nav.initiative}</Link></li>
             <li><Link href={`/${lang}/sign`} className="hover:text-white transition-colors">{dict.nav.sign}</Link></li>
@@ -100,7 +109,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         </div>
 
         <div>
-          <h3 className="font-black text-[10px] uppercase tracking-[4px] mb-6 text-primary">{footerTexts.legal}</h3>
+          <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">{footerTexts.legal}</h3>
           <ul className="flex flex-col gap-3 text-gray-400 text-xs font-bold">
             <li><Link href="#" className="hover:text-white transition-colors flex items-center gap-2">{footerTexts.privacy} <ExternalLink className="w-3 h-3 opacity-50"/></Link></li>
             <li><Link href="#" className="hover:text-white transition-colors flex items-center gap-2">{footerTexts.terms} <ExternalLink className="w-3 h-3 opacity-50"/></Link></li>
@@ -109,8 +118,8 @@ export const Footer = ({ lang }: { lang: Locale }) => {
         </div>
 
         <div>
-          <h3 className="font-black text-[10px] uppercase tracking-[4px] mb-6 text-primary">Contact</h3>
-          <ul className="flex flex-col gap-4 text-gray-400">
+          <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">Contact</h3>
+          <ul className="flex flex-col gap-3 text-gray-400">
             <li className="flex items-center gap-4 group cursor-pointer">
               <Mail className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-all" />
               <span className="text-gray-300 font-bold text-xs break-all tracking-tight">info@swissdigitalpact.ch</span>

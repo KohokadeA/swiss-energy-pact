@@ -1,12 +1,12 @@
 export const dictionaries = {
   en: {
     title: "Swiss Digital Pact",
-    subtitle: "Swiss Federal Popular Initiative",
+    subtitle: "Popular federal initiative: For the digital security of Switzerland",
     hero: {
       title: "For a free, secure Switzerland in control of its digital destiny",
       description: "Digital technology already shapes our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with it on its own terms: open, demanding, human-centered, and sovereign.",
       cta: "Read the initiative",
-      learn: "Download the signature sheet",
+      learn: "Sign the Swiss Digital Pact",
       watch: "Our vision"
     },
     nav: {
@@ -14,7 +14,11 @@ export const dictionaries = {
       initiative: "The Initiative",
       sign: "Sign",
       support: "Support",
-      contact: "Contact"
+      contact: "Contact",
+      media: "Media",
+      partners: "Partners",
+      association: "Association",
+      about: "About Us"
     },
     common: {
       signCta: "Sign the Initiative Now",
@@ -73,12 +77,12 @@ export const dictionaries = {
   },
   fr: {
     title: "Pacte Numérique Suisse",
-    subtitle: "Initiative Populaire Fédérale",
+    subtitle: "Initiative populaire fédérale : Pour la sécurité numérique de la Suisse",
     hero: {
       title: "Pour une Suisse libre, sûre et maîtresse de son destin numérique",
       description: "Le numérique façonne déjà notre vie quotidienne, notre économie, nos institutions et notre démocratie. La Suisse doit s'y engager avec sa propre ligne: ouverte, exigeante, humaine et souveraine.",
       cta: "Lire l'initiative",
-      learn: "Télécharger la feuille de signatures",
+      learn: "Signer le Pacte numérique suisse",
       watch: "Notre vision"
     },
     nav: {
@@ -86,7 +90,11 @@ export const dictionaries = {
       initiative: "L'Initiative",
       sign: "Signer",
       support: "Soutenir",
-      contact: "Contact"
+      contact: "Contact",
+      media: "Médias",
+      partners: "Partenaires",
+      association: "Association",
+      about: "À propos"
     },
     common: {
       signCta: "Signer l'initiative maintenant",
@@ -145,12 +153,12 @@ export const dictionaries = {
   },
   de: {
     title: "Schweizer Digital-Pakt",
-    subtitle: "Eidgenössische Volksinitiative",
+    subtitle: "Eidgenössische Volksinitiative: Für die digitale Sicherheit der Schweiz",
     hero: {
       title: "Für eine freie, sichere Schweiz, die ihr digitales Schicksal selbst bestimmt",
       description: "Die Digitalisierung prägt bereits unseren Alltag, unsere Wirtschaft, unsere Institutionen und unsere Demokratie. Die Schweiz muss sich mit eigener Haltung engagieren: offen, anspruchsvoll, menschlich und souverän.",
       cta: "Initiative lesen",
-      learn: "Unterschriftenbogen herunterladen",
+      learn: "Unterzeichnen Sie den Schweizer Digitalpakt",
       watch: "Unsere Vision"
     },
     nav: {
@@ -158,7 +166,11 @@ export const dictionaries = {
       initiative: "Die Initiative",
       sign: "Unterzeichnen",
       support: "Unterstützen",
-      contact: "Kontakt"
+      contact: "Kontakt",
+      media: "Medien",
+      partners: "Partner",
+      association: "Verein",
+      about: "Über uns"
     },
     common: {
       signCta: "Initiative jetzt unterzeichnen",
@@ -217,12 +229,12 @@ export const dictionaries = {
   },
   it: {
     title: "Patto Digitale Svizzero",
-    subtitle: "Iniziativa Popolare Federale",
+    subtitle: "Iniziativa popolare federale: Per la sicurezza digitale della Svizzera",
     hero: {
       title: "Per una Svizzera libera, sicura e padrona del suo destino digitale",
       description: "Il digitale plasma già la nostra vita quotidiana, la nostra economia, le nostre istituzioni e la nostra democrazia. La Svizzera deve impegnarsi con la propria linea: aperta, esigente, umana e sovrana.",
       cta: "Leggi l'iniziativa",
-      learn: "Scarica il foglio firme",
+      learn: "Firma il Patto digitale svizzero",
       watch: "La nostra visione"
     },
     nav: {
@@ -230,7 +242,11 @@ export const dictionaries = {
       initiative: "L'Iniziativa",
       sign: "Firmare",
       support: "Sostieni",
-      contact: "Contatto"
+      contact: "Contatto",
+      media: "Media",
+      partners: "Partner",
+      association: "Associazione",
+      about: "Chi siamo"
     },
     common: {
       signCta: "Firma l'iniziativa ora",

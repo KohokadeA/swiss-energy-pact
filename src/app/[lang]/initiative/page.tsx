@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ShieldAlert, Fingerprint, Lock, Server, Cpu, Globe2, FileText, ChevronRight, Landmark, Link as LinkIcon, ArrowRight, ShieldCheck, Database, Scale, Network } from 'lucide-react';
+import { ShieldAlert, Fingerprint, Lock, Server, Cpu, Globe2, FileText, ChevronRight, Landmark, Link as LinkIcon, ArrowRight, ShieldCheck, Database, Scale, Network, Target, Users } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -20,50 +20,100 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
   const structuralText = {
     en: {
-      title: "Structural Change",
+      title: "Pillars of the initiative",
       items: [
-        { t: "Security", d: "In the digital world too, a serious country sets serious rules." },
-        { t: "Infrastructure Protection", d: "The vital is not left to chance." },
-        { t: "Data protection & digital integrity", d: "Our data are not faceless commodities." },
-        { t: "Sovereignty", d: "Cooperate with all, depend on no one against our interests." },
-        { t: "Literacy and skills", d: "Digital freedom is built through understanding." },
-        { t: "Anticipation and collaboration", d: "Invent here, develop here, make Switzerland shine." }
+        { t: "Security", d: "Clear rules to protect the Swiss digital space." },
+        { t: "Infrastructure", d: "What keeps the country standing must be protected as such." },
+        { t: "Data and people", d: "Protecting data means protecting people." },
+        { t: "Sovereignty", d: "Open to the world, but never outside ourselves." },
+        { t: "Skills", d: "Digital freedom is built through understanding." },
+        { t: "Anticipation", d: "Invent here, develop here, make Switzerland shine." }
       ]
     },
 
     fr: {
-      title: "Changement Structurel",
+      title: "Les piliers de l'initiative",
       items: [
-        { t: "Sécurité", d: "Dans le numérique aussi, un pays sérieux fixe des règles sérieuses." },
-        { t: "Protection des infrastructures", d: "Le vital ne se laisse pas au hasard." },
-        { t: "Protection des données et intégrité numérique", d: "Nos données ne sont pas des marchandises sans visage." },
-        { t: "Souveraineté", d: "Coopérer avec tous, dépendre de personne contre nos intérêts." },
-        { t: "Littératie et compétences", d: "La liberté numérique se construit par la compréhension." },
-        { t: "Anticipation et collaboration", d: "Inventer ici, développer ici, faire rayonner la Suisse." }
+        { t: "Sécurité", d: "Des règles claires pour protéger l'espace numérique suisse." },
+        { t: "Infrastructures", d: "Ce qui fait tenir le pays doit être protégé comme tel." },
+        { t: "Données et personnes", d: "Protéger les données, c'est protéger les personnes." },
+        { t: "Souveraineté", d: "Ouverts au monde, mais jamais hors de nous-mêmes." },
+        { t: "Compétences", d: "La liberté numérique se construit par la compréhension." },
+        { t: "Anticipation", d: "Inventer ici, développer ici, faire rayonner la Suisse." }
       ]
     },
 
     de: {
-      title: "Struktureller Wandel",
+      title: "Die Pfeiler der Initiative",
       items: [
-        { t: "Sicherheit", d: "Auch im digitalen Raum setzt ein seriöses Land klare Regeln." },
-        { t: "Schutz der Infrastrukturen", d: "Das Lebenswichtige wird nicht dem Zufall überlassen." },
-        { t: "Datenschutz und digitale Integrität", d: "Unsere Daten sind keine gesichtslosen Waren." },
-        { t: "Souveränität", d: "Mit allen kooperieren, von niemandem gegen unsere Interessen abhängig sein." },
-        { t: "Bildung und Kompetenzen", d: "Digitale Freiheit entsteht durch Verständnis." },
-        { t: "Antizipation und Zusammenarbeit", d: "Hier erfinden, hier entwickeln, die Schweiz zum Strahlen bringen." }
+        { t: "Sicherheit", d: "Klare Regeln zum Schutz des digitalen Raums der Schweiz." },
+        { t: "Infrastrukturen", d: "Was das Land trägt, muss entsprechend geschützt werden." },
+        { t: "Daten und Menschen", d: "Daten zu schützen heißt, Menschen zu schützen." },
+        { t: "Souveränität", d: "Offen für die Welt, aber niemals außerhalb unserer selbst." },
+        { t: "Kompetenzen", d: "Digitale Freiheit entsteht durch Verständnis." },
+        { t: "Voraussicht", d: "Hier erfinden, hier entwickeln, die Schweiz strahlen lassen." }
       ]
     },
 
     it: {
-      title: "Cambiamento strutturale",
+      title: "I pilastri dell'iniziativa",
       items: [
-        { t: "Sicurezza", d: "Anche nel digitale, un Paese serio stabilisce regole serie." },
-        { t: "Protezione delle infrastrutture", d: "Ciò che è vitale non viene lasciato al caso." },
-        { t: "Protezione dei dati e integrità digitale", d: "I nostri dati non sono merci senza volto." },
-        { t: "Sovranità", d: "Cooperare con tutti, non dipendere da nessuno contro i nostri interessi." },
-        { t: "Alfabetizzazione e competenze", d: "La libertà digitale si costruisce attraverso la comprensione." },
-        { t: "Anticipazione e collaborazione", d: "Inventare qui, sviluppare qui, far brillare la Svizzera." }
+        { t: "Sicurezza", d: "Regole chiare per proteggere lo spazio digitale svizzero." },
+        { t: "Infrastrutture", d: "Ciò che sostiene il Paese deve essere protetto come tale." },
+        { t: "Dati e persone", d: "Proteggere i dati significa proteggere le persone." },
+        { t: "Sovranità", d: "Aperti al mondo, ma mai fuori da noi stessi." },
+        { t: "Competenze", d: "La libertà digitale si costruisce attraverso la comprensione." },
+        { t: "Anticipazione", d: "Inventare qui, sviluppare qui, far risplendere la Svizzera." }
+      ]
+    }
+  };
+
+  const impactTitle = {
+    en: "Impact",
+    fr: "Impact",
+    de: "Auswirkung",
+    it: "Impatto"
+  };
+
+  const longPillarsText = {
+    en: {
+      items: [
+        { t: "Security", d: "Switzerland must set clear cybersecurity rules for public institutions, critical sectors, and private actors operating in its digital space. Trust, resilience, and responsibility require common standards that are effectively enforced." },
+        { t: "Infrastructure Protection", d: "Our energy networks, hospitals, transport systems, telecoms, and public services rely on digital infrastructure. These essential systems must be protected against disruption, sabotage, and external dependence." },
+        { t: "Data Protection & Digital Integrity", d: "Personal data concerns privacy, identity, and dignity. Switzerland must guarantee strong data protection and defend every person against misuse, manipulation, unauthorized surveillance, and attacks on digital integrity." },
+        { t: "Sovereignty", d: "Switzerland should remain open to cooperation while ensuring that essential digital services, infrastructures, and strategic resources stay free from any influence contrary to our national interests." },
+        { t: "Literacy and Skills", d: "Digital freedom depends on understanding. Switzerland must strengthen digital education, practical skills, and data literacy across all generations so that everyone can navigate the digital world with confidence." },
+        { t: "Anticipation and Collaboration", d: "Technological change moves quickly. Switzerland must anticipate risks, seize opportunities, and work with universities, researchers, startups, and industry to remain among the world's most advanced and secure nations." }
+      ]
+    },
+    fr: {
+      items: [
+        { t: "Sécurité", d: "La Suisse doit fixer des règles claires de cybersécurité pour les institutions publiques, les secteurs critiques et les acteurs privés opérant dans son espace numérique. La confiance, la résilience et la responsabilité exigent des normes communes efficacement appliquées." },
+        { t: "Protection des infrastructures", d: "Nos réseaux énergétiques, hôpitaux, systèmes de transport, télécommunications et services publics reposent sur l'infrastructure numérique. Ces systèmes essentiels doivent être protégés contre les perturbations, les sabotages et la dépendance extérieure." },
+        { t: "Protection des données et intégrité", d: "Les données personnelles concernent la vie privée, l'identité et la dignité. La Suisse doit garantir une protection solide des données et défendre chaque personne contre les abus, les manipulations, la surveillance non autorisée et les atteintes à l'intégrité numérique." },
+        { t: "Souveraineté", d: "La Suisse doit rester ouverte à la coopération tout en s'assurant que les services numériques essentiels, les infrastructures et les ressources stratégiques restent libres de toute influence contraire à nos intérêts nationaux." },
+        { t: "Littératie et compétences", d: "La liberté numérique dépend de la compréhension. La Suisse doit renforcer l'éducation numérique, les compétences pratiques et la culture des données à travers toutes les générations pour que chacun puisse naviguer dans le monde numérique avec confiance." },
+        { t: "Anticipation et collaboration", d: "Les changements technologiques sont rapides. La Suisse doit anticiper les risques, saisir les opportunités et collaborer avec les universités, les chercheurs, les startups et l'industrie pour rester parmi les nations les plus avancées et les plus sûres au monde." }
+      ]
+    },
+    de: {
+      items: [
+        { t: "Sicherheit", d: "Die Schweiz muss klare Cybersicherheitsregeln für öffentliche Institutionen, kritische Sektoren und private Akteure in ihrem digitalen Raum festlegen. Vertrauen, Resilienz und Verantwortung erfordern gemeinsame, wirksam durchgesetzte Standards." },
+        { t: "Schutz der Infrastrukturen", d: "Unsere Energienetze, Spitäler, Verkehrssysteme, Telekommunikation und öffentlichen Dienste sind auf digitale Infrastrukturen angewiesen. Diese essenziellen Systeme müssen vor Störungen, Sabotage und externer Abhängigkeit geschützt werden." },
+        { t: "Datenschutz und digitale Integrität", d: "Personenbezogene Daten betreffen Privatsphäre, Identität und Würde. Die Schweiz muss einen starken Datenschutz gewährleisten und jede Person vor Missbrauch, Manipulation, unbefugter Überwachung und Angriffen auf die digitale Integrität schützen." },
+        { t: "Souveränität", d: "Die Schweiz sollte offen für Zusammenarbeit bleiben und gleichzeitig sicherstellen, dass wesentliche digitale Dienste, Infrastrukturen und strategische Ressourcen frei von Einflüssen bleiben, die unseren nationalen Interessen zuwiderlaufen." },
+        { t: "Bildung und Kompetenzen", d: "Digitale Freiheit hängt vom Verständnis ab. Die Schweiz muss die digitale Bildung, praktische Fähigkeiten und Datenkompetenz über alle Generationen hinweg stärken, damit sich jeder selbstbewusst in der digitalen Welt bewegen kann." },
+        { t: "Antizipation und Zusammenarbeit", d: "Der technologische Wandel vollzieht sich schnell. Die Schweiz muss Risiken antizipieren, Chancen nutzen und mit Universitäten, Forschern, Start-ups und der Industrie zusammenarbeiten, um zu den fortschrittlichsten und sichersten Nationen der Welt zu gehören." }
+      ]
+    },
+    it: {
+      items: [
+        { t: "Sicurezza", d: "La Svizzera deve stabilire chiare regole di cybersicurezza per le istituzioni pubbliche, i settori critici e gli attori privati che operano nel suo spazio digitale. La fiducia, la resilienza e la responsabilità richiedono standard comuni applicati efficacemente." },
+        { t: "Protezione delle infrastrutture", d: "Le nostre reti energetiche, gli ospedali, i sistemi di trasporto, le telecomunicazioni e i servizi pubblici si basano su infrastrutture digitali. Questi sistemi essenziali devono essere protetti da interruzioni, sabotaggi e dipendenza esterna." },
+        { t: "Protezione dei dati e integrità", d: "I dati personali riguardano la privacy, l'identità e la dignità. La Svizzera deve garantire una solida protezione dei dati e difendere ogni persona da abusi, manipolazioni, sorveglianza non autorizzata e attacchi all'integrità digitale." },
+        { t: "Sovranità", d: "La Svizzera deve rimanere aperta alla cooperazione garantendo al contempo che i servizi digitali essenziali, le infrastrutture e le risorse strategiche restino liberi da qualsiasi influenza contraria ai nostri interessi nazionali." },
+        { t: "Alfabetizzazione e competenze", d: "La libertà digitale dipende dalla comprensione. La Svizzera deve rafforzare l'educazione digitale, le competenze pratiche e l'alfabetizzazione dei dati in tutte le generazioni affinché tutti possano navigare nel mondo digitale con fiducia." },
+        { t: "Anticipazione e collaborazione", d: "Il cambiamento tecnologico è rapido. La Svizzera deve anticipare i rischi, cogliere le opportunità e collaborare con università, ricercatori, startup e industria per rimanere tra le nazioni più avanzate e sicure al mondo." }
       ]
     }
   };
@@ -72,7 +122,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     en: {
       title1: "Why this",
       title2: "initiative",
-      desc: `"Digital is no longer a subject reserved for specialists. It affects health, schools, energy, transport, municipalities, businesses, and families. Switzerland must therefore set a clear course: protect what matters, remain free in its choices, and prepare for its future."`,
+      para1: "Digital is no longer a subject reserved for specialists. It now affects everyone\u2019s privacy, our families, our health, our national security and the quality of government services. It also underpins our energy systems, transportation, finance, and the functioning of our economy. Switzerland must therefore set a clear course: protect what matters, remain free in its choices, and prepare for its future.",
+      para2: "Switzerland relies increasingly on digital systems. Cyber threats are rising, technological competition is accelerating, and digital innovation is reshaping our lives. Our country needs a clear constitutional foundation to safeguard its autonomy, strengthen its resilience, foster innovation, and remain master of its own future.",
       boxTitle: "A Swiss Line",
       points: [
         "Not against the world.",
@@ -86,7 +137,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     fr: {
       title1: "Pourquoi cette",
       title2: "initiative",
-      desc: `"Le numérique n’est plus un sujet réservé aux spécialistes. Il touche la santé, l’école, l’énergie, les transports, les communes, les entreprises et les familles. La Suisse doit donc se donner un cap clair: protéger ce qui compte, rester libre de ses choix et préparer son avenir."`,
+      para1: "Le numérique n\u2019est plus un sujet réservé aux spécialistes. Il touche désormais la vie privée de chacun, nos familles, notre santé, notre sécurité nationale et la qualité des services publics. Il sous-tend aussi nos systèmes énergétiques, nos transports, nos finances et le fonctionnement de notre économie. La Suisse doit donc se donner un cap clair\u00a0: protéger ce qui compte, rester libre dans ses choix et préparer son avenir.",
+      para2: "La Suisse dépend de plus en plus de systèmes numériques. Les cybermenaces augmentent, la compétition technologique s\u2019accélère et l\u2019innovation numérique transforme nos vies. Notre pays a besoin d\u2019une base constitutionnelle claire pour préserver son autonomie, renforcer sa résilience, favoriser l\u2019innovation et rester maître de son propre avenir.",
       boxTitle: "Une ligne suisse",
       points: [
         "Pas contre le monde.",
@@ -100,7 +152,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     de: {
       title1: "Warum diese",
       title2: "Initiative",
-      desc: `"Die Digitalisierung ist kein Thema mehr nur für Spezialisten. Sie betrifft Gesundheit, Schulen, Energie, Verkehr, Gemeinden, Unternehmen und Familien. Die Schweiz muss daher einen klaren Kurs festlegen: schützen, was zählt, in ihren Entscheidungen frei bleiben und ihre Zukunft vorbereiten."`,
+      para1: "Digitalisierung ist längst kein Thema mehr nur für Fachleute. Sie betrifft heute die Privatsphäre aller, unsere Familien, unsere Gesundheit, unsere nationale Sicherheit und die Qualität öffentlicher Dienste. Sie trägt auch unsere Energiesysteme, den Verkehr, die Finanzen und das Funktionieren unserer Wirtschaft. Die Schweiz muss daher einen klaren Kurs setzen: schützen, was zählt, frei in ihren Entscheidungen bleiben und sich auf ihre Zukunft vorbereiten.",
+      para2: "Die Schweiz ist zunehmend auf digitale Systeme angewiesen. Cyberbedrohungen nehmen zu, der technologische Wettbewerb beschleunigt sich und digitale Innovation verändert unser Leben. Unser Land braucht eine klare verfassungsrechtliche Grundlage, um seine Autonomie zu sichern, seine Resilienz zu stärken, Innovation zu fördern und Herr seiner eigenen Zukunft zu bleiben.",
       boxTitle: "Eine Schweizer Linie",
       points: [
         "Nicht gegen die Welt.",
@@ -114,7 +167,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     it: {
       title1: "Perché questa",
       title2: "iniziativa",
-      desc: `"Il digitale non è più un tema riservato agli specialisti. Riguarda la sanità, le scuole, l’energia, i trasporti, i comuni, le imprese e le famiglie. La Svizzera deve quindi definire una rotta chiara: proteggere ciò che conta, rimanere libera nelle sue scelte e preparare il proprio futuro."`,
+      para1: "Il digitale non è più un argomento riservato agli specialisti. Oggi riguarda la privacy di tutti, le nostre famiglie, la nostra salute, la nostra sicurezza nazionale e la qualità dei servizi pubblici. Sostiene inoltre i nostri sistemi energetici, i trasporti, la finanza e il funzionamento della nostra economia. La Svizzera deve quindi tracciare una rotta chiara: proteggere ciò che conta, restare libera nelle proprie scelte e preparare il proprio futuro.",
+      para2: "La Svizzera dipende sempre più dai sistemi digitali. Le minacce informatiche sono in aumento, la competizione tecnologica accelera e l\u2019innovazione digitale sta trasformando le nostre vite. Il nostro Paese ha bisogno di una chiara base costituzionale per salvaguardare la propria autonomia, rafforzare la propria resilienza, promuovere l\u2019innovazione e restare padrone del proprio futuro.",
       boxTitle: "Una linea svizzera",
       points: [
         "Non contro il mondo.",
@@ -183,7 +237,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   };
 
   return (
-    <div className="container mx-auto px-6 py-16 max-w-7xl overflow-hidden min-h-screen">
+    <div className="container mx-auto px-6 pt-32 pb-16 max-w-7xl overflow-hidden min-h-screen">
       {/* Premium Banner Header */}
       <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-end">
         <div className="flex-1 animate-in slide-in-from-left duration-1000">
@@ -195,71 +249,45 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
             </span>
           </h1>
 
-          <p className="text-xl text-gray-400 dark:text-gray-500 max-w-3xl leading-relaxed font-medium">
-            {whyText[lang].desc}
-          </p>
+          <div className="space-y-6 text-xl text-gray-400 dark:text-gray-500 max-w-3xl leading-relaxed font-medium">
+             <p>{whyText[lang].para1}</p>
+             <p>{whyText[lang].para2}</p>
+          </div>
 
         </div>
 
-        <div className="lg:w-1/3 p-10 bg-secondary dark:bg-zinc-900 rounded-[3rem] text-white flex flex-col gap-6 shadow-2xl shadow-secondary/10 relative animate-in slide-in-from-right duration-1000 delay-300 overflow-hidden group">
-
+        <div className="lg:w-1/3 p-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-900/50 border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative animate-in slide-in-from-right duration-1000 delay-300 overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full translate-x-10 -translate-y-10 group-hover:scale-150 transition-all duration-1000" />
-
-          <ShieldCheck className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
-
-          <h2 className="text-2xl font-black leading-tight">
-            {whyText[lang].boxTitle}
-          </h2>
-
-          <ul className="text-white/80 text-sm leading-relaxed font-medium list-disc list-inside space-y-2">
-            {whyText[lang].points.map((p, i) => (
-              <li key={i}>{p}</li>
-            ))}
-          </ul>
-
-          <Link
-            href={`/${lang}/sign`}
-            className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest group-hover:gap-4 transition-all"
-          >
-            {whyText[lang].cta}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-
+          <div className="absolute inset-0 bg-white/40 dark:bg-black/20 backdrop-blur-xl z-0" />
+          <div className="relative z-10 flex flex-col gap-6">
+            <ShieldCheck className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
+            <h2 className="text-2xl font-black text-secondary dark:text-white leading-tight">
+              {whyText[lang].boxTitle}
+            </h2>
+            <ul className="text-gray-600 dark:text-white/80 text-sm leading-relaxed font-medium list-disc list-inside space-y-2">
+              {whyText[lang].points.map((p, i) => (
+                <li key={i}>{p}</li>
+              ))}
+            </ul>
+            <Link
+              href={`/${lang}/sign`}
+              className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest group-hover:gap-4 transition-all mt-4"
+            >
+              {whyText[lang].cta}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </header>
 
       {/* Grid of Content Sections */}
-      <div className="relative mb-32 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="relative mb-32 flex flex-col gap-8">
         <section className="flex flex-col gap-8 p-10 rounded-[3rem] bg-white dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl">
           <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center group">
-            <Globe2 className="w-7 h-7 group-hover:rotate-12 transition-all" />
+            <Target className="w-7 h-7 group-hover:rotate-12 transition-all" />
           </div>
           <h2 className="text-3xl font-black tracking-tight">
-            {dict.pactDetails.s1.title}
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
-            {dict.pactDetails.s1.text}
-          </p>
-        </section>
-
-        <section className="flex flex-col gap-8 p-10 rounded-[3rem] bg-white dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl">
-          <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center group">
-            <ShieldAlert className="w-7 h-7 group-hover:rotate-12 transition-all" />
-          </div>
-          <h2 className="text-3xl font-black tracking-tight">
-            {dict.pactDetails.s2.title}
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
-            {dict.pactDetails.s2.text}
-          </p>
-        </section>
-
-        <section className="lg:col-span-2 flex flex-col gap-8 p-10 rounded-[3rem] bg-white dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl">
-          <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center group">
-            <Lock className="w-7 h-7 group-hover:rotate-12 transition-all" />
-          </div>
-          <h2 className="text-3xl font-black tracking-tight">
-            {dict.pactDetails.s3.title}
+            {impactTitle[lang]}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
              <div className="p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800">
@@ -271,36 +299,29 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                 <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">{dict.pactDetails.s3.population}</p>
              </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-            {structuralText[lang].items.map((item, idx) => (
-              <div
-                key={idx}
-                onMouseEnter={() => setHoveredPoint(idx)}
-                onMouseLeave={() => setHoveredPoint(null)}
-                className={cn(
-                  "flex flex-col gap-1 p-5 rounded-2xl transition-all duration-500 border cursor-default group",
-                  hoveredPoint === idx
-                    ? "bg-white dark:bg-zinc-900 border-primary/30 shadow-2xl scale-[1.02] ring-4 ring-primary/5"
-                    : "bg-gray-50/50 dark:bg-black/20 border-gray-50 dark:border-gray-800"
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-500 shrink-0",
-                    hoveredPoint === idx ? "bg-primary scale-150" : "bg-primary/40"
-                  )} />
-                  <span className={cn(
-                    "text-lg font-black transition-colors duration-500",
-                    hoveredPoint === idx ? "text-primary" : "text-secondary dark:text-white"
-                  )}>
-                    {item.t}
-                  </span>
-                </div>
-                <p className="text-gray-500 dark:text-gray-400 font-bold text-xs ml-5 leading-relaxed">
-                  "{item.d}"
-                </p>
-              </div>
-            ))}
+
+          <div className="mt-12">
+            <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
+              {structuralText[lang].title}
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {longPillarsText[lang].items.map((item, idx) => {
+                 const Icon = [ShieldCheck, Landmark, Database, Globe2, Users, Network][idx];
+                 return (
+                   <div key={idx} className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
+                     <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                           <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">{item.t}</h3>
+                     </div>
+                     <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                        {item.d}
+                     </p>
+                   </div>
+                 );
+              })}
+            </div>
           </div>
         </section>
       </div>
@@ -344,11 +365,11 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                </div>
              ))}
           </div>
-          {/* <div className="text-center mt-2">
+          <div className="text-center mt-2">
             <p className="text-gray-400 text-xs italic">
               {disclaimerText[lang]}
             </p>
-          </div> */}
+          </div>
           <div className="flex justify-between items-center px-4 mt-4">
              <span className="text-[10px] uppercase font-black tracking-widest text-primary">{proposalText[lang]}</span>
              <Link href="#" className="flex items-center gap-2 text-[10px] uppercase font-black tracking-widest text-white/40 hover:text-white transition-all">{downloadText[lang]} <LinkIcon className="w-3 h-3"/></Link>
@@ -357,7 +378,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       </div>
 
       {/* Process Section */}
-      <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
+      {/* <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -translate-y-20 translate-x-20 rounded-full" />
           <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
             <ChevronRight className="w-10 h-10 text-primary" /> {dict.pactDetails.s7.title}
@@ -373,7 +394,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                 </div>
              ))}
           </div>
-      </section>
+      </section> */}
 
       {/* Visual Pillars Section - Changed to Technical Sub-themes */}
       <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">

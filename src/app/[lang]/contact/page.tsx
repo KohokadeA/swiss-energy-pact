@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Mail, MapPin, Phone, Send, Landmark, Clock, ExternalLink, MessageCircle, ArrowRight, ShieldCheck, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Landmark, Clock, ExternalLink, MessageCircle, ArrowRight, ShieldCheck, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import Link from 'next/link';
 
@@ -257,7 +257,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       <div className="mt-20 py-16 border-t border-gray-100 dark:border-gray-800 text-center flex flex-col items-center gap-8">
          <h3 className="text-3xl font-black">{t.socialTitle}</h3>
          <div className="flex gap-6">
-            {[Twitter, Instagram, Facebook].map((Icon, idx) => (
+            {[Linkedin, Instagram, Facebook].map((Icon, idx) => (
               <Link key={idx} href="#" className="p-6 bg-gray-100 dark:bg-zinc-900 hover:bg-primary transition-all duration-500 rounded-[2rem] group border border-gray-200 dark:border-gray-800">
                 <Icon className="w-8 h-8 text-gray-400 group-hover:text-white transition-all transform group-hover:scale-125" />
               </Link>
