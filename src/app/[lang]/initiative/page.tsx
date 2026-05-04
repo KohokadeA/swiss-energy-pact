@@ -78,103 +78,99 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   const longPillarsText = {
     en: {
       items: [
-        { t: "Security", d: "Switzerland must set clear cybersecurity rules for public institutions, critical sectors, and private actors operating in its digital space. Trust, resilience, and responsibility require common standards that are effectively enforced." },
-        { t: "Infrastructure Protection", d: "Our energy networks, hospitals, transport systems, telecoms, and public services rely on digital infrastructure. These essential systems must be protected against disruption, sabotage, and external dependence." },
-        { t: "Data Protection & Digital Integrity", d: "Personal data concerns privacy, identity, and dignity. Switzerland must guarantee strong data protection and defend every person against misuse, manipulation, unauthorized surveillance, and attacks on digital integrity." },
-        { t: "Sovereignty", d: "Switzerland should remain open to cooperation while ensuring that essential digital services, infrastructures, and strategic resources stay free from any influence contrary to our national interests." },
-        { t: "Literacy and Skills", d: "Digital freedom depends on understanding. Switzerland must strengthen digital education, practical skills, and data literacy across all generations so that everyone can navigate the digital world with confidence." },
-        { t: "Anticipation and Collaboration", d: "Technological change moves quickly. Switzerland must anticipate risks, seize opportunities, and work with universities, researchers, startups, and industry to remain among the world's most advanced and secure nations." }
+        { t: "SECURITY", d: "In every critical domain, clear rules are the norm—the digital space should be no exception. Switzerland must define and enforce minimum cybersecurity standards to protect institutions, businesses, and the population. Without credible and applied rules, there is no lasting trust or security." },
+        { t: "INFRASTRUCTURE", d: "Switzerland depends on digital infrastructures that are essential to daily life. When they fail, everything stops. Their protection must be treated as a core mission, with clear responsibilities and the ability to act collectively when needed." },
+        { t: "DATA & PEOPLE", d: "Personal data is an extension of the individual. Protecting it means protecting fundamental rights, dignity, and freedom. Switzerland must go beyond basic safeguards to ensure true digital integrity and protect people against misuse and loss of control." },
+        { t: "SOVEREIGNTY", d: "Switzerland must remain open, but never lose control over what is essential. Sovereignty means the ability to choose, control, and replace when necessary. Cooperation is key—but dependence must never undermine our capacity to decide." },
+        { t: "LITERACY & SKILLS", d: "Digital strength starts with people. Without understanding, there is no real freedom. Switzerland must invest in digital education, data literacy, and digital skills at all levels so that everyone can act with confidence and responsibility." },
+        { t: "ANTICIPATION", d: "In a fast-moving digital world, waiting means falling behind. Switzerland must anticipate risks, support innovation, and strengthen collaboration to remain among the leading and most secure nations" }
       ]
     },
     fr: {
       items: [
-        { t: "Sécurité", d: "La Suisse doit fixer des règles claires de cybersécurité pour les institutions publiques, les secteurs critiques et les acteurs privés opérant dans son espace numérique. La confiance, la résilience et la responsabilité exigent des normes communes efficacement appliquées." },
-        { t: "Protection des infrastructures", d: "Nos réseaux énergétiques, hôpitaux, systèmes de transport, télécommunications et services publics reposent sur l'infrastructure numérique. Ces systèmes essentiels doivent être protégés contre les perturbations, les sabotages et la dépendance extérieure." },
-        { t: "Protection des données et intégrité", d: "Les données personnelles concernent la vie privée, l'identité et la dignité. La Suisse doit garantir une protection solide des données et défendre chaque personne contre les abus, les manipulations, la surveillance non autorisée et les atteintes à l'intégrité numérique." },
-        { t: "Souveraineté", d: "La Suisse doit rester ouverte à la coopération tout en s'assurant que les services numériques essentiels, les infrastructures et les ressources stratégiques restent libres de toute influence contraire à nos intérêts nationaux." },
-        { t: "Littératie et compétences", d: "La liberté numérique dépend de la compréhension. La Suisse doit renforcer l'éducation numérique, les compétences pratiques et la culture des données à travers toutes les générations pour que chacun puisse naviguer dans le monde numérique avec confiance." },
-        { t: "Anticipation et collaboration", d: "Les changements technologiques sont rapides. La Suisse doit anticiper les risques, saisir les opportunités et collaborer avec les universités, les chercheurs, les startups et l'industrie pour rester parmi les nations les plus avancées et les plus sûres au monde." }
+        { t: "SÉCURITÉ", d: "Dans chaque domaine critique, des règles claires sont la norme – l'espace numérique ne doit pas faire exception. La Suisse doit définir et imposer des normes minimales de cybersécurité pour protéger les institutions, les entreprises et la population. Sans règles crédibles et appliquées, il n'y a ni confiance ni sécurité durables." },
+        { t: "INFRASTRUCTURE", d: "La Suisse dépend d'infrastructures numériques essentielles à la vie quotidienne. Lorsqu'elles tombent en panne, tout s'arrête. Leur protection doit être traitée comme une mission centrale, avec des responsabilités claires et la capacité d'agir collectivement en cas de besoin." },
+        { t: "DONNÉES & PERSONNES", d: "Les données personnelles sont le prolongement de l'individu. Les protéger signifie protéger les droits fondamentaux, la dignité et la liberté. La Suisse doit aller au-delà des garanties de base pour assurer une véritable intégrité numérique et protéger les personnes contre les abus et la perte de contrôle." },
+        { t: "SOUVERAINETÉ", d: "La Suisse doit rester ouverte, mais ne jamais perdre le contrôle sur ce qui est essentiel. La souveraineté signifie la capacité de choisir, de contrôler et de remplacer si nécessaire. La coopération est clé – mais la dépendance ne doit jamais compromettre notre capacité de décision." },
+        { t: "LITTÉRATIE & COMPÉTENCES", d: "La force numérique commence avec les personnes. Sans compréhension, il n'y a pas de vraie liberté. La Suisse doit investir dans l'éducation numérique, la littératie des données et les compétences numériques à tous les niveaux pour que chacun puisse agir avec confiance et responsabilité." },
+        { t: "ANTICIPATION", d: "Dans un monde numérique qui évolue rapidement, attendre signifie prendre du retard. La Suisse doit anticiper les risques, soutenir l'innovation et renforcer la collaboration pour rester parmi les nations leaders et les plus sûres." }
       ]
     },
     de: {
       items: [
-        { t: "Sicherheit", d: "Die Schweiz muss klare Cybersicherheitsregeln für öffentliche Institutionen, kritische Sektoren und private Akteure in ihrem digitalen Raum festlegen. Vertrauen, Resilienz und Verantwortung erfordern gemeinsame, wirksam durchgesetzte Standards." },
-        { t: "Schutz der Infrastrukturen", d: "Unsere Energienetze, Spitäler, Verkehrssysteme, Telekommunikation und öffentlichen Dienste sind auf digitale Infrastrukturen angewiesen. Diese essenziellen Systeme müssen vor Störungen, Sabotage und externer Abhängigkeit geschützt werden." },
-        { t: "Datenschutz und digitale Integrität", d: "Personenbezogene Daten betreffen Privatsphäre, Identität und Würde. Die Schweiz muss einen starken Datenschutz gewährleisten und jede Person vor Missbrauch, Manipulation, unbefugter Überwachung und Angriffen auf die digitale Integrität schützen." },
-        { t: "Souveränität", d: "Die Schweiz sollte offen für Zusammenarbeit bleiben und gleichzeitig sicherstellen, dass wesentliche digitale Dienste, Infrastrukturen und strategische Ressourcen frei von Einflüssen bleiben, die unseren nationalen Interessen zuwiderlaufen." },
-        { t: "Bildung und Kompetenzen", d: "Digitale Freiheit hängt vom Verständnis ab. Die Schweiz muss die digitale Bildung, praktische Fähigkeiten und Datenkompetenz über alle Generationen hinweg stärken, damit sich jeder selbstbewusst in der digitalen Welt bewegen kann." },
-        { t: "Antizipation und Zusammenarbeit", d: "Der technologische Wandel vollzieht sich schnell. Die Schweiz muss Risiken antizipieren, Chancen nutzen und mit Universitäten, Forschern, Start-ups und der Industrie zusammenarbeiten, um zu den fortschrittlichsten und sichersten Nationen der Welt zu gehören." }
+        { t: "SICHERHEIT", d: "In jedem kritischen Bereich sind klare Regeln die Norm – der digitale Raum darf keine Ausnahme sein. Die Schweiz muss minimale Cybersicherheitsstandards definieren und durchsetzen, um Institutionen, Unternehmen und die Bevölkerung zu schützen. Ohne glaubwürdige und angewandte Regeln gibt es kein dauerhaftes Vertrauen und keine Sicherheit." },
+        { t: "INFRASTRUKTUR", d: "Die Schweiz hängt von digitalen Infrastrukturen ab, die für das tägliche Leben unerlässlich sind. Wenn sie ausfallen, steht alles still. Ihr Schutz muss als Kernaufgabe behandelt werden, mit klaren Verantwortlichkeiten und der Fähigkeit, bei Bedarf kollektiv zu handeln." },
+        { t: "DATEN & MENSCHEN", d: "Persönliche Daten sind eine Erweiterung des Individuums. Sie zu schützen bedeutet, Grundrechte, Würde und Freiheit zu schützen. Die Schweiz muss über grundlegende Massnahmen hinausgehen, um echte digitale Integrität zu gewährleisten und Menschen vor Missbrauch und Kontrollverlust zu schützen." },
+        { t: "SOUVERÄNITÄT", d: "Die Schweiz muss offen bleiben, darf aber nie die Kontrolle über das Wesentliche verlieren. Souveränität bedeutet die Fähigkeit zu wählen, zu kontrollieren und bei Bedarf zu ersetzen. Kooperation ist entscheidend – aber Abhängigkeit darf niemals unsere Entscheidungsfähigkeit untergraben." },
+        { t: "KOMPETENZ & BILDUNG", d: "Digitale Stärke beginnt bei den Menschen. Ohne Verständnis gibt es keine wahre Freiheit. Die Schweiz muss auf allen Ebenen in die digitale Bildung, Datenkompetenz und digitale Fähigkeiten investieren, damit alle mit Zuversicht und Verantwortung handeln können." },
+        { t: "ANTIZIPATION", d: "In einer schnelllebigen digitalen Welt bedeutet Warten, dass man zurückfällt. Die Schweiz muss Risiken antizipieren, Innovationen unterstützen und die Zusammenarbeit stärken, um zu den führenden und sichersten Nationen zu gehören." }
       ]
     },
     it: {
       items: [
-        { t: "Sicurezza", d: "La Svizzera deve stabilire chiare regole di cybersicurezza per le istituzioni pubbliche, i settori critici e gli attori privati che operano nel suo spazio digitale. La fiducia, la resilienza e la responsabilità richiedono standard comuni applicati efficacemente." },
-        { t: "Protezione delle infrastrutture", d: "Le nostre reti energetiche, gli ospedali, i sistemi di trasporto, le telecomunicazioni e i servizi pubblici si basano su infrastrutture digitali. Questi sistemi essenziali devono essere protetti da interruzioni, sabotaggi e dipendenza esterna." },
-        { t: "Protezione dei dati e integrità", d: "I dati personali riguardano la privacy, l'identità e la dignità. La Svizzera deve garantire una solida protezione dei dati e difendere ogni persona da abusi, manipolazioni, sorveglianza non autorizzata e attacchi all'integrità digitale." },
-        { t: "Sovranità", d: "La Svizzera deve rimanere aperta alla cooperazione garantendo al contempo che i servizi digitali essenziali, le infrastrutture e le risorse strategiche restino liberi da qualsiasi influenza contraria ai nostri interessi nazionali." },
-        { t: "Alfabetizzazione e competenze", d: "La libertà digitale dipende dalla comprensione. La Svizzera deve rafforzare l'educazione digitale, le competenze pratiche e l'alfabetizzazione dei dati in tutte le generazioni affinché tutti possano navigare nel mondo digitale con fiducia." },
-        { t: "Anticipazione e collaborazione", d: "Il cambiamento tecnologico è rapido. La Svizzera deve anticipare i rischi, cogliere le opportunità e collaborare con università, ricercatori, startup e industria per rimanere tra le nazioni più avanzate e sicure al mondo." }
+        { t: "SICUREZZA", d: "In ogni dominio critico, regole chiare sono la norma – lo spazio digitale non dovrebbe fare eccezione. La Svizzera deve definire e far rispettare standard minimi di cybersicurezza per proteggere istituzioni, aziende e la popolazione. Senza regole credibili e applicate, non c'è fiducia o sicurezza duratura." },
+        { t: "INFRASTRUTTURA", d: "La Svizzera dipende da infrastrutture digitali essenziali per la vita quotidiana. Quando si fermano, tutto si ferma. La loro protezione deve essere trattata come una missione fondamentale, con responsabilità chiare e la capacità di agire collettivamente quando necessario." },
+        { t: "DATI & PERSONE", d: "I dati personali sono un'estensione dell'individuo. Proteggerli significa proteggere i diritti fondamentali, la dignità e la libertà. La Svizzera deve andare oltre le garanzie di base per assicurare una vera integrità digitale e proteggere le persone contro gli abusi e la perdita di controllo." },
+        { t: "SOVRANITÀ", d: "La Svizzera deve rimanere aperta, ma mai perdere il controllo su ciò che è essenziale. Sovranità significa la capacità di scegliere, controllare e sostituire quando necessario. La cooperazione è fondamentale – ma la dipendenza non deve mai minare la nostra capacità di decidere." },
+        { t: "ALFABETIZZAZIONE & COMPETENZE", d: "La forza digitale inizia con le persone. Senza comprensione, non c'è vera libertà. La Svizzera deve investire nell'educazione digitale, nell'alfabetizzazione dei dati e nelle competenze digitali a tutti i livelli in modo che tutti possano agire con fiducia e responsabilità." },
+        { t: "ANTICIPAZIONE", d: "In un mondo digitale in rapida evoluzione, aspettare significa rimanere indietro. La Svizzera deve anticipare i rischi, sostenere l'innovazione e rafforzare la collaborazione per rimanere tra le nazioni leader e più sicure." }
       ]
     }
   };
 
   const whyText = {
     en: {
-      title1: "Why this",
-      title2: "initiative",
-      para1: "Digital is no longer a subject reserved for specialists. It now affects everyone\u2019s privacy, our families, our health, our national security and the quality of government services. It also underpins our energy systems, transportation, finance, and the functioning of our economy. Switzerland must therefore set a clear course: protect what matters, remain free in its choices, and prepare for its future.",
-      para2: "Switzerland relies increasingly on digital systems. Cyber threats are rising, technological competition is accelerating, and digital innovation is reshaping our lives. Our country needs a clear constitutional foundation to safeguard its autonomy, strengthen its resilience, foster innovation, and remain master of its own future.",
+      para1: "Digital is no longer just a technical domain—it shapes our daily lives, our economy, and our security. As our dependence grows, so do the risks and the responsibilities.",
+      para2: "This initiative sets a clear direction: to protect what is essential, strengthen trust and resilience, and ensure that Switzerland remains free in its digital choices. It establishes a constitutional foundation to secure critical infrastructure, safeguard people and their data, reinforce national sovereignty, and invest in skills and innovation.",
+      para3: "The goal is simple: a Switzerland that is open, secure, and in control of its digital future.",
       boxTitle: "A Swiss Line",
       points: [
-        "Not against the world.",
-        "For a strong Switzerland in the world.",
-        "Not a sovereignty of closure.",
-        "A sovereignty of mastery."
+        "For an approach that promotes rather than restricts",
+        "For an innovative and strong Switzerland that serves everyone",
+        "For an informed population that makes the most of digital technologies",
+        "For stronger trust and resilience across society"
       ],
       cta: "Download the form"
     },
 
     fr: {
-      title1: "Pourquoi cette",
-      title2: "initiative",
-      para1: "Le numérique n\u2019est plus un sujet réservé aux spécialistes. Il touche désormais la vie privée de chacun, nos familles, notre santé, notre sécurité nationale et la qualité des services publics. Il sous-tend aussi nos systèmes énergétiques, nos transports, nos finances et le fonctionnement de notre économie. La Suisse doit donc se donner un cap clair\u00a0: protéger ce qui compte, rester libre dans ses choix et préparer son avenir.",
-      para2: "La Suisse dépend de plus en plus de systèmes numériques. Les cybermenaces augmentent, la compétition technologique s\u2019accélère et l\u2019innovation numérique transforme nos vies. Notre pays a besoin d\u2019une base constitutionnelle claire pour préserver son autonomie, renforcer sa résilience, favoriser l\u2019innovation et rester maître de son propre avenir.",
+      para1: "Le numérique n'est plus un simple domaine technique, il façonne notre vie quotidienne, notre économie et notre sécurité. A mesure que notre dépendance s'accroît, les risques et les responsabilités augmentent également.",
+      para2: "Cette initiative donne une direction claire : protéger ce qui est essentiel, renforcer la confiance et la résilience, et faire en sorte que la Suisse reste libre de ses choix numériques. Elle établit une base constitutionnelle pour sécuriser les infrastructures critiques, protéger les personnes et leurs données, renforcer la souveraineté nationale, et investir dans les compétences et l'innovation.",
+      para3: "L'objectif est simple : une Suisse ouverte, sûre et maîtresse de son avenir numérique.",
       boxTitle: "Une ligne suisse",
       points: [
-        "Pas contre le monde.",
-        "Pour une Suisse forte dans le monde.",
-        "Pas une souveraineté de fermeture.",
-        "Une souveraineté de maîtrise."
+        "Pour une approche qui favorise plutôt que de restreindre",
+        "Pour une Suisse innovante et forte au service de tous",
+        "Pour une population informée qui tire le meilleur parti des technologies numériques",
+        "Pour une confiance et une résilience accrues à travers toute la société"
       ],
       cta: "Télécharger le formulaire"
     },
 
     de: {
-      title1: "Warum diese",
-      title2: "Initiative",
-      para1: "Digitalisierung ist längst kein Thema mehr nur für Fachleute. Sie betrifft heute die Privatsphäre aller, unsere Familien, unsere Gesundheit, unsere nationale Sicherheit und die Qualität öffentlicher Dienste. Sie trägt auch unsere Energiesysteme, den Verkehr, die Finanzen und das Funktionieren unserer Wirtschaft. Die Schweiz muss daher einen klaren Kurs setzen: schützen, was zählt, frei in ihren Entscheidungen bleiben und sich auf ihre Zukunft vorbereiten.",
-      para2: "Die Schweiz ist zunehmend auf digitale Systeme angewiesen. Cyberbedrohungen nehmen zu, der technologische Wettbewerb beschleunigt sich und digitale Innovation verändert unser Leben. Unser Land braucht eine klare verfassungsrechtliche Grundlage, um seine Autonomie zu sichern, seine Resilienz zu stärken, Innovation zu fördern und Herr seiner eigenen Zukunft zu bleiben.",
+      para1: "Die Digitalisierung ist längst kein reiner Technikbereich mehr – sie prägt unser tägliches Leben, unsere Wirtschaft und unsere Sicherheit. Mit unserer wachsenden Abhängigkeit steigen auch die Risiken und die Verantwortung.",
+      para2: "Diese Initiative gibt eine klare Richtung vor: das Wesentliche zu schützen, das Vertrauen und die Widerstandsfähigkeit zu stärken und sicherzustellen, dass die Schweiz in ihren digitalen Entscheidungen frei bleibt. Sie schafft eine verfassungsmässige Grundlage, um kritische Infrastrukturen zu sichern, Menschen und ihre Daten zu schützen, die nationale Souveränität zu stärken sowie in Fähigkeiten und Innovationen zu investieren.",
+      para3: "Das Ziel ist einfach: eine Schweiz, die offen, sicher und Herr über ihre digitale Zukunft ist.",
       boxTitle: "Eine Schweizer Linie",
       points: [
-        "Nicht gegen die Welt.",
-        "Für eine starke Schweiz in der Welt.",
-        "Keine Souveränität der Abschottung.",
-        "Eine Souveränität der Kontrolle."
+        "Für einen Ansatz, der fördert anstatt einzuschränken",
+        "Für eine innovative und starke Schweiz, die allen dient",
+        "Für eine informierte Bevölkerung, die digitale Technologien bestmöglich nutzt",
+        "Für mehr Vertrauen und Resilienz in der gesamten Gesellschaft"
       ],
       cta: "Formular herunterladen"
     },
 
     it: {
-      title1: "Perché questa",
-      title2: "iniziativa",
-      para1: "Il digitale non è più un argomento riservato agli specialisti. Oggi riguarda la privacy di tutti, le nostre famiglie, la nostra salute, la nostra sicurezza nazionale e la qualità dei servizi pubblici. Sostiene inoltre i nostri sistemi energetici, i trasporti, la finanza e il funzionamento della nostra economia. La Svizzera deve quindi tracciare una rotta chiara: proteggere ciò che conta, restare libera nelle proprie scelte e preparare il proprio futuro.",
-      para2: "La Svizzera dipende sempre più dai sistemi digitali. Le minacce informatiche sono in aumento, la competizione tecnologica accelera e l\u2019innovazione digitale sta trasformando le nostre vite. Il nostro Paese ha bisogno di una chiara base costituzionale per salvaguardare la propria autonomia, rafforzare la propria resilienza, promuovere l\u2019innovazione e restare padrone del proprio futuro.",
+      para1: "Il digitale non è più solo un dominio tecnico: plasma la nostra vita quotidiana, la nostra economia e la nostra sicurezza. Con la nostra crescente dipendenza aumentano anche i rischi e le responsabilità.",
+      para2: "Questa iniziativa stabilisce una direzione chiara: per proteggere ciò che è essenziale, rafforzare la fiducia e la resilienza, e garantire che la Svizzera rimanga libera nelle sue scelte digitali. Essa stabilisce una base costituzionale per proteggere le infrastrutture critiche, salvaguardare le persone e i loro dati, rafforzare la sovranità nazionale e investire in competenze e innovazione.",
+      para3: "L'obiettivo è semplice: una Svizzera aperta, sicura e padrona del proprio futuro digitale.",
       boxTitle: "Una linea svizzera",
       points: [
-        "Non contro il mondo.",
-        "Per una Svizzera forte nel mondo.",
-        "Non una sovranità di chiusura.",
-        "Una sovranità di controllo."
+        "Per un approccio che promuove piuttosto che limitare",
+        "Per una Svizzera innovativa e forte al servizio di tutti",
+        "Per una popolazione informata che sfrutta al meglio le tecnologie digitali",
+        "Per una maggiore fiducia e resilienza in tutta la società"
       ],
       cta: "Scaricare il modulo"
     }
@@ -239,19 +235,41 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   return (
     <div className="container mx-auto px-6 pt-32 pb-16 max-w-7xl overflow-hidden min-h-screen">
       {/* Premium Banner Header */}
-      <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-end">
-        <div className="flex-1 animate-in slide-in-from-left duration-1000">
+      <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex-1 animate-in slide-in-from-left duration-1000 flex flex-col gap-12">
 
-          <h1 className="text-6xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter">
-            {whyText[lang].title1}{" "}
-            <span className="text-primary italic">
-              {whyText[lang].title2}
-            </span>
-          </h1>
-
-          <div className="space-y-6 text-xl text-gray-400 dark:text-gray-500 max-w-3xl leading-relaxed font-medium">
+          <div className="space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
              <p>{whyText[lang].para1}</p>
              <p>{whyText[lang].para2}</p>
+             <p className="font-black text-primary text-2xl md:text-3xl tracking-tight leading-tight mt-10">
+               {whyText[lang].para3}
+             </p>
+          </div>
+
+          {/* Impact Highlights Integrated into Hero */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-10">
+             <div className="flex flex-col gap-4 text-left">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                    <Landmark className="w-6 h-6"/>
+                  </div>
+                  <h3 className="text-xl font-black text-secondary dark:text-white tracking-tight">Confederation</h3>
+                </div>
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                  {dict.pactDetails.s3.confederation}
+                </p>
+             </div>
+             <div className="flex flex-col gap-4 text-left">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                    <Fingerprint className="w-6 h-6"/>
+                  </div>
+                  <h3 className="text-xl font-black text-secondary dark:text-white tracking-tight">Population</h3>
+                </div>
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                  {dict.pactDetails.s3.population}
+                </p>
+             </div>
           </div>
 
         </div>
@@ -282,25 +300,6 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
       {/* Grid of Content Sections */}
       <div className="relative mb-32 flex flex-col gap-8">
-        <section className="flex flex-col gap-8 p-10 rounded-[3rem] bg-white dark:bg-zinc-900/50 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl">
-          <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center group">
-            <Target className="w-7 h-7 group-hover:rotate-12 transition-all" />
-          </div>
-          <h2 className="text-3xl font-black tracking-tight">
-            {impactTitle[lang]}
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-             <div className="p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800">
-                <h3 className="text-xl font-black mb-4 flex items-center gap-2"><Landmark className="text-primary w-5 h-5"/> Confederation</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">{dict.pactDetails.s3.confederation}</p>
-             </div>
-             <div className="p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800">
-                <h3 className="text-xl font-black mb-4 flex items-center gap-2"><Fingerprint className="text-primary w-5 h-5"/> Population</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">{dict.pactDetails.s3.population}</p>
-             </div>
-          </div>
-
-          <div className="mt-12">
             <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
               {structuralText[lang].title}
             </h2>
@@ -322,8 +321,6 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                  );
               })}
             </div>
-          </div>
-        </section>
       </div>
 
       <section className="mb-24 p-12 lg:p-20 bg-secondary dark:bg-zinc-900 rounded-[4rem] text-white overflow-hidden relative group shadow-3xl">
@@ -365,14 +362,16 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                </div>
              ))}
           </div>
-          <div className="text-center mt-2">
+          <div className="text-center mt-2 mb-8">
             <p className="text-gray-400 text-xs italic">
               {disclaimerText[lang]}
             </p>
           </div>
-          <div className="flex justify-between items-center px-4 mt-4">
-             <span className="text-[10px] uppercase font-black tracking-widest text-primary">{proposalText[lang]}</span>
-             <Link href="#" className="flex items-center gap-2 text-[10px] uppercase font-black tracking-widest text-white/40 hover:text-white transition-all">{downloadText[lang]} <LinkIcon className="w-3 h-3"/></Link>
+          
+          <div className="flex justify-center w-full mt-4">
+            <div className="relative shadow-2xl rounded-xl overflow-hidden bg-white max-w-3xl w-full">
+              <img src="/non_aux_f35_clear.png" alt="Official Document — Non aux F-35" className="w-full h-auto object-contain" />
+            </div>
           </div>
         </section>
       </div>

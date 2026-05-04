@@ -6,7 +6,7 @@ export const dictionaries = {
       title: "For a free, secure Switzerland in control of its digital destiny",
       description: "Digital technology already shapes our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with it on its own terms: open, demanding, human-centered, and sovereign.",
       cta: "Read the initiative",
-      learn: "Sign the Swiss Digital Pact",
+      learn: "Sign the initiative",
       watch: "Our vision"
     },
     nav: {
@@ -45,12 +45,12 @@ export const dictionaries = {
       step3: "Sign Ink",
       step3d: "Sign manually with a pen (blue or black ink).",
       step4: "Mail it",
-      step4d: "Send by post to our office in Lausanne (no stamp needed)."
+      step4d: "Send by post to our office in Berne (no stamp needed)."
     },
     pactDetails: {
       s1: {
         title: "Introduction",
-        text: "In December 2025, the Federal Chancellery was contacted regarding the launch of a federal popular initiative entitled “For the Digital Security of Switzerland”. The initiative proposes a new article in the Federal Constitution to ensure digital security and sovereignty."
+        text: "In December 2025, the Federal Chancellery was contacted regarding the launch of a federal popular initiative entitled For the Digital Security of Switzerland. The initiative proposes a new article in the Federal Constitution to ensure digital security and sovereignty."
       },
       s2: {
         title: "Why this Initiative?",
@@ -59,7 +59,7 @@ export const dictionaries = {
       s3: {
         title: "Impact",
         confederation: "Enables the Confederation to assume responsibilities and coordinates federal/cantonal authorities.",
-        population: "Strengthens data protection and encourages digital skills across society."
+        population: "Strengthens data protection and promote data literacy and digital skills across society."
       },
       s5: {
         title: "Constitutional Article Art. 57a",
@@ -82,7 +82,7 @@ export const dictionaries = {
       title: "Pour une Suisse libre, sûre et maîtresse de son destin numérique",
       description: "Le numérique façonne déjà notre vie quotidienne, notre économie, nos institutions et notre démocratie. La Suisse doit s'y engager avec sa propre ligne: ouverte, exigeante, humaine et souveraine.",
       cta: "Lire l'initiative",
-      learn: "Signer le Pacte numérique suisse",
+      learn: "Signer l'initiative",
       watch: "Notre vision"
     },
     nav: {
@@ -121,12 +121,12 @@ export const dictionaries = {
       step3: "Signer",
       step3d: "Signez à la main avec un stylo (bleu ou noir).",
       step4: "Envoyer",
-      step4d: "Envoyez-le par la poste à Lausanne (sans affranchir)."
+      step4d: "Envoyez-le par la poste à Berne (sans affranchir)."
     },
     pactDetails: {
       s1: {
         title: "Introduction",
-        text: "En décembre 2025, la Chancellerie fédérale a été contactée pour le lancement de l'initiative « Pour la sécurité numérique de la Suisse ». Elle propose un nouvel article constitutionnel pour garantir la souveraineté numérique."
+        text: "En décembre 2025, la Chancellerie fédérale a été contactée pour le lancement de l'initiative Pour la sécurité numérique de la Suisse. Elle propose un nouvel article constitutionnel pour garantir la souveraineté numérique."
       },
       s2: {
         title: "Pourquoi ?",
@@ -135,7 +135,7 @@ export const dictionaries = {
       s3: {
         title: "Impact",
         confederation: "Permet à la Confédération d'assumer ses responsabilités et de coordonner les autorités.",
-        population: "Renforce la protection des données et encourage les compétences numériques."
+        population: "Renforce la protection des données et promeut la littératie des données et les compétences numériques dans la société."
       },
       s5: {
         title: "Article Constitutionnel Art. 57a",
@@ -158,7 +158,7 @@ export const dictionaries = {
       title: "Für eine freie, sichere Schweiz, die ihr digitales Schicksal selbst bestimmt",
       description: "Die Digitalisierung prägt bereits unseren Alltag, unsere Wirtschaft, unsere Institutionen und unsere Demokratie. Die Schweiz muss sich mit eigener Haltung engagieren: offen, anspruchsvoll, menschlich und souverän.",
       cta: "Initiative lesen",
-      learn: "Unterzeichnen Sie den Schweizer Digitalpakt",
+      learn: "Die Initiative unterzeichnen",
       watch: "Unsere Vision"
     },
     nav: {
@@ -197,12 +197,12 @@ export const dictionaries = {
       step3: "Unterschreiben",
       step3d: "Von Hand unterschreiben (blauer oder schwarzer Stift).",
       step4: "Senden",
-      step4d: "Per Post an unser Büro in Lausanne (portofrei)."
+      step4d: "Per Post an unser Büro in Bern (portofrei)."
     },
     pactDetails: {
       s1: {
         title: "Einführung",
-        text: "Im Dezember 2025 wurde die Bundeskanzlei bezüglich der Initiative «Für die digitale Sicherheit der Schweiz» kontaktiert. Sie schlägt einen neuen Verfassungsartikel vor."
+        text: "Im Dezember 2025 wurde die Bundeskanzlei bezüglich der Initiative Für die digitale Sicherheit der Schweiz kontaktiert. Sie schlägt einen neuen Verfassungsartikel vor."
       },
       s2: {
         title: "Warum diese Initiative?",
@@ -211,7 +211,7 @@ export const dictionaries = {
       s3: {
         title: "Auswirkungen",
         confederation: "Ermöglicht dem Bund, seine Verantwortung wahrzunehmen und die Koordination zu stärken.",
-        population: "Stärkt den Datenschutz und fördert digitale Kompetenzen in der Gesellschaft."
+        population: "Stärkt den Datenschutz und fördert Datenkompetenz sowie digitale Fähigkeiten in der Gesellschaft."
       },
       s5: {
         title: "Verfassungsartikel Art. 57a",
@@ -234,7 +234,7 @@ export const dictionaries = {
       title: "Per una Svizzera libera, sicura e padrona del suo destino digitale",
       description: "Il digitale plasma già la nostra vita quotidiana, la nostra economia, le nostre istituzioni e la nostra democrazia. La Svizzera deve impegnarsi con la propria linea: aperta, esigente, umana e sovrana.",
       cta: "Leggi l'iniziativa",
-      learn: "Firma il Patto digitale svizzero",
+      learn: "Firma l'iniziativa",
       watch: "La nostra visione"
     },
     nav: {
@@ -273,12 +273,12 @@ export const dictionaries = {
       step3: "Firma",
       step3d: "Firma a mano con una penna (inchiostro blu o nero).",
       step4: "Invia",
-      step4d: "Invialo via posta a Losanna (invio gratuito)."
+      step4d: "Invialo via posta a Berna (invio gratuito)."
     },
     pactDetails: {
       s1: {
         title: "Introduzione",
-        text: "Nel dicembre 2025, la Cancelleria federale è stata contattata per il lancio dell'iniziativa «Per la sicurezza digitale della Svizzera». Propone un nuovo articolo costituzionale."
+        text: "Nel dicembre 2025, la Cancelleria federale è stata contattata per il lancio dell'iniziativa Per la sicurezza digitale della Svizzera. Propone un nuovo articolo costituzionale."
       },
       s2: {
         title: "Perché questa iniziativa?",
@@ -287,7 +287,7 @@ export const dictionaries = {
       s3: {
         title: "Impatto",
         confederation: "Permette alla Confederazione di assumersi le proprie responsabilità e coordinare le autorità.",
-        population: "Rafforza la protezione dei dati e incoraggia le competenze digitali nella società."
+        population: "Rafforza la protezione dei dati e promuove l'alfabetizzazione dei dati e le competenze digitali nella società."
       },
       s5: {
         title: "Articolo Costituzionale Art. 57a",

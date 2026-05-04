@@ -195,7 +195,7 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
           <Heart className="w-4 h-4 flex-shrink-0" />
           {supportText[lang]}
         </div>
-        <h1 className="text-5xl md:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
            {titleParts[lang].p1}<span className="text-primary italic underline decoration-1 decoration-dashed underline-offset-[16px]">{titleParts[lang].p2}</span>{titleParts[lang].p3}
         </h1>
         <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
@@ -245,40 +245,40 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 w-full">
-               {(lang === 'fr' ? [
-                 "Rejoindre l'association et soutenir la mission",
-                 "Apporter compétences, idées ou expertise professionnelle",
-                 "Aider localement, nationalement ou en ligne",
-                 "Introduire des contacts et réseaux utiles",
-                 "Soutenir la communication, les événements ou la sensibilisation",
-                 "Engagement flexible et volontaire pour tous"
-               ] : lang === 'de' ? [
-                 "Dem Verein beitreten und die Mission unterstützen",
-                 "Fähigkeiten, Ideen oder Fachwissen einbringen",
-                 "Lokal, national oder online helfen",
-                 "Nützliche Kontakte und Netzwerke vermitteln",
-                 "Kommunikation, Veranstaltungen oder Reichweite unterstützen",
-                 "Flexibles und freiwilliges Engagement für alle"
-               ] : lang === 'it' ? [
-                 "Unirsi all'associazione e sostenere la missione",
-                 "Contribuire con competenze, idee o esperienza professionale",
-                 "Aiutare a livello locale, nazionale o online",
-                 "Presentare contatti e reti utili",
-                 "Sostenere la comunicazione, gli eventi o la sensibilizzazione",
-                 "Impegno flessibile e volontario per tutti"
-               ] : [
-                 "Join the association and support the mission",
-                 "Contribute skills, ideas, or professional expertise",
-                 "Help locally, nationally, or online",
-                 "Introduce useful contacts and networks",
-                 "Support communication, events, or outreach",
-                 "Flexible and voluntary involvement for everyone"
-               ]).map((text, i) => (
-                 <div key={i} className="flex items-center gap-3 bg-[#1c1c1f] border border-white/5 p-4 rounded-2xl hover:border-primary/30 hover:bg-white/5 transition-all">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-white/90 text-xs font-bold uppercase tracking-wide leading-tight">{text}</span>
-                 </div>
-               ))}
+                {((lang === 'fr' ? [
+                  "Rejoindre l'association et soutenir la mission",
+                  "Apporter compétences, idées ou expertise professionnelle",
+                  "Aider localement, nationalement ou en ligne",
+                  "Introduire des contacts et réseaux utiles",
+                  "Soutenir la communication, les événements ou la sensibilisation",
+                  "Engagement flexible et volontaire pour tous"
+                ] : lang === 'de' ? [
+                  "Dem Verein beitreten und die Mission unterstützen",
+                  "Fähigkeiten, Ideen oder Fachwissen einbringen",
+                  "Lokal, national oder online helfen",
+                  "Nützliche Kontakte und Netzwerke vermitteln",
+                  "Kommunikation, Veranstaltungen oder Reichweite unterstützen",
+                  "Flexibles und freiwilliges Engagement für alle"
+                ] : lang === 'it' ? [
+                  "Unirsi all'associazione e sostenere la missione",
+                  "Contribuire con competenze, idee o esperienza professionale",
+                  "Aiutare a livello locale, nazionale o online",
+                  "Presentare contatti e reti utili",
+                  "Sostenere la comunicazione, gli eventi o la sensibilizzazione",
+                  "Impegno flessibile e volontario per tutti"
+                ] : [
+                  "Join the association and support the mission",
+                  "Contribute skills, ideas, or professional expertise",
+                  "Help locally, nationally, or online",
+                  "Introduce useful contacts and networks",
+                  "Support communication, events, or outreach",
+                  "Flexible and voluntary involvement for everyone"
+                ]) as string[]).map((text, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-[#1c1c1f] border border-white/5 p-4 rounded-2xl hover:border-primary/30 hover:bg-white/5 transition-all">
+                     <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                     <span className="text-white/90 text-[13px] font-medium leading-tight">{text}</span>
+                  </div>
+                ))}
             </div>
          </div>
 

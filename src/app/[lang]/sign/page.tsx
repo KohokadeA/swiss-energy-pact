@@ -8,34 +8,51 @@ import { type Locale, getDictionary } from '@/lib/dictionary';
 
 export default function SignPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
-  
-  const steps = [
-    {
-      icon: Download,
-      title: dict.sign.step1,
-      description: dict.sign.step1d,
-      color: "bg-red-500",
-      link: "/signature_form.pdf"
-    },
-    {
-      icon: Printer,
-      title: dict.sign.step2,
-      description: dict.sign.step2d,
-      color: "bg-orange-500"
-    },
-    {
-      icon: PenTool,
-      title: dict.sign.step3,
-      description: dict.sign.step3d,
-      color: "bg-blue-500"
-    },
-    {
-      icon: Send,
-      title: dict.sign.step4,
-      description: dict.sign.step4d,
-      color: "bg-green-500"
-    }
-  ];
+
+  const stepsContent = {
+    en: [
+      { icon: Download, title: "Download PDF", description: "Save the official Swiss Digital Pact signature form.", color: "bg-red-500", link: "/signature_form.pdf" },
+      { icon: Printer, title: "Print A4", description: "The signature must be on a physical paper sheet.", color: "bg-orange-500" },
+      { icon: PenTool, title: "Sign Ink", description: "Sign manually with a pen (blue or black ink).", color: "bg-blue-500",
+        reminders: ["Swiss citizens with voting rights ONLY.", "Handwritten signature in ink REQUIRED.", "Clearly indicate your domicile."]
+      },
+      { icon: Send, title: "Mail it", description: "Send by post to our office in Berne (no stamp needed).", color: "bg-green-500",
+        address: "Marktgasse 55, 3011 Berne"
+      }
+    ],
+    fr: [
+      { icon: Download, title: "Télécharger le PDF", description: "Enregistrez le formulaire officiel de signature du Pacte Numérique Suisse.", color: "bg-red-500", link: "/signature_form.pdf" },
+      { icon: Printer, title: "Imprimer A4", description: "La signature doit figurer sur une feuille de papier physique.", color: "bg-orange-500" },
+      { icon: PenTool, title: "Signer à l'encre", description: "Signez manuellement au stylo (encre bleue ou noire).", color: "bg-blue-500",
+        reminders: ["Citoyens suisses avec droit de vote UNIQUEMENT.", "Signature manuscrite à l'encre OBLIGATOIRE.", "Indiquer clairement le domicile."]
+      },
+      { icon: Send, title: "Envoyer", description: "Envoyez par la poste à notre bureau à Berne (pas de timbre nécessaire).", color: "bg-green-500",
+        address: "Marktgasse 55, 3011 Berne"
+      }
+    ],
+    de: [
+      { icon: Download, title: "PDF herunterladen", description: "Speichern Sie das offizielle Unterschriftenformular des Schweizer Digital-Pakts.", color: "bg-red-500", link: "/signature_form.pdf" },
+      { icon: Printer, title: "A4 drucken", description: "Die Unterschrift muss auf einem physischen Papierblatt sein.", color: "bg-orange-500" },
+      { icon: PenTool, title: "Mit Tinte unterschreiben", description: "Unterschreiben Sie handschriftlich mit einem Kugelschreiber (blaue oder schwarze Tinte).", color: "bg-blue-500",
+        reminders: ["NUR stimmberechtigte Schweizer Bürger.", "Handschriftliche Unterschrift mit Tinte ERFORDERLICH.", "Geben Sie Ihren Wohnort deutlich an."]
+      },
+      { icon: Send, title: "Abschicken", description: "Per Post an unser Büro in Bern senden (kein Porto erforderlich).", color: "bg-green-500",
+        address: "Marktgasse 55, 3011 Berne"
+      }
+    ],
+    it: [
+      { icon: Download, title: "Scarica PDF", description: "Salvate il modulo ufficiale di firma del Patto Digitale Svizzero.", color: "bg-red-500", link: "/signature_form.pdf" },
+      { icon: Printer, title: "Stampa A4", description: "La firma deve essere su un foglio di carta fisico.", color: "bg-orange-500" },
+      { icon: PenTool, title: "Firma a inchiostro", description: "Firmate manualmente con una penna (inchiostro blu o nero).", color: "bg-blue-500",
+        reminders: ["SOLO cittadini svizzeri con diritto di voto.", "Firma autografa a inchiostro OBBLIGATORIA.", "Indicare chiaramente il domicilio."]
+      },
+      { icon: Send, title: "Spedire", description: "Inviate per posta al nostro ufficio a Berna (nessun francobollo necessario).", color: "bg-green-500",
+        address: "Marktgasse 55, 3011 Berne"
+      }
+    ]
+  };
+
+  const steps = stepsContent[lang] || stepsContent['fr'];
 
   const content = {
     en: {
@@ -114,7 +131,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
           <ShieldCheck className="w-4 h-4 flex-shrink-0" />
           {dict.common.howToSign}
         </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-tight tracking-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
            {t.title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-3xl mx-auto">
@@ -125,7 +142,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
 
 
       {/* Steps Visualizer */}
-      <motion.div 
+      <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -142,20 +159,39 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
       >
         <div className="hidden lg:block absolute top-[20%] left-[10%] right-[10%] h-1 border-t-4 border-dashed border-gray-100 dark:border-gray-800 -z-10" />
         {steps.map((step, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             variants={{
               hidden: { opacity: 0, y: 30 },
               show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
             }}
-            className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white dark:bg-zinc-900/40 p-10 rounded-[3rem] border border-gray-50 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:border-primary/20 relative"
+            className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white dark:bg-zinc-900/40 p-8 rounded-[3rem] border border-gray-50 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:border-primary/20 relative"
           >
             <div className="absolute top-0 right-0 p-4 font-black text-5xl text-gray-100/30 dark:text-gray-800/20 leading-none select-none group-hover:text-primary/10 transition-all">0{idx + 1}</div>
-            <div className={`w-16 h-16 ${step.color} text-white rounded-2xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+            <div className={`w-16 h-16 ${step.color} text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
               <step.icon className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-black mb-4 leading-tight">{step.title}</h3>
+            <h3 className="text-xl font-black mb-3 leading-tight">{step.title}</h3>
             <p className="text-gray-500 dark:text-gray-400 text-xs font-bold leading-relaxed">{step.description}</p>
+
+            {/* Legal Reminders integrated into Step 3 */}
+            {step.reminders && (
+              <div className="mt-5 w-full space-y-2">
+                {step.reminders.map((rule, ri) => (
+                  <div key={ri} className="flex items-start gap-2 text-left p-2.5 rounded-xl bg-amber-50 dark:bg-amber-900/10 border border-amber-200/50 dark:border-amber-800/30">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-1.5 shrink-0" />
+                    <span className="text-[10px] font-bold text-amber-800 dark:text-amber-300 leading-snug">{rule}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Mailing Address integrated into Step 4 */}
+            {step.address && (
+              <div className="mt-5 w-full p-4 rounded-xl bg-green-50 dark:bg-green-900/10 border border-green-200/50 dark:border-green-800/30 text-center">
+                <p className="text-[10px] font-black text-green-800 dark:text-green-300 uppercase tracking-wider">{step.address}</p>
+              </div>
+            )}
           </motion.div>
         ))}
       </motion.div>
@@ -163,7 +199,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
       {/* Main Action Block */}
       <div className="w-full bg-secondary dark:bg-zinc-900 p-12 lg:p-24 rounded-[4rem] text-white flex flex-col lg:flex-row items-center gap-16 shadow-3xl relative overflow-hidden group">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary opacity-[0.05] rounded-full translate-x-20 translate-y-20 blur-[100px] group-hover:scale-125 transition-all duration-1000" />
-        
+
         <div className="flex-1 flex flex-col gap-8 items-center lg:items-start text-center lg:text-left z-10">
           <div className="w-20 h-20 bg-white/10 rounded-[2rem] flex items-center justify-center border border-white/10 group-hover:scale-110 transition-all duration-500">
              <FileCheck className="w-10 h-10 text-primary" />
@@ -179,43 +215,6 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
              <ArrowDown className="w-3 h-3" /> {t.pdf} | 16 KB
           </div>
         </div>
-
-        <div className="lg:w-1/3 bg-white/5 border border-white/10 p-10 rounded-[3.5rem] backdrop-blur-xl z-10 relative overflow-hidden group/card shadow-2xl">
-           <AlertTriangle className="w-10 h-10 text-amber-500 mb-6" />
-           <h4 className="text-xl font-black mb-4">{t.reminders}</h4>
-           <ul className="space-y-4 text-white/60 text-xs font-bold">
-             <li className="flex items-start gap-4 p-4 rounded-xl bg-black/20 group-hover/card:bg-primary/10 transition-all">
-                <span className="w-2 h-2 bg-primary rounded-full mt-1.5 shrink-0" />
-                {t.rule1}
-             </li>
-             <li className="flex items-start gap-4 p-4 rounded-xl bg-black/20 group-hover/card:bg-primary/10 transition-all">
-                <span className="w-2 h-2 bg-primary rounded-full mt-1.5 shrink-0" />
-                {t.rule2}
-             </li>
-             <li className="flex items-start gap-4 p-4 rounded-xl bg-black/20 group-hover/card:bg-primary/10 transition-all">
-                <span className="w-2 h-2 bg-primary rounded-full mt-1.5 shrink-0" />
-                {t.rule3}
-             </li>
-           </ul>
-        </div>
-      </div>
-      
-      {/* Postal Address Block */}
-      <div className="mt-24 flex flex-col items-center">
-         <h4 className="text-[9px] font-black uppercase tracking-[5px] text-gray-500 mb-8">{t.mailing}</h4>
-         <div className="p-12 rounded-[3.5rem] bg-gray-100 dark:bg-black/60 border-2 border-gray-200 dark:border-gray-900 text-center flex flex-col items-center gap-6 group hover:border-primary transition-all duration-700 shadow-xl shadow-gray-200/50 relative overflow-hidden max-w-4xl w-full">
-           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:scale-150 transition-all" />
-           <div className="w-16 h-16 bg-white dark:bg-zinc-900 text-primary rounded-[1.5rem] flex items-center justify-center shadow-lg group-hover:scale-110 transition-all border border-gray-100 dark:border-gray-800">
-             <Landmark className="w-8 h-8" />
-           </div>
-           <div className="text-3xl lg:text-4xl font-black text-secondary dark:text-gray-200 tracking-tight leading-tight">
-             {t.comm}<br />
-             <span className="text-gray-500 dark:text-gray-400 font-semibold text-2xl">CP 456, 1000 Lausanne</span>
-           </div>
-           <Link href={`/${lang}/contact`} className="px-8 py-3 bg-gray-200 dark:bg-gray-800 rounded-2xl font-black uppercase text-[9px] tracking-widest hover:bg-primary hover:text-white transition-all transition-smooth">
-             {t.questions} <ChevronRight className="w-4 h-4 inline ml-2"/>
-           </Link>
-         </div>
       </div>
     </div>
   );

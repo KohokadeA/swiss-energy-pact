@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Digital Security - Logo Concepts</title>
+    <style>
+        :root {
+            --swiss-red: #DA291C;
+            --white: #FFFFFF;
+            --bg: #F8F9FA;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+
+        h1 { margin-bottom: 40px; font-weight: 300; }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-box {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* CONCEPT 1: THE SEAL */
+        .seal {
+            width: 140px;
+            height: 140px;
+            border: 8px solid var(--swiss-red);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .seal-pillar {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border: 4px solid var(--swiss-red);
+            border-radius: 50%;
+        }
+        .p1 { top: -9px; } .p2 { right: -9px; } .p3 { bottom: -9px; } .p4 { left: -9px; }
+
+        .cross-red {
+            background: var(--swiss-red);
+            width: 70px;
+            height: 70px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+        }
+        .cross-white-h, .cross-white-v {
+            background: white;
+            position: absolute;
+            border-radius: 1px;
+        }
+        .cross-white-h { width: 45px; height: 13px; }
+        .cross-white-v { width: 13px; height: 45px; }
+
+        /* CONCEPT 2: THE MONUMENT */
+        .monument {
+            width: 120px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+            background: white;
+        }
+        .pillar { background: var(--swiss-red); border-radius: 4px; }
+
+        /* CONCEPT 3: THE SHIELD */
+        .shield {
+            width: 110px;
+            height: 130px;
+            background: var(--swiss-red);
+            border-radius: 4px 4px 55px 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .shield-line {
+            position: absolute;
+            background: rgba(255,255,255,0.2);
+            width: 100%;
+            height: 2px;
+        }
+        .l1 { top: 33%; } .l2 { bottom: 33%; }
+
+        .desc { font-size: 14px; color: #666; line-height: 1.5; margin-top: 10px; }
+        .title { font-weight: bold; font-size: 18px; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Institutional Logo Drafts</h1>
+
+    <div class="container">
+        <!-- CONCEPT 1 -->
+        <div class="card">
+            <div class="logo-box">
+                <div class="seal">
+                    <div class="seal-pillar p1"></div>
+                    <div class="seal-pillar p2"></div>
+                    <div class="seal-pillar p3"></div>
+                    <div class="seal-pillar p4"></div>
+                    <div class="cross-red">
+                        <div class="cross-white-h"></div>
+                        <div class="cross-white-v"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="title">1. The Digital Seal</p>
+            <p class="desc">A symbol of federal authority. The 4 outer points represent the pillars protecting the national core.</p>
+        </div>
+
+        <!-- CONCEPT 2 -->
+        <div class="card">
+            <div class="logo-box">
+                <div class="monument">
+                    <div class="pillar"></div>
+                    <div class="pillar"></div>
+                    <div class="pillar"></div>
+                    <div class="pillar"></div>
+                </div>
+            </div>
+            <p class="title">2. The Infrastructure Monument</p>
+            <p class="desc">The Swiss cross emerges from the space between four solid pillars. Simple, balanced, and institutional.</p>
+        </div>
+
+        <!-- CONCEPT 3 -->
+        <div class="card">
+            <div class="logo-box">
+                <div class="shield">
+                    <div class="shield-line l1"></div>
+                    <div class="shield-line l2"></div>
+                    <div class="cross-white-h"></div>
+                    <div class="cross-white-v"></div>
+                </div>
+            </div>
+            <p class="title">3. The Sovereign Shield</p>
+            <p class="desc">A classic shield with horizontal 'foundation layers' representing the constitutional buildup of the initiative.</p>
+        </div>
+    </div>
+
+</body>
+</html>

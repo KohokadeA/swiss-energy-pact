@@ -137,7 +137,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
           <MessageCircle className="w-4 h-4 flex-shrink-0" />
           {t.badge}
         </div>
-        <h1 className="text-5xl md:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.8] tracking-tighter italic font-serif">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
            {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
         </h1>
         <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
@@ -147,7 +147,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10" />
-        
+
         {/* Contact Form Section - Premium Design */}
         <section className="animate-in slide-in-from-left duration-1000">
           <div className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 lg:p-16 rounded-[3rem] shadow-xl shadow-gray-200/50 dark:shadow-none transition-all duration-700 hover:-translate-y-4 hover:shadow-4xl hover:border-primary/20 relative">
@@ -156,17 +156,17 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelName}</label>
-                  <input 
-                    type="text" 
-                    placeholder="Muster Peter" 
+                  <input
+                    type="text"
+                    placeholder="Muster Peter"
                     className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 text-sm"
                   />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelEmail}</label>
-                  <input 
-                    type="email" 
-                    placeholder="p.muster@email.ch" 
+                  <input
+                    type="email"
+                    placeholder="p.muster@email.ch"
                     className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 text-sm"
                   />
                 </div>
@@ -185,14 +185,14 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
               </div>
               <div className="space-y-3">
                 <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelMessage}</label>
-                <textarea 
-                  rows={4} 
-                  placeholder={t.messagePlaceholder} 
+                <textarea
+                  rows={4}
+                  placeholder={t.messagePlaceholder}
                   className="w-full px-6 py-5 rounded-[2rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 resize-none text-sm"
                 />
               </div>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="swiss-button w-full flex items-center justify-center gap-3 py-6 text-xl font-black group-hover/form:bg-primary transition-all shadow-lg active:scale-95"
               >
                 {t.sendBtn} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
@@ -210,7 +210,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                  {[
                    { icon: Mail, label: t.labelMail, value: "info@swissdigitalpact.ch" },
                    { icon: Phone, label: t.labelPhone, value: "+41 22 000 00 00" },
-                   { icon: MapPin, label: t.labelAddress, value: "CP 456, 1000 Lausanne" },
+                   { icon: MapPin, label: t.labelAddress, value: "Marktgasse 55, 3011 Berne" },
                  ].map((item, idx) => (
                    <li key={idx} className="flex items-start gap-6 group">
                      <div className="w-14 h-14 bg-primary group-hover:bg-primary-dark rounded-[1.5rem] flex items-center justify-center text-white transition-all shadow-xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6">

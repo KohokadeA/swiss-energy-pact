@@ -126,7 +126,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
             </li>
             <li className="flex items-center gap-4 group cursor-pointer">
               <MapPin className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-all" />
-              <span className="text-gray-300 font-bold text-xs">CP 456, 1000 Lausanne</span>
+              <span className="text-gray-300 font-bold text-xs">Marktgasse 55, 3011 Berne</span>
             </li>
           </ul>
         </div>

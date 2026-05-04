@@ -125,26 +125,30 @@ const whyInitiativeText = {
   en: {
     title1: "Why this",
     titleHighlight: "initiative",
-    para1: "Digital is no longer a subject reserved for specialists. It now affects everyone\u2019s privacy, our families, our health, our national security and the quality of government services. It also underpins our energy systems, transportation, finance, and the functioning of our economy. Switzerland must therefore set a clear course: protect what matters, remain free in its choices, and prepare for its future.",
-    para2: "Switzerland relies increasingly on digital systems. Cyber threats are rising, technological competition is accelerating, and digital innovation is reshaping our lives. Our country needs a clear constitutional foundation to safeguard its autonomy, strengthen its resilience, foster innovation, and remain master of its own future."
+    para1: "Digital is at the heart of our daily lives. It affects our privacy, our health, our economy, and our national security.",
+    para2: "As our dependence grows, so do the risks. Cyber threats are increasing, technological competition is intensifying, and key systems are becoming more exposed.",
+    para3: "Switzerland must act with clarity and purpose: to protect what is essential, strengthen trust, and remain free in its choices. This initiative provides the foundation to do so—ensuring that our country stays secure, resilient, and in control of its digital future."
   },
   fr: {
     title1: "Pourquoi cette",
     titleHighlight: "initiative",
-    para1: "Le numérique n\u2019est plus un sujet réservé aux spécialistes. Il touche désormais la vie privée de chacun, nos familles, notre santé, notre sécurité nationale et la qualité des services publics. Il sous-tend aussi nos systèmes énergétiques, nos transports, nos finances et le fonctionnement de notre économie. La Suisse doit donc se donner un cap clair\u00a0: protéger ce qui compte, rester libre dans ses choix et préparer son avenir.",
-    para2: "La Suisse dépend de plus en plus de systèmes numériques. Les cybermenaces augmentent, la compétition technologique s\u2019accélère et l\u2019innovation numérique transforme nos vies. Notre pays a besoin d\u2019une base constitutionnelle claire pour préserver son autonomie, renforcer sa résilience, favoriser l\u2019innovation et rester maître de son propre avenir."
+    para1: "Le numérique est au cœur de notre vie quotidienne. Il affecte notre vie privée, notre santé, notre économie et notre sécurité nationale.",
+    para2: "A mesure que notre dépendance s'accroît, les risques augmentent également. Les cybermenaces se multiplient, la concurrence technologique s'intensifie et les systèmes clés sont de plus en plus exposés.",
+    para3: "La Suisse doit agir avec clarté et détermination : protéger ce qui est essentiel, renforcer la confiance et rester libre de ses choix. Cette initiative en jette les bases, afin que notre pays reste sûr, résilient et maître de son avenir numérique."
   },
   de: {
     title1: "Warum diese",
     titleHighlight: "Initiative",
-    para1: "Digitalisierung ist längst kein Thema mehr nur für Fachleute. Sie betrifft heute die Privatsphäre aller, unsere Familien, unsere Gesundheit, unsere nationale Sicherheit und die Qualität öffentlicher Dienste. Sie trägt auch unsere Energiesysteme, den Verkehr, die Finanzen und das Funktionieren unserer Wirtschaft. Die Schweiz muss daher einen klaren Kurs setzen: schützen, was zählt, frei in ihren Entscheidungen bleiben und sich auf ihre Zukunft vorbereiten.",
-    para2: "Die Schweiz ist zunehmend auf digitale Systeme angewiesen. Cyberbedrohungen nehmen zu, der technologische Wettbewerb beschleunigt sich und digitale Innovation verändert unser Leben. Unser Land braucht eine klare verfassungsrechtliche Grundlage, um seine Autonomie zu sichern, seine Resilienz zu stärken, Innovation zu fördern und Herr seiner eigenen Zukunft zu bleiben."
+    para1: "Die Digitalisierung steht im Mittelpunkt unseres täglichen Lebens. Sie betrifft unsere Privatsphäre, unsere Gesundheit, unsere Wirtschaft und unsere nationale Sicherheit.",
+    para2: "Mit unserer wachsenden Abhängigkeit steigen auch die Risiken. Cyberbedrohungen nehmen zu, der technologische Wettbewerb verschärft sich und wichtige Systeme sind zunehmend exponiert.",
+    para3: "Die Schweiz muss klar und zielgerichtet handeln: das Wesentliche schützen, das Vertrauen stärken und in ihren Entscheidungen frei bleiben. Diese Initiative schafft die Grundlage dafür und stellt sicher, dass unser Land sicher, widerstandsfähig und Herr über seine digitale Zukunft bleibt."
   },
   it: {
     title1: "Perché questa",
     titleHighlight: "iniziativa",
-    para1: "Il digitale non è più un argomento riservato agli specialisti. Oggi riguarda la privacy di tutti, le nostre famiglie, la nostra salute, la nostra sicurezza nazionale e la qualità dei servizi pubblici. Sostiene inoltre i nostri sistemi energetici, i trasporti, la finanza e il funzionamento della nostra economia. La Svizzera deve quindi tracciare una rotta chiara: proteggere ciò che conta, restare libera nelle proprie scelte e preparare il proprio futuro.",
-    para2: "La Svizzera dipende sempre più dai sistemi digitali. Le minacce informatiche sono in aumento, la competizione tecnologica accelera e l\u2019innovazione digitale sta trasformando le nostre vite. Il nostro Paese ha bisogno di una chiara base costituzionale per salvaguardare la propria autonomia, rafforzare la propria resilienza, promuovere l\u2019innovazione e restare padrone del proprio futuro."
+    para1: "Il digitale è al centro della nostra vita quotidiana. Riguarda la nostra privacy, la nostra salute, la nostra economia e la nostra sicurezza nazionale.",
+    para2: "Con la nostra crescente dipendenza aumentano anche i rischi. Le minacce informatiche sono in aumento, la concorrenza tecnologica si intensifica e i sistemi chiave sono sempre più esposti.",
+    para3: "La Svizzera deve agire con chiarezza e determinazione: per proteggere ciò che è essenziale, rafforzare la fiducia e rimanere libera nelle sue scelte. Questa iniziativa fornisce le basi per farlo, assicurando che il nostro Paese rimanga sicuro, resiliente e padrone del proprio futuro digitale."
   }
 };
 
@@ -215,24 +219,23 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
       <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-16">
         {data.sectionTitle}
       </h2>
-      <div 
+      <div
         className="max-w-7xl mx-auto relative h-[500px] md:h-[450px] lg:h-[400px] cursor-pointer"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {data.endorsements.map((e, i) => {
           const len = data.endorsements.length;
-          
+
           let diff = i - idx;
           if (diff < -len / 2) diff += len;
           if (diff > len / 2) diff -= len;
-          
+
           const isVisible = Math.abs(diff) <= 1;
-          const isCenter = diff === 0;
-          
-          const xPos = diff === 0 ? "0%" : diff === -1 ? "-50%" : diff === 1 ? "50%" : diff < -1 ? "-100%" : "100%";
-          const scale = diff === 0 ? 1 : 0.65;
-          const opacity = diff === 0 ? 1 : isVisible ? 0.3 : 0;
+
+          const xPos = diff === 0 ? "0%" : diff === -1 ? "-105%" : diff === 1 ? "105%" : diff < -1 ? "-200%" : "200%";
+          const scale = diff === 0 ? 1 : 0.95;
+          const opacity = isVisible ? (diff === 0 ? 1 : 0.7) : 0;
           const zIndex = diff === 0 ? 30 : isVisible ? 10 : 0;
 
           return (
@@ -247,7 +250,7 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
               }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
               className={cn(
-                "absolute top-0 left-0 right-0 mx-auto w-full max-w-2xl bg-white dark:bg-zinc-900 p-8 lg:p-12 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-2xl text-center",
+                "absolute top-0 left-0 right-0 mx-auto w-full max-w-[320px] lg:max-w-[380px] bg-white dark:bg-zinc-900 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-2xl text-center",
                 !isVisible && "pointer-events-none"
               )}
               onClick={() => {
@@ -275,10 +278,10 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
       </div>
       <div className="flex justify-center gap-2 mt-8">
         {data.endorsements.map((_, i) => (
-          <button 
-            key={i} 
-            onClick={() => setIdx(i)} 
-            className={cn("h-2 rounded-full transition-all", idx === i ? "w-8 bg-primary" : "w-2 bg-gray-200 dark:bg-gray-700")} 
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            className={cn("h-2 rounded-full transition-all", idx === i ? "w-8 bg-primary" : "w-2 bg-gray-200 dark:bg-gray-700")}
           />
         ))}
       </div>
@@ -308,7 +311,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
   return (
     <div className="flex flex-col gap-14 pb-12 overflow-hidden selection:bg-primary selection:text-white">
       {/* Hero Section - Full Viewport & 100% Visibility */}
-      <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 pb-12">
+      <section className="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-6">
         <div className="absolute inset-0 z-0">
           <Image
             src="/swiss_digital_pact_hero_v5.png"
@@ -321,23 +324,41 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
           <div className="absolute inset-0 bg-black/15 z-0" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-20 text-center animate-in fade-in zoom-in duration-1000">
-           <div className="flex justify-center mb-5">
+        <div className="container mx-auto px-4 lg:px-6 relative z-20 text-center animate-in fade-in zoom-in duration-1000">
+           {/* Logo added above the title for a sober, institutional look */}
+           <motion.div
+             initial={{ opacity: 0, scale: 0.8, y: 20 }}
+             animate={{ opacity: 1, scale: 1, y: 0 }}
+             transition={{ duration: 0.8, ease: "easeOut" }}
+             className="flex justify-center mb-2"
+           >
+             <div className="h-32 w-[250px] md:h-40 md:w-[350px] lg:h-[200px] lg:w-[450px] relative overflow-hidden">
+                <Image
+                  src="/swiss_digital_pact_logo.png"
+                  alt="Swiss Digital Pact Logo"
+                  fill
+                  className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                />
+             </div>
+           </motion.div>
+
+           <div className="flex justify-center mb-3">
              <motion.div
                initial={{ opacity: 0, y: 15 }}
                animate={{ opacity: 1, y: 0 }}
-               className="inline-flex items-center gap-3 px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-[10px] font-black tracking-widest uppercase shadow-2xl"
+               transition={{ delay: 0.2 }}
+               className="inline-flex items-center gap-4 text-white text-sm md:text-base lg:text-xl font-black tracking-[0.2em] uppercase drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]"
              >
-               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-               {dict.subtitle}
+               <span className="flex h-3 w-3 rounded-full bg-primary shadow-[0_0_15px_rgba(227,6,19,1)] animate-pulse" />
+               <span>{dict.subtitle}</span>
              </motion.div>
            </div>
 
            <motion.h1
              initial={{ opacity: 0, scale: 0.95 }}
              animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.7 }}
-             className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[0.95] text-white mb-5 drop-shadow-2xl"
+             transition={{ duration: 0.7, delay: 0.3 }}
+             className="text-4xl md:text-5xl lg:text-[5.5rem] font-black tracking-tighter leading-[0.95] text-white mb-4 drop-shadow-2xl max-w-[90vw] xl:max-w-7xl mx-auto"
            >
              {dict.hero.title.split(' ').map((word, i) => (
                <span key={i} className={word.toLowerCase() === 'sovereignty' || word.toLowerCase() === 'souveraineté' || word.toLowerCase() === 'souveränität' || word.toLowerCase() === 'sovranità' ? "text-primary italic" : ""}>
@@ -350,7 +371,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 0.2 }}
-             className="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-8 font-bold drop-shadow-xl"
+             className="text-base md:text-xl text-white/90 leading-relaxed max-w-5xl mx-auto mb-6 font-bold drop-shadow-xl"
            >
              {dict.hero.description}
            </motion.p>
@@ -359,18 +380,14 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0, y: 15 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.4 }}
-             className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-12"
+             className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4"
            >
-             <Magnetic>
-               <Link href={`/${lang}/initiative`} className="swiss-button px-12 py-6 text-2xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] group">
-                 {dict.hero.cta.toUpperCase()} <ArrowRight className="w-10 h-10 group-hover:translate-x-3 transition-smooth" />
-               </Link>
-             </Magnetic>
-             <Magnetic>
-               <Link href={`/${lang}/sign`} className="px-12 py-6 rounded-[2rem] font-black text-xl text-white border-2 border-white/20 hover:bg-white hover:text-black hover:border-white transition-all backdrop-blur-xl shadow-xl hover:shadow-[0_10px_40px_rgba(255,255,255,0.4)] hover:-translate-y-1 active:scale-95 duration-300">
-                 {dict.hero.learn.toUpperCase()}
-               </Link>
-             </Magnetic>
+             <Link href={`/${lang}/initiative`} className="swiss-button px-12 py-6 text-2xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] group inline-flex items-center justify-center gap-2">
+               {dict.hero.cta.toUpperCase()} <ArrowRight className="w-10 h-10 group-hover:translate-x-3 transition-smooth" />
+             </Link>
+             <Link href={`/${lang}/sign`} className="px-12 py-6 rounded-[2rem] font-black text-xl text-white border-2 border-white/40 hover:bg-white hover:text-black transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] active:scale-95 duration-300">
+               {dict.hero.learn.toUpperCase()}
+             </Link>
            </motion.div>
         </div>
       </section>
@@ -409,10 +426,22 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium"
+            className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
           >
             {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para2}
           </motion.p>
+
+          {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para3 && (
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+              className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium"
+            >
+              {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para3}
+            </motion.p>
+          )}
         </div>
       </section>
 
@@ -541,16 +570,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             {visionText[lang].quote}
          </p>
 
-         <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base font-black uppercase tracking-widest text-primary">
-            {visionText[lang].words.map((word, i) => (
-               <React.Fragment key={word}>
-               <span>{word}</span>
-               {i < visionText[lang].words.length - 1 && (
-                  <span className="text-gray-300 dark:text-gray-700 mx-2">•</span>
-               )}
-               </React.Fragment>
-            ))}
-         </div>
+
       </section>
 
       {/* Rotating Endorsements */}
@@ -568,16 +588,9 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                <Download className="w-7 h-7" />
                </div>
 
-               <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] flex flex-col">
-               <span>{ctaText[lang].join}</span>
-               <span className="italic underline decoration-dashed underline-offset-4">
-                  {ctaText[lang].initiative}
-               </span>
-               </h2>
-
-               <p className="text-white/80 text-base max-w-lg mx-auto font-bold leading-relaxed drop-shadow-md">
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-[1.1] max-w-3xl mx-auto drop-shadow-md mb-2">
                {ctaText[lang].desc}
-               </p>
+               </h2>
 
                <div className="flex flex-col sm:flex-row gap-5 w-full justify-center mt-4">
 
