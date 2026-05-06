@@ -313,15 +313,8 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
       {/* Hero Section - Full Viewport & 100% Visibility */}
       <section className="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-6">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/swiss_digital_pact_hero_v5.png"
-            alt="Swiss Digital Pact Hero"
-            fill
-            priority
-            className="object-cover object-center brightness-[0.85] transition-all duration-1000"
-          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary opacity-[0.08] rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90 z-10" />
-          <div className="absolute inset-0 bg-black/15 z-0" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-6 relative z-20 text-center animate-in fade-in zoom-in duration-1000">

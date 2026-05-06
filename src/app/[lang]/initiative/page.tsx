@@ -247,26 +247,26 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
           </div>
 
           {/* Impact Highlights Integrated into Hero */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-10">
-             <div className="flex flex-col gap-4 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-gray-200 dark:border-gray-800 pt-10">
+             <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Landmark className="w-6 h-6"/>
                   </div>
-                  <h3 className="text-xl font-black text-secondary dark:text-white tracking-tight">Confederation</h3>
+                  <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Confederation</h3>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
                   {dict.pactDetails.s3.confederation}
                 </p>
              </div>
-             <div className="flex flex-col gap-4 text-left">
+             <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Fingerprint className="w-6 h-6"/>
                   </div>
-                  <h3 className="text-xl font-black text-secondary dark:text-white tracking-tight">Population</h3>
+                  <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Population</h3>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
                   {dict.pactDetails.s3.population}
                 </p>
              </div>

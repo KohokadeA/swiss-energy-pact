@@ -70,7 +70,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
           </div> */}
 
           {/* Text */}
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <span className={clsx(
               "font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap",
               isScrolled ? "text-gray-900 dark:text-white" : "text-white"
@@ -88,7 +88,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
                 </React.Fragment>
               ))}
             </span>
-          </div>
+          </div> */}
 
         </Link>
 
@@ -100,8 +100,8 @@ export const Header = ({ lang }: { lang: Locale }) => {
                   href={link.href as string}
                   className={clsx(
                     'nav-link relative font-medium text-sm whitespace-nowrap px-2 py-2 transition-colors',
-                    pathname === link.href 
-                      ? 'text-primary font-bold' 
+                    pathname === link.href
+                      ? 'text-primary font-bold'
                       : (isScrolled ? 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white' : 'text-white/90 hover:text-white')
                   )}
                 >
