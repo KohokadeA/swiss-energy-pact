@@ -1,7 +1,7 @@
 export const dictionaries = {
   en: {
     title: "Swiss Digital Pact",
-    subtitle: "Popular federal initiative: For the digital security of Switzerland",
+    subtitle: "Federal popular initiative: For the digital security of Switzerland",
     hero: {
       title: "For a free, secure Switzerland in control of its digital destiny",
       description: "Digital technology already shapes our daily lives, our economy, our institutions, and our democracy. Switzerland must engage with it on its own terms: open, demanding, human-centered, and sovereign.",
@@ -10,15 +10,15 @@ export const dictionaries = {
       watch: "Our vision"
     },
     nav: {
-      home: "Home",
-      initiative: "The Initiative",
-      sign: "Sign",
-      support: "Support",
-      contact: "Contact",
-      media: "Media",
-      partners: "Partners",
-      association: "Association",
-      about: "About Us"
+      home: "HOME",
+      initiative: "THE INITIATIVE",
+      sign: "SIGH",
+      support: "SUPPORT",
+      contact: "CONTACT",
+      media: "MEDIA",
+      partners: "PARTNERS",
+      association: "ASSOCIATION",
+      about: "ABOUT US"
     },
     common: {
       signCta: "Sign the Initiative Now",

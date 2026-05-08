@@ -25,10 +25,10 @@ export const Header = ({ lang }: { lang: Locale }) => {
     { name: dict.nav.home, href: `/${lang}` },
     { name: dict.nav.initiative, href: `/${lang}/initiative` },
     { name: dict.nav.sign, href: `/${lang}/sign` },
-    { name: dict.nav.media, href: `/${lang}/media` },
-    { name: dict.nav.partners, href: `/${lang}/partners` },
-    { name: dict.nav.association, href: `/${lang}/association` },
     { name: dict.nav.support, href: `/${lang}/support` },
+    { name: dict.nav.media, href: `/${lang}/media` },
+    // { name: dict.nav.partners, href: `/${lang}/partners` },
+    // { name: dict.nav.association, href: `/${lang}/association` },
     { name: dict.nav.contact, href: `/${lang}/contact` },
   ];
 
@@ -48,6 +48,8 @@ export const Header = ({ lang }: { lang: Locale }) => {
     return segments.join('/');
   };
 
+  const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`;
+
   return (
     <header
       className={clsx(
@@ -63,7 +65,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
           {/* Logo container */}
           {/* <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300">
             <img
-              src="/new_logo.png"
+              src="/new_logo_sdp.png"
               alt="Swiss Digital Pact Logo"
               className="w-full h-full object-contain"
             />
@@ -102,7 +104,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
                     'nav-link relative font-medium text-sm whitespace-nowrap px-2 py-2 transition-colors',
                     pathname === link.href
                       ? 'text-primary font-bold'
-                      : (isScrolled ? 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white' : 'text-white/90 hover:text-white')
+                      : (isHomePage && !isScrolled ? 'text-white/90 hover:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white')
                   )}
                 >
                   {link.name}
@@ -122,7 +124,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
                 href={redirectedPathName(l.code)}
                 className={clsx(
                   'px-2.5 py-1.5 text-[10px] font-bold rounded-md transition-all',
-                  lang === l.code ? 'bg-white dark:bg-white text-black shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white'
+                  lang === l.code ? 'bg-white dark:bg-white text-black shadow-sm' : (isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white')
                 )}
               >
                 {l.name}

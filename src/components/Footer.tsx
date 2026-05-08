@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from "next/image";
-import { Mail, MapPin, Phone, Shield, ExternalLink, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Shield, ExternalLink } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 export const Footer = ({ lang }: { lang: Locale }) => {
@@ -89,13 +89,6 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           <p className="text-gray-400 max-w-xs leading-relaxed text-xs font-medium">
             {footerTexts.description}
           </p>
-          <div className="flex gap-4">
-            {[Linkedin, Instagram, Facebook].map((Icon, idx) => (
-              <Link key={idx} href="#" className="p-2.5 bg-white/5 hover:bg-primary transition-all rounded-xl group border border-white/5">
-                <Icon className="w-4 h-4 text-gray-400 group-hover:text-white" />
-              </Link>
-            ))}
-          </div>
         </div>
 
         <div className="lg:pl-12">
@@ -126,7 +119,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
             </li>
             <li className="flex items-center gap-4 group cursor-pointer">
               <MapPin className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-all" />
-              <span className="text-gray-300 font-bold text-xs">Marktgasse 55, 3011 Berne</span>
+              <span className="text-gray-300 font-bold text-xs">Marktgasse 55, 3011 Bern, Switzerland</span>
             </li>
           </ul>
         </div>

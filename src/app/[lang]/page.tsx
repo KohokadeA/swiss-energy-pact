@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ArrowRight, Download, Users, Database, X, PlayCircle, Globe, Quote } from 'lucide-react';
+import { Shield, ArrowRight, Download, Users, Database, X, PlayCircle, Globe, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import Magnetic from '@/components/Magnetic';
+import ScrollReveal from '@/components/ScrollReveal';
 import { cn } from '@/lib/utils';
 
 // translations
@@ -207,75 +208,108 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
   const [idx, setIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const data = endorsementsData[lang] || endorsementsData.fr;
+  const [selectedEndorser, setSelectedEndorser] = useState<typeof data.endorsements[0] | null>(null);
+  const len = data.endorsements.length;
+
+  const goPrev = () => setIdx((idx - 1 + len) % len);
+  const goNext = () => setIdx((idx + 1) % len);
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(() => setIdx(p => (p + 1) % data.endorsements.length), 5000);
+    const timer = setInterval(() => setIdx(p => (p + 1) % len), 5000);
     return () => clearInterval(timer);
-  }, [data.endorsements.length, isPaused]);
+  }, [len, isPaused]);
+
+  // Get 3 visible endorsers starting from idx, wrapping around
+  const visible = [0, 1, 2].map(offset => data.endorsements[(idx + offset) % len]);
 
   return (
     <section className="container mx-auto px-6 py-12 overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-16">
-        {data.sectionTitle}
-      </h2>
-      <div
-        className="max-w-7xl mx-auto relative h-[500px] md:h-[450px] lg:h-[400px] cursor-pointer"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        {data.endorsements.map((e, i) => {
-          const len = data.endorsements.length;
+      <ScrollReveal>
+        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-16">
+          {data.sectionTitle}
+        </h2>
+      </ScrollReveal>
 
-          let diff = i - idx;
-          if (diff < -len / 2) diff += len;
-          if (diff > len / 2) diff -= len;
+      <ScrollReveal delay={0.2}>
+        <div
+          className="max-w-7xl mx-auto relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+        {/* Left arrow */}
+        <button
+          onClick={goPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-40 p-3 md:p-4 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
+          aria-label="Previous endorsement"
+        >
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
 
-          const isVisible = Math.abs(diff) <= 1;
+        {/* Right arrow */}
+        <button
+          onClick={goNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-40 p-3 md:p-4 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
+          aria-label="Next endorsement"
+        >
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
 
-          const xPos = diff === 0 ? "0%" : diff === -1 ? "-105%" : diff === 1 ? "105%" : diff < -1 ? "-200%" : "200%";
-          const scale = diff === 0 ? 1 : 0.95;
-          const opacity = isVisible ? (diff === 0 ? 1 : 0.7) : 0;
-          const zIndex = diff === 0 ? 30 : isVisible ? 10 : 0;
-
-          return (
-            <motion.div
-              key={i}
-              initial={false}
-              animate={{
-                x: xPos,
-                scale: scale,
-                opacity: opacity,
-                zIndex: zIndex,
-              }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-              className={cn(
-                "absolute top-0 left-0 right-0 mx-auto w-full max-w-[320px] lg:max-w-[380px] bg-white dark:bg-zinc-900 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-2xl text-center",
-                !isVisible && "pointer-events-none"
-              )}
-              onClick={() => {
-                if (diff === -1) setIdx((idx - 1 + len) % len);
-                if (diff === 1) setIdx((idx + 1) % len);
-              }}
-            >
-              <Quote className="w-12 h-12 text-primary/10 absolute top-8 left-10" />
-              <div className="w-24 h-24 rounded-full mx-auto mb-6 overflow-hidden border-4 border-white shadow-[0_0_20px_rgba(0,0,0,0.1)] relative z-10">
-                {e.picture ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img src={e.picture} alt={e.name} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-3xl font-black text-primary">{e.name.charAt(0)}</span>
-                  </div>
+        {/* 3-card grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8"
+          >
+            {visible.map((e, vi) => (
+              <div
+                key={`${idx}-${vi}`}
+                onClick={() => setSelectedEndorser(e)}
+                className={cn(
+                  "bg-white dark:bg-zinc-900 rounded-[1.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden flex flex-row cursor-pointer group/card hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
+                  vi === 1 && "hidden md:flex",
+                  vi === 2 && "hidden lg:flex"
                 )}
+              >
+                {/* Photo — left */}
+                <div className="w-28 md:w-32 flex-shrink-0 relative overflow-hidden bg-gray-100 dark:bg-zinc-800">
+                  {e.picture ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img src={e.picture} alt={e.name} className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-4xl font-black text-primary/20">{e.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Content — right */}
+                <div className="flex-1 p-5 flex flex-col justify-between min-w-0">
+                  <div>
+                    <Quote className="w-6 h-6 text-primary/20 mb-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-600 dark:text-gray-300 font-medium italic leading-relaxed line-clamp-4">
+                      &ldquo;{e.text}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Name & title — bottom */}
+                  <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+                    <p className="font-black text-secondary dark:text-white text-sm">{e.name}</p>
+                    <p className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-0.5">{e.title}</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-medium italic mb-6 leading-relaxed">"{e.text}"</p>
-              <p className="font-black text-secondary dark:text-white text-base md:text-lg">{e.name}</p>
-              <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-widest mt-1">{e.title}</p>
-            </motion.div>
-          );
-        })}
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
+     </ScrollReveal>
+
+      {/* Dots */}
       <div className="flex justify-center gap-2 mt-8">
         {data.endorsements.map((_, i) => (
           <button
@@ -285,6 +319,73 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
           />
         ))}
       </div>
+
+      {/* Popup Modal */}
+      <AnimatePresence>
+        {selectedEndorser && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
+            onClick={() => setSelectedEndorser(null)}
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+            {/* Modal content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 30 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative z-10 bg-white dark:bg-zinc-900 rounded-[2rem] shadow-[0_40px_80px_rgba(0,0,0,0.4)] border border-gray-100 dark:border-gray-800 max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(ev) => ev.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setSelectedEndorser(null)}
+                className="absolute top-5 right-5 z-50 p-3 rounded-full bg-white/90 dark:bg-zinc-800/90 backdrop-blur-xl border border-gray-200 dark:border-gray-700 hover:bg-primary hover:border-primary hover:text-white text-gray-500 transition-all duration-300 shadow-lg"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex flex-col md:flex-row">
+                {/* Photo — left */}
+                <div className="md:w-[280px] lg:w-[320px] flex-shrink-0 relative">
+                  <div className="aspect-[3/4] md:aspect-auto md:h-full w-full relative bg-gray-100 dark:bg-zinc-800 rounded-t-[2rem] md:rounded-l-[2rem] md:rounded-tr-none overflow-hidden">
+                    {selectedEndorser.picture ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={selectedEndorser.picture} alt={selectedEndorser.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-7xl font-black text-primary/20">{selectedEndorser.name.charAt(0)}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Content — right */}
+                <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-between">
+                  <div>
+                    <Quote className="w-10 h-10 text-primary/15 mb-4" />
+                    <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 font-medium italic leading-relaxed">
+                      &ldquo;{selectedEndorser.text}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Name & title — bottom */}
+                  <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+                    <p className="font-black text-secondary dark:text-white text-lg md:text-xl">{selectedEndorser.name}</p>
+                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-1">{selectedEndorser.title}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
@@ -325,9 +426,9 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              transition={{ duration: 0.8, ease: "easeOut" }}
              className="flex justify-center mb-2"
            >
-             <div className="h-32 w-[250px] md:h-40 md:w-[350px] lg:h-[200px] lg:w-[450px] relative overflow-hidden">
+             <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 relative overflow-hidden rounded-full mx-auto">
                 <Image
-                  src="/swiss_digital_pact_logo.png"
+                  src="/new_logo_sdp.png"
                   alt="Swiss Digital Pact Logo"
                   fill
                   className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
@@ -409,7 +510,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
+            className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
           >
             {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para1}
           </motion.p>
@@ -419,7 +520,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
+            className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
           >
             {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para2}
           </motion.p>
@@ -430,7 +531,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-              className="text-base md:text-lg text-gray-300/90 leading-[1.9] md:leading-[2] font-medium"
+              className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium"
             >
               {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para3}
             </motion.p>
@@ -440,6 +541,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
 
       {/* The Vision Movie - REFINED SCALE & PREMIUM */}
       <section className="container mx-auto px-6">
+        <ScrollReveal>
          <div className="relative aspect-video max-w-5xl mx-auto rounded-[2rem] overflow-hidden group shadow-[0_40px_80px_rgba(0,0,0,0.4)] bg-zinc-950 border border-white/5">
             <AnimatePresence mode="wait">
                {!isVisionPlaying ? (
@@ -448,16 +550,9 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="relative w-full h-full cursor-pointer"
+                  className="relative w-full h-full cursor-pointer bg-black"
                   onClick={() => setIsVisionPlaying(true)}
                >
-                  <Image
-                     src="/swiss_digital_pact_hero_v5.png"
-                     alt="Vision Poster"
-                     fill
-                     className="object-cover object-center brightness-[0.35] group-hover:scale-105 transition-all duration-1000"
-                  />
-
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                      <div className="p-10 bg-white/10 backdrop-blur-3xl rounded-full group-hover:scale-110 transition-all duration-500 group-hover:bg-primary shadow-3xl border border-white/20 mb-8">
                      <PlayCircle className="w-20 h-20 text-white" />
@@ -467,21 +562,6 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                      {visionText[lang].watch}{" "}
                      <span className="text-primary italic">VISION</span>
                      </h2>
-                  </div>
-
-                  <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end text-white">
-                     <div className="bg-black/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10">
-                     <p className="text-white/50 font-black text-[9px] uppercase tracking-[0.3em] mb-1">
-                        {visionText[lang].authenticated}
-                     </p>
-                     <p className="text-white/90 font-black text-lg tracking-tighter">
-                        {visionText[lang].foundation}
-                     </p>
-                     </div>
-
-                     <span className="px-6 py-2.5 bg-primary rounded-full font-black text-[10px] uppercase tracking-widest shadow-2xl">
-                     {visionText[lang].explore}
-                     </span>
                   </div>
                </motion.div>
                ) : (
@@ -517,44 +597,16 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                      </button>
                   </div>
 
-                  <div className="absolute bottom-8 left-10 right-10 flex items-center justify-between z-40">
-                     <div className="flex gap-2">
-                     {scenes.map((_, i) => (
-                        <div
-                           key={i}
-                           className={cn(
-                           "h-1.5 transition-all duration-700 rounded-full",
-                           visionScene === i
-                              ? "w-20 bg-primary"
-                              : "w-6 bg-white/10"
-                           )}
-                        />
-                     ))}
-                     </div>
 
-                     <div className="flex items-center gap-6">
-                     <p className="text-white/30 font-black text-[9px] tracking-[0.3em] uppercase">
-                        {visionText[lang].pillar} {visionScene + 1} / {scenes.length}
-                     </p>
-
-                     <button
-                        onClick={() =>
-                           setVisionScene((prev) => (prev + 1) % scenes.length)
-                        }
-                        className="flex items-center gap-3 text-white font-black hover:text-primary transition-all uppercase tracking-[0.2em] text-[10px]"
-                     >
-                        {visionText[lang].next}
-                        <ArrowRight className="w-5 h-5" />
-                     </button>
-                     </div>
-                  </div>
                </motion.div>
                )}
             </AnimatePresence>
          </div>
+        </ScrollReveal>
       </section>
 
       <section className="container mx-auto px-6 py-12 text-center">
+        <ScrollReveal>
          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary dark:text-white leading-[1] mb-6">
             {visionText[lang].title}
          </h2>
@@ -562,15 +614,68 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
          <p className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto mb-10 italic">
             {visionText[lang].quote}
          </p>
-
-
+        </ScrollReveal>
       </section>
 
-      {/* Rotating Endorsements */}
       <EndorsementsSection lang={lang} />
+
+      {/* Partners Section */}
+      <section className="container mx-auto px-6 py-12">
+       <ScrollReveal>
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white mb-4">
+            {lang === 'fr' ? 'Partenaires' : lang === 'de' ? 'Partner' : lang === 'it' ? 'Partner' : 'Partners'}
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium leading-relaxed">
+            {lang === 'fr' ? "Une coalition solide engagée pour la souveraineté numérique de la Suisse" :
+             lang === 'de' ? "Eine starke Koalition für die digitale Souveränität der Schweiz" :
+             lang === 'it' ? "Una coalizione forte impegnata per la sovranità digitale della Svizzera" :
+             "A strong coalition committed to Switzerland's digital sovereignty"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          {[
+            { name: "Swiss Cyber Defense Group", logo: "/partners/logo1.png" },
+            { name: "Helvetia Data Systems", logo: "/partners/logo2.png" },
+            { name: "Alpine Secure Cloud", logo: "/partners/logo3.png" },
+            { name: "Geneva Privacy Trust", logo: "/partners/logo4.png" },
+            { name: "Zürich Tech Alliance", logo: "/partners/logo5.png" },
+            { name: "Digital Future Foundation", logo: "/partners/logo6.png" },
+            { name: "Swiss IT Coalition", logo: "/partners/logo1.png" },
+            { name: "Romandie Cyber", logo: "/partners/logo2.png" },
+            { name: "National Privacy Network", logo: "/partners/logo3.png" },
+            { name: "Swiss Institute of Tech", logo: "/partners/logo4.png" },
+            { name: "Bern Data Science Lab", logo: "/partners/logo5.png" },
+            { name: "Lausanne Crypto Hub", logo: "/partners/logo6.png" },
+            { name: "Cyber Policy Institute", logo: "/partners/logo1.png" },
+          ].map((partner, i) => (
+            <div key={i} className="group relative flex items-center justify-center">
+              {/* Tooltip */}
+              <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:-translate-y-2 pointer-events-none z-20">
+                <div className="bg-[#0A1D37] text-white px-5 py-2.5 rounded-xl shadow-2xl whitespace-nowrap border border-white/10">
+                  <span className="text-xs font-bold tracking-wide">{partner.name}</span>
+                </div>
+                <div className="w-2.5 h-2.5 bg-[#0A1D37] rotate-45 mx-auto -mt-1.5 border-r border-b border-white/10" />
+              </div>
+
+              <div className="w-full h-32 flex items-center justify-center transition-all duration-500 p-2 group-hover:-translate-y-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="w-full h-full object-contain mix-blend-multiply dark:invert dark:mix-blend-screen scale-110 group-hover:scale-125 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+       </ScrollReveal>
+      </section>
 
       {/* FINAL CTA - Refined Scale & High-End Block */}
       <section className="container mx-auto px-6 mb-8">
+       <ScrollReveal>
          <div className="bg-primary p-10 lg:p-14 rounded-[2.5rem] text-white flex flex-col items-center text-center relative overflow-hidden shadow-xl shadow-primary/20 group max-w-5xl mx-auto">
 
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.02] rounded-full -mr-32 -mt-32 blur-3xl transition-all duration-1000 group-hover:scale-110" />
@@ -604,6 +709,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                </div>
             </div>
          </div>
+        </ScrollReveal>
       </section>
     </div>
   );

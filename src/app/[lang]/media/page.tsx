@@ -1,5 +1,6 @@
 import React from 'react';
 import { Newspaper, ExternalLink } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function MediaPage() {
   const sections = [
@@ -31,24 +32,26 @@ export default function MediaPage() {
 
        <div className="space-y-16 mb-20">
          {sections.map((section, idx) => (
-           <div key={idx} className="flex flex-col">
-             <div className="flex items-center gap-3 mb-8">
-               <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl text-primary">
-                 <section.icon className="w-6 h-6" />
-               </div>
-               <h2 className="text-3xl font-black text-secondary dark:text-white">{section.title}</h2>
-             </div>
-             
-             <div className={`grid grid-cols-1 md:grid-cols-2 ${section.items.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6`}>
-               {section.items.map((item, i) => (
-                 <div key={i} className="group p-8 rounded-[2.5rem] bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer hover:-translate-y-1">
-                   <span className="text-xs font-bold text-gray-400 mb-3 block">{item.date}</span>
-                   <h3 className="text-xl font-black leading-tight mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
-                   <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6 flex-grow">{item.desc}</p>
-                 </div>
-               ))}
-             </div>
-           </div>
+           <ScrollReveal key={idx} delay={idx * 0.1}>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl text-primary">
+                  <section.icon className="w-6 h-6" />
+                </div>
+                <h2 className="text-3xl font-black text-secondary dark:text-white">{section.title}</h2>
+              </div>
+              
+              <div className={`grid grid-cols-1 md:grid-cols-2 ${section.items.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6`}>
+                {section.items.map((item, i) => (
+                  <div key={i} className="group p-8 rounded-[2.5rem] bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer hover:-translate-y-1">
+                    <span className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-3 block">{item.date}</span>
+                    <h3 className="text-xl font-black leading-tight mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                    <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6 flex-grow">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+           </ScrollReveal>
          ))}
        </div>
     </div>

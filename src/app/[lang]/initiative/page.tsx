@@ -2,14 +2,105 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ShieldAlert, Fingerprint, Lock, Server, Cpu, Globe2, FileText, ChevronRight, Landmark, Link as LinkIcon, ArrowRight, ShieldCheck, Database, Scale, Network, Target, Users } from 'lucide-react';
+import { ShieldAlert, Fingerprint, Lock, Server, Cpu, Globe2, FileText, ChevronRight, Landmark, Link as LinkIcon, ArrowRight, ShieldCheck, Database, Scale, Network, Target, Users, X, User } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function InitiativePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<'committee' | 'statuts' | 'join' | null>('committee');
+
+  const getCommitteeMembers = (lang: Locale) => [
+    { name: "Gérald Vernez", role: lang === 'fr' ? "Président" : lang === 'de' ? "Präsident" : lang === 'it' ? "Presidente" : "President", initials: "GV" },
+    { name: "Diego Kuonen", role: lang === 'fr' ? "Vice-Président" : lang === 'de' ? "Vizepräsident" : lang === 'it' ? "Vicepresidente" : "Vice-President", initials: "DK" },
+    { name: "Daniel Fasel", role: lang === 'fr' ? "Vice-Président" : lang === 'de' ? "Vizepräsident" : lang === 'it' ? "Vicepresidente" : "Vice-President", initials: "DF" },
+    { name: "Reiny Schnyder", role: lang === 'fr' ? "Responsable Communication" : lang === 'de' ? "Kommunikationsmanager" : lang === 'it' ? "Responsabile Comunicazione" : "Communication Manager", initials: "RS" },
+    { name: "Massimo Rodella", role: lang === 'fr' ? "Secrétaire général" : lang === 'de' ? "Generalsekretär" : lang === 'it' ? "Segretario Generale" : "Secretary-General", initials: "MR" },
+    { name: "Alexandre Dimitrijevic", role: lang === 'fr' ? "Membre du comité d'initiative" : lang === 'de' ? "Mitglied des Initiativkomitees" : lang === 'it' ? "Membro del comitato d'iniziativa" : "Member of the initiative committee", initials: "AD" },
+  ];
+  const committeeMembers = getCommitteeMembers(lang);
+
+  const assocDict = {
+    en: {
+      membersLabel: "Members of the initiative:",
+      assocTitle: "The Association",
+      assocDesc: "The Association supports the federal popular initiative “For Switzerland’s digital security,” which aims to strengthen the country’s digital security, sovereignty, and resilience.",
+      btnCommittee: "Committee",
+      btnStatuts: "Statuts",
+      btnJoin: "Join as a member",
+      committeeTitle: "Members of the initiative",
+      committeeDesc: "The dedicated team driving the initiative forward.",
+      statutsTitle: "Statuts",
+      statutsDesc: "The statuts will be provided shortly.",
+      joinTitle: "Join as a member",
+      joinDesc1: "Become an official part of the association and directly support the Swiss Digital Pact's mission to secure our digital future.",
+      joinDesc2: "Membership is subject to an annual fee, which helps fund our activities, public engagement, and the advancement of the initiative.",
+      students: "Students / reduced",
+      individuals: "Individuals",
+      organizations: "Organizations",
+      apply: "Apply Now"
+    },
+    fr: {
+      membersLabel: "Membres de l'initiative :",
+      assocTitle: "L'Association",
+      assocDesc: "L'Association soutient l'initiative populaire fédérale « Pour la sécurité numérique de la Suisse », qui vise à renforcer la sécurité, la souveraineté et la résilience numériques du pays.",
+      btnCommittee: "Comité",
+      btnStatuts: "Statuts",
+      btnJoin: "Devenir membre",
+      committeeTitle: "Membres de l'initiative",
+      committeeDesc: "L'équipe dévouée qui fait avancer l'initiative.",
+      statutsTitle: "Statuts",
+      statutsDesc: "Les statuts seront fournis prochainement.",
+      joinTitle: "Devenir membre",
+      joinDesc1: "Devenez officiellement membre de l'association et soutenez directement la mission du Pacte Digital Suisse pour sécuriser notre avenir numérique.",
+      joinDesc2: "L'adhésion est soumise à une cotisation annuelle, qui permet de financer nos activités, notre engagement public et l'avancement de l'initiative.",
+      students: "Étudiants / réduit",
+      individuals: "Individus",
+      organizations: "Organisations",
+      apply: "Postuler maintenant"
+    },
+    de: {
+      membersLabel: "Mitglieder der Initiative:",
+      assocTitle: "Der Verein",
+      assocDesc: "Der Verein unterstützt die eidgenössische Volksinitiative „Für die digitale Sicherheit der Schweiz“, die darauf abzielt, die digitale Sicherheit, Souveränität und Widerstandsfähigkeit des Landes zu stärken.",
+      btnCommittee: "Komitee",
+      btnStatuts: "Statuten",
+      btnJoin: "Mitglied werden",
+      committeeTitle: "Mitglieder der Initiative",
+      committeeDesc: "Das engagierte Team, das die Initiative vorantreibt.",
+      statutsTitle: "Statuten",
+      statutsDesc: "Die Statuten werden in Kürze zur Verfügung gestellt.",
+      joinTitle: "Mitglied werden",
+      joinDesc1: "Werden Sie offiziell Teil des Vereins und unterstützen Sie direkt die Mission des Schweizer Digitalpakts, unsere digitale Zukunft zu sichern.",
+      joinDesc2: "Die Mitgliedschaft ist mit einem Jahresbeitrag verbunden, der unsere Aktivitäten, unser öffentliches Engagement und die Förderung der Initiative finanziert.",
+      students: "Studierende / ermäßigt",
+      individuals: "Einzelpersonen",
+      organizations: "Organisationen",
+      apply: "Jetzt bewerben"
+    },
+    it: {
+      membersLabel: "Membri dell'iniziativa:",
+      assocTitle: "L'Associazione",
+      assocDesc: "L'Associazione sostiene l'iniziativa popolare federale “Per la sicurezza digitale della Svizzera”, che mira a rafforzare la sicurezza digitale, la sovranità e la resilienza del Paese.",
+      btnCommittee: "Comitato",
+      btnStatuts: "Statuti",
+      btnJoin: "Diventa membro",
+      committeeTitle: "Membri dell'iniziativa",
+      committeeDesc: "Il team dedicato che porta avanti l'iniziativa.",
+      statutsTitle: "Statuti",
+      statutsDesc: "Gli statuti saranno forniti a breve.",
+      joinTitle: "Diventa membro",
+      joinDesc1: "Diventa ufficialmente parte dell'associazione e sostieni direttamente la missione del Patto Digitale Svizzero per garantire il nostro futuro digitale.",
+      joinDesc2: "L'adesione è soggetta a una quota annuale, che contribuisce a finanziare le nostre attività, l'impegno pubblico e l'avanzamento dell'iniziativa.",
+      students: "Studenti / ridotto",
+      individuals: "Individui",
+      organizations: "Organizzazioni",
+      apply: "Candidati ora"
+    }
+  };
 
   const articleText = {
     fr: `"Art. 57a : Pour la sécurité numérique de la Suisse\n1 La Confédération détermine les règles de sécurité pour tous les acteurs publics et privés dans l’espace numérique de la Suisse et en assure l’application.\n2 Elle protège ses données et ses infrastructures numériques et soutient subsidiairement les opérateurs d’infrastructures critiques.\n3 Elle garantit la protection des données personnelles et l’intégrité numérique des personnes.\n4 Elle garantit que les infrastructures, les services et les ressources numériques et informationnelles essentiels pour l’État, l’économie et la société soient en toute circonstance indépendants de toute influence contraire à ses intérêts.\n5 Elle encourage le développement de la littératie des données et des compétences numériques de la société.\n6 Elle prend, en coordination avec les acteurs académiques et économiques, des dispositions permettant d’anticiper les risques et les opportunités et ainsi de maintenir la Suisse parmi les nations les plus avancées et sûres dans le domaine numérique."`,
@@ -233,6 +324,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   };
 
   return (
+    <>
     <div className="container mx-auto px-6 pt-32 pb-16 max-w-7xl overflow-hidden min-h-screen">
       {/* Premium Banner Header */}
       <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
@@ -246,31 +338,6 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
              </p>
           </div>
 
-          {/* Impact Highlights Integrated into Hero */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-gray-200 dark:border-gray-800 pt-10">
-             <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Landmark className="w-6 h-6"/>
-                  </div>
-                  <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Confederation</h3>
-                </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
-                  {dict.pactDetails.s3.confederation}
-                </p>
-             </div>
-             <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Fingerprint className="w-6 h-6"/>
-                  </div>
-                  <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Population</h3>
-                </div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
-                  {dict.pactDetails.s3.population}
-                </p>
-             </div>
-          </div>
 
         </div>
 
@@ -298,47 +365,80 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
         </div>
       </header>
 
-      {/* Grid of Content Sections */}
-      <div className="relative mb-32 flex flex-col gap-8">
-            <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
-              {structuralText[lang].title}
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {longPillarsText[lang].items.map((item, idx) => {
-                 const Icon = [ShieldCheck, Landmark, Database, Globe2, Users, Network][idx];
-                 return (
-                   <div key={idx} className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
-                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                           <Icon className="w-6 h-6" />
-                        </div>
-                        <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">{item.t}</h3>
-                     </div>
-                     <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
-                        {item.d}
-                     </p>
-                   </div>
-                 );
-              })}
-            </div>
-      </div>
+      {/* Impact Highlights */}
+      <ScrollReveal>
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+          <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
+             <div className="flex items-center gap-4">
+               <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                 <Landmark className="w-6 h-6"/>
+               </div>
+               <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Confederation</h3>
+             </div>
+             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
+               {dict.pactDetails.s3.confederation}
+             </p>
+          </div>
+          <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
+             <div className="flex items-center gap-4">
+               <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                 <Fingerprint className="w-6 h-6"/>
+               </div>
+               <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">Population</h3>
+             </div>
+             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed text-left">
+               {dict.pactDetails.s3.population}
+             </p>
+          </div>
+       </div>
+      </ScrollReveal>
 
-      <section className="mb-24 p-12 lg:p-20 bg-secondary dark:bg-zinc-900 rounded-[4rem] text-white overflow-hidden relative group shadow-3xl">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full translate-x-20 -translate-y-20 group-hover:scale-150 transition-all duration-1000" />
-        <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
-          <div className="w-24 h-24 bg-white/10 rounded-[2.5rem] flex items-center justify-center border border-white/10 shadow-2xl group-hover:scale-110 transition-all">
-            <Scale className="w-12 h-12 text-primary" />
-          </div>
-          <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight leading-tight">
-               Why a Constitutional Basis?
-            </h2>
-            <p className="text-white/60 text-xl font-medium leading-relaxed max-w-4xl">
-              Unlike temporary laws, the Constitution defines long-term responsibilities independent of political cycles. It provides maximum legal certainty and a clear signal to national and international partners about Switzerland's digital sovereignty.
-            </p>
-          </div>
-        </div>
-      </section>
+
+      {/* Grid of Content Sections */}
+      <ScrollReveal delay={0.1}>
+       <div className="relative mb-32 flex flex-col gap-8">
+             <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
+               {structuralText[lang].title}
+             </h2>
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+               {longPillarsText[lang].items.map((item, idx) => {
+                  const Icon = [ShieldCheck, Landmark, Database, Globe2, Users, Network][idx];
+                  return (
+                    <div key={idx} className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
+                      <div className="flex items-center gap-4">
+                         <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <Icon className="w-6 h-6" />
+                         </div>
+                         <h3 className="text-xl font-black text-secondary dark:text-white uppercase tracking-wider">{item.t}</h3>
+                      </div>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                         {item.d}
+                      </p>
+                    </div>
+                  );
+               })}
+             </div>
+       </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+       <section className="mb-24 p-12 lg:p-20 bg-secondary dark:bg-zinc-900 rounded-[4rem] text-white overflow-hidden relative group shadow-3xl">
+         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full translate-x-20 -translate-y-20 group-hover:scale-150 transition-all duration-1000" />
+         <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
+           <div className="w-24 h-24 bg-white/10 rounded-[2.5rem] flex items-center justify-center border border-white/10 shadow-2xl group-hover:scale-110 transition-all">
+             <Scale className="w-12 h-12 text-primary" />
+           </div>
+           <div className="flex-1 text-center lg:text-left">
+             <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight leading-tight">
+                Why a Constitutional Basis?
+             </h2>
+             <p className="text-white/60 text-xl font-medium leading-relaxed max-w-4xl">
+               Unlike temporary laws, the Constitution defines long-term responsibilities independent of political cycles. It provides maximum legal certainty and a clear signal to national and international partners about Switzerland's digital sovereignty.
+             </p>
+           </div>
+         </div>
+       </section>
+      </ScrollReveal>
 
       <div className="flex flex-col items-center gap-8 mb-16">
         <section className="w-full flex flex-col gap-8 p-10 rounded-[3rem] bg-secondary dark:bg-black/40 text-white transition-all shadow-xl hover:shadow-2xl border-t-4 border-primary">
@@ -367,14 +467,113 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
               {disclaimerText[lang]}
             </p>
           </div>
-          
+
           <div className="flex justify-center w-full mt-4">
             <div className="relative shadow-2xl rounded-xl overflow-hidden bg-white max-w-3xl w-full">
               <img src="/non_aux_f35_clear.png" alt="Official Document — Non aux F-35" className="w-full h-auto object-contain" />
             </div>
           </div>
+
+          <div className="mt-8 text-center max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
+              <span className="text-white font-bold">{assocDict[lang].membersLabel}</span> Jean-Charles Brandt (Zurich), Carl-Alexandre Brandt (Zurich), Alexandre Dimitrijevic (Geneva), Lazar Dimitrijevic, Daniel Fasel (Fribourg), Umberto Giardini (Neuchâtel), André Jolivet (Vaud), Diego Kuonen (Valais), Gilles Merrier (Geneva), Richard Pachon (Vaud), Marc Rigolet (Geneva), Andrea Rodella (Geneva), Massimo Rodella (Geneva), Gérald Vernez (Vaud)
+            </p>
+          </div>
         </section>
       </div>
+
+      {/* Association Section migrated from Association Tab */}
+      <ScrollReveal delay={0.1}>
+       <section className="mb-24 p-8 md:p-12 bg-secondary dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-3xl overflow-hidden relative group text-center transition-all duration-500">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+          
+          <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto gap-6">
+             <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl text-primary mb-2">
+                <Target className="w-6 h-6" />
+             </div>
+             <h2 className="text-4xl md:text-5xl font-black text-white">{assocDict[lang].assocTitle}</h2>
+             <p className="text-xl text-white/80 font-medium leading-relaxed max-w-3xl mx-auto">
+               {assocDict[lang].assocDesc}
+             </p>
+             
+             <div className="flex flex-wrap justify-center gap-4 mt-6 mb-4">
+                <button onClick={() => setActiveTab(activeTab === 'committee' ? null : 'committee')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'committee' ? "bg-white text-secondary border-white" : "bg-white/10 hover:bg-white/20 text-white border-white/10")}>
+                  {assocDict[lang].btnCommittee}
+                </button>
+                <button onClick={() => setActiveTab(activeTab === 'statuts' ? null : 'statuts')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'statuts' ? "bg-white text-secondary border-white" : "bg-white/10 hover:bg-white/20 text-white border-white/10")}>
+                  {assocDict[lang].btnStatuts}
+                </button>
+                <button onClick={() => setActiveTab(activeTab === 'join' ? null : 'join')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'join' ? "bg-primary text-white border-primary shadow-[0_0_30px_rgba(227,6,19,0.3)]" : "bg-primary/80 hover:bg-primary text-white border-primary/50")}>
+                  {assocDict[lang].btnJoin}
+                </button>
+             </div>
+ 
+             {/* Expandable Tab Content */}
+             <div className={cn("w-full transition-all duration-500 overflow-hidden", activeTab ? "max-h-[2000px] opacity-100 mt-8" : "max-h-0 opacity-0 mt-0")}>
+               <div className="p-8 md:p-12 bg-white dark:bg-black/20 rounded-[2.5rem] text-left shadow-inner border border-white/5">
+                 {activeTab === 'committee' && (
+                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center">
+                     <h2 className="text-3xl lg:text-4xl font-black mb-4 text-secondary dark:text-white">{assocDict[lang].committeeTitle}</h2>
+                     <p className="text-gray-500 font-medium text-lg mb-10">{assocDict[lang].committeeDesc}</p>
+                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                       {committeeMembers.map((member, i) => (
+                         <div key={i} className="flex flex-col items-center gap-4 p-6 bg-gray-50 dark:bg-black/40 rounded-[2rem] border border-gray-100 dark:border-white/5 text-center hover:-translate-y-1 transition-transform">
+                           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-secondary/80 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center text-white shadow-lg border-2 border-white dark:border-zinc-700">
+                             <User className="w-8 h-8 opacity-90" />
+                           </div>
+                           <div>
+                             <h3 className="font-black text-sm text-secondary dark:text-white leading-tight">{member.name}</h3>
+                             <p className="text-primary font-bold text-[9px] uppercase tracking-widest mt-1">{member.role}</p>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
+                 )}
+ 
+                 {activeTab === 'statuts' && (
+                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center py-16">
+                     <FileText className="w-16 h-16 text-primary mx-auto mb-6 opacity-80" />
+                     <h2 className="text-3xl lg:text-4xl font-black mb-4 text-secondary dark:text-white">{assocDict[lang].statutsTitle}</h2>
+                     <p className="text-gray-500 font-medium text-lg">{assocDict[lang].statutsDesc}</p>
+                   </div>
+                 )}
+ 
+                 {activeTab === 'join' && (
+                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center max-w-2xl mx-auto">
+                     <h2 className="text-3xl lg:text-4xl font-black mb-6 text-secondary dark:text-white">{assocDict[lang].joinTitle}</h2>
+                     <div className="space-y-6">
+                       <p className="text-gray-800 dark:text-white text-lg font-bold leading-relaxed">
+                         {assocDict[lang].joinDesc1}
+                       </p>
+                       <p className="text-gray-600 dark:text-white/70 text-base leading-relaxed">
+                         {assocDict[lang].joinDesc2}
+                       </p>
+                       <div className="flex flex-col gap-4 text-left bg-gray-50 dark:bg-white/5 p-6 rounded-2xl border border-gray-100 dark:border-white/10 mt-8">
+                         <div className="flex justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4">
+                           <span className="text-xs uppercase tracking-widest text-primary font-bold">{assocDict[lang].students}</span>
+                           <span className="text-xl font-black text-secondary dark:text-white">CHF 50</span>
+                         </div>
+                         <div className="flex justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4">
+                           <span className="text-xs uppercase tracking-widest text-primary font-bold">{assocDict[lang].individuals}</span>
+                           <span className="text-xl font-black text-secondary dark:text-white">CHF 100</span>
+                         </div>
+                         <div className="flex justify-between items-center">
+                           <span className="text-xs uppercase tracking-widest text-primary font-bold">{assocDict[lang].organizations}</span>
+                           <span className="text-xl font-black text-secondary dark:text-white">CHF 150</span>
+                         </div>
+                       </div>
+                       <Link href={`/${lang}/contact`} className="swiss-button mt-8 w-full py-4 flex items-center justify-center gap-2">
+                         {assocDict[lang].apply} <ChevronRight className="w-5 h-5" />
+                       </Link>
+                     </div>
+                   </div>
+                 )}
+               </div>
+             </div>
+          </div>
+       </section>
+      </ScrollReveal>
 
       {/* Process Section */}
       {/* <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
@@ -396,46 +595,51 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       </section> */}
 
       {/* Visual Pillars Section - Changed to Technical Sub-themes */}
-      <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">
-        {wantsTitleText[lang]}
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
-         <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-all duration-1000 -z-10" />
+      <ScrollReveal>
+       <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">
+         {wantsTitleText[lang]}
+       </h2>
+       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
+          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-all duration-1000 -z-10" />
+ 
+          {(lang === 'en' ? [
+            { icon: Fingerprint, t: "Protect the people", d: "" },
+            { icon: Landmark, t: "Strengthen the country", d: "" },
+            { icon: Globe2, t: "Prepare the future", d: "" }
+          ] : lang === 'de' ? [
+            { icon: Fingerprint, t: "Die Menschen schützen", d: "" },
+            { icon: Landmark, t: "Das Land stärken", d: "" },
+            { icon: Globe2, t: "Die Zukunft vorbereiten", d: "" }
+          ] : lang === 'it' ? [
+            { icon: Fingerprint, t: "Proteggere le persone", d: "" },
+            { icon: Landmark, t: "Rafforzare il Paese", d: "" },
+            { icon: Globe2, t: "Preparare il futuro", d: "" }
+          ] : [
+            { icon: Fingerprint, t: "Protéger les personnes", d: "" },
+            { icon: Landmark, t: "Renforcer le pays", d: "" },
+            { icon: Globe2, t: "Préparer l'avenir", d: "" }
+          ]).map((p, i) => (
+            <div key={i} className="flex flex-col gap-4 text-center items-center py-2 px-4 border-r border-gray-200 dark:border-gray-800 last:border-0 border-dashed">
+               <div className="w-10 h-10 text-primary group-hover:scale-125 transition-all duration-500"><p.icon className="w-full h-full" /></div>
+               <h3 className="text-xl font-black text-secondary dark:text-white">{p.t}</h3>
+            </div>
+          ))}
+       </div>
+      </ScrollReveal>
 
-         {(lang === 'en' ? [
-           { icon: Fingerprint, t: "Protect the people", d: "" },
-           { icon: Landmark, t: "Strengthen the country", d: "" },
-           { icon: Globe2, t: "Prepare the future", d: "" }
-         ] : lang === 'de' ? [
-           { icon: Fingerprint, t: "Die Menschen schützen", d: "" },
-           { icon: Landmark, t: "Das Land stärken", d: "" },
-           { icon: Globe2, t: "Die Zukunft vorbereiten", d: "" }
-         ] : lang === 'it' ? [
-           { icon: Fingerprint, t: "Proteggere le persone", d: "" },
-           { icon: Landmark, t: "Rafforzare il Paese", d: "" },
-           { icon: Globe2, t: "Preparare il futuro", d: "" }
-         ] : [
-           { icon: Fingerprint, t: "Protéger les personnes", d: "" },
-           { icon: Landmark, t: "Renforcer le pays", d: "" },
-           { icon: Globe2, t: "Préparer l'avenir", d: "" }
-         ]).map((p, i) => (
-           <div key={i} className="flex flex-col gap-4 text-center items-center py-2 px-4 border-r border-gray-200 dark:border-gray-800 last:border-0 border-dashed">
-              <div className="w-10 h-10 text-primary group-hover:scale-125 transition-all duration-500"><p.icon className="w-full h-full" /></div>
-              <h3 className="text-xl font-black text-secondary dark:text-white">{p.t}</h3>
-           </div>
-         ))}
-      </div>
-
-      <div className="mt-16 text-center p-16 bg-white dark:bg-black/40 rounded-[4rem] border-4 border-gray-100 dark:border-gray-900 shadow-2xl hover:border-primary transition-all duration-1000 group">
-        <h3 className="text-3xl md:text-4xl font-black mb-8 tracking-tight leading-tight max-w-2xl mx-auto">
-          {futureText[lang]}
-          <span className="text-primary italic">{anchorText[lang]}</span>
-        </h3>
-        <Link href={`/${lang}/sign`} className="swiss-button mx-auto inline-flex items-center gap-4 py-4 px-12 text-xl font-black hover:scale-110 active:scale-95 group shadow-[0_0_80px_rgba(227,6,19,0.2)]">
-           {signCtaText[lang]} <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth"/>
-        </Link>
-      </div>
+      <ScrollReveal delay={0.2}>
+       <div className="mt-16 text-center p-16 bg-white dark:bg-black/40 rounded-[4rem] border-4 border-gray-100 dark:border-gray-900 shadow-2xl hover:border-primary transition-all duration-1000 group">
+         <h3 className="text-3xl md:text-4xl font-black mb-8 tracking-tight leading-tight max-w-2xl mx-auto">
+           {futureText[lang]}
+           <span className="text-primary italic">{anchorText[lang]}</span>
+         </h3>
+         <Link href={`/${lang}/sign`} className="swiss-button mx-auto inline-flex items-center gap-4 py-4 px-12 text-xl font-black hover:scale-110 active:scale-95 group shadow-[0_0_80px_rgba(227,6,19,0.2)]">
+            {signCtaText[lang]} <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth"/>
+         </Link>
+       </div>
+      </ScrollReveal>
     </div>
+  </>
   );
 }
 
