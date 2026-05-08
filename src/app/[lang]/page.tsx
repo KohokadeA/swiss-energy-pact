@@ -426,7 +426,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              transition={{ duration: 0.8, ease: "easeOut" }}
              className="flex justify-center mb-2"
            >
-             <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 relative overflow-hidden rounded-full mx-auto">
+             <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 relative overflow-hidden rounded-3xl mx-auto">
                 <Image
                   src="/new_logo_sdp.png"
                   alt="Swiss Digital Pact Logo"
