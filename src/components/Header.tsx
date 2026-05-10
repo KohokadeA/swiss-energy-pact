@@ -72,25 +72,14 @@ export const Header = ({ lang }: { lang: Locale }) => {
           </div> */}
 
           {/* Text */}
-          {/* <div className="flex flex-col">
+          <div className="flex flex-col">
             <span className={clsx(
               "font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap",
               isScrolled ? "text-gray-900 dark:text-white" : "text-white"
             )}>
-              {dict.title.toUpperCase()}
+              {dict.associationTitle}
             </span>
-            <span className={clsx(
-              "text-[10px] uppercase font-semibold tracking-[0.05em] leading-tight mt-1 hidden lg:block max-w-[350px]",
-              isScrolled ? "text-gray-600 dark:text-gray-400" : "text-white/80"
-            )}>
-              {dict.subtitle.split(':').map((part, i, arr) => (
-                <React.Fragment key={i}>
-                  {part.trim()}{i < arr.length - 1 ? ':' : ''}
-                  {i < arr.length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </span>
-          </div> */}
+          </div>
 
         </Link>
 

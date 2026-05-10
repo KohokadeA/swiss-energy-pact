@@ -132,19 +132,21 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
 
   return (
     <div className="container mx-auto px-6 py-16 max-w-7xl overflow-hidden min-h-screen">
-      <header className="mb-20 text-center max-w-4xl mx-auto relative animate-in fade-in duration-1000">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
-          <MessageCircle className="w-4 h-4 flex-shrink-0" />
-          {t.badge}
-        </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
-           {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
-        </h1>
-        <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
-          {t.desc}
-        </p>
-      </header>
+      <ScrollReveal>
+        <header className="mb-20 text-center max-w-4xl mx-auto relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
+            <MessageCircle className="w-4 h-4 flex-shrink-0" />
+            {t.badge}
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
+             {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
+          </h1>
+          <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
+            {t.desc}
+          </p>
+        </header>
+      </ScrollReveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10" />
@@ -228,7 +230,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                   ))}
                 </ul>
              </div>
- 
+
              <div className="pt-12 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3 p-6 bg-gray-100 dark:bg-black/60 rounded-[2.5rem] border border-gray-200 dark:border-gray-900 group hover:border-primary transition-all">
                    <div className="flex items-center gap-3 text-primary">
@@ -245,7 +247,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
                    <p className="text-gray-500 font-bold text-xs">{t.mediaKitDesc} &rarr;</p>
                 </div>
              </div>
- 
+
              <div className="flex gap-6 p-8 bg-secondary dark:bg-black rounded-[3rem] text-white items-center relative overflow-hidden group">
                 <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-1000 -z-10" />
                 <ShieldCheck className="w-12 h-12 text-primary flex-shrink-0" />
@@ -259,7 +261,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
         </ScrollReveal>
       </div>
 
-      <ScrollReveal delay={0.3}>
+      {/* <ScrollReveal delay={0.3}>
        <div className="mt-20 py-16 border-t border-gray-100 dark:border-gray-800 text-center flex flex-col items-center gap-8">
           <h3 className="text-3xl font-black">{t.socialTitle}</h3>
           <div className="flex gap-6">
@@ -270,7 +272,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
              ))}
           </div>
        </div>
-      </ScrollReveal>
+      </ScrollReveal> */}
     </div>
   );
 }

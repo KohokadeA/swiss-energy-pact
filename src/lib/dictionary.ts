@@ -1,6 +1,7 @@
 export const dictionaries = {
   en: {
     title: "Swiss Digital Pact",
+    associationTitle: "The Swiss Digital Pact Association",
     subtitle: "Federal popular initiative: For the digital security of Switzerland",
     hero: {
       title: "For a free, secure Switzerland in control of its digital destiny",
@@ -12,7 +13,7 @@ export const dictionaries = {
     nav: {
       home: "HOME",
       initiative: "THE INITIATIVE",
-      sign: "SIGH",
+      sign: "SIGN",
       support: "SUPPORT",
       contact: "CONTACT",
       media: "MEDIA",
@@ -77,6 +78,7 @@ export const dictionaries = {
   },
   fr: {
     title: "Pacte Numérique Suisse",
+    associationTitle: "Association du Pacte Numérique Suisse",
     subtitle: "Initiative populaire fédérale : Pour la sécurité numérique de la Suisse",
     hero: {
       title: "Pour une Suisse libre, sûre et maîtresse de son destin numérique",
@@ -153,6 +155,7 @@ export const dictionaries = {
   },
   de: {
     title: "Schweizer Digital-Pakt",
+    associationTitle: "Verein Schweizer Digital-Pakt",
     subtitle: "Eidgenössische Volksinitiative: Für die digitale Sicherheit der Schweiz",
     hero: {
       title: "Für eine freie, sichere Schweiz, die ihr digitales Schicksal selbst bestimmt",
@@ -229,6 +232,7 @@ export const dictionaries = {
   },
   it: {
     title: "Patto Digitale Svizzero",
+    associationTitle: "Associazione Patto Digitale Svizzero",
     subtitle: "Iniziativa popolare federale: Per la sicurezza digitale della Svizzera",
     hero: {
       title: "Per una Svizzera libera, sicura e padrona del suo destino digitale",

@@ -327,43 +327,45 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     <>
     <div className="container mx-auto px-6 pt-32 pb-16 max-w-7xl overflow-hidden min-h-screen">
       {/* Premium Banner Header */}
-      <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
-        <div className="flex-1 animate-in slide-in-from-left duration-1000 flex flex-col gap-12">
+      <ScrollReveal>
+        <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
+          <div className="flex-1 flex flex-col gap-12">
 
-          <div className="space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
-             <p>{whyText[lang].para1}</p>
-             <p>{whyText[lang].para2}</p>
-             <p className="font-black text-primary text-2xl md:text-3xl tracking-tight leading-tight mt-10">
-               {whyText[lang].para3}
-             </p>
+            <div className="space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
+               <p>{whyText[lang].para1}</p>
+               <p>{whyText[lang].para2}</p>
+               <p className="font-black text-primary text-2xl md:text-3xl tracking-tight leading-tight mt-10">
+                 {whyText[lang].para3}
+               </p>
+            </div>
+
+
           </div>
 
-
-        </div>
-
-        <div className="lg:w-1/3 p-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-900/50 border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative animate-in slide-in-from-right duration-1000 delay-300 overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full translate-x-10 -translate-y-10 group-hover:scale-150 transition-all duration-1000" />
-          <div className="absolute inset-0 bg-white/40 dark:bg-black/20 backdrop-blur-xl z-0" />
-          <div className="relative z-10 flex flex-col gap-6">
-            <ShieldCheck className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
-            <h2 className="text-2xl font-black text-secondary dark:text-white leading-tight">
-              {whyText[lang].boxTitle}
-            </h2>
-            <ul className="text-gray-600 dark:text-white/80 text-sm leading-relaxed font-medium list-disc list-inside space-y-2">
-              {whyText[lang].points.map((p, i) => (
-                <li key={i}>{p}</li>
-              ))}
-            </ul>
-            <Link
-              href={`/${lang}/sign`}
-              className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest group-hover:gap-4 transition-all mt-4"
-            >
-              {whyText[lang].cta}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="lg:w-1/3 p-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-900/50 border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full translate-x-10 -translate-y-10 group-hover:scale-150 transition-all duration-1000" />
+            <div className="absolute inset-0 bg-white/40 dark:bg-black/20 backdrop-blur-xl z-0" />
+            <div className="relative z-10 flex flex-col gap-6">
+              <ShieldCheck className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
+              <h2 className="text-2xl font-black text-secondary dark:text-white leading-tight">
+                {whyText[lang].boxTitle}
+              </h2>
+              <ul className="text-gray-600 dark:text-white/80 text-sm leading-relaxed font-medium list-disc list-inside space-y-2">
+                {whyText[lang].points.map((p, i) => (
+                  <li key={i}>{p}</li>
+                ))}
+              </ul>
+              <Link
+                href={`/${lang}/sign`}
+                className="flex items-center gap-2 text-primary font-black uppercase text-[10px] tracking-widest group-hover:gap-4 transition-all mt-4"
+              >
+                {whyText[lang].cta}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </ScrollReveal>
 
       {/* Impact Highlights */}
       <ScrollReveal>
@@ -440,6 +442,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
        </section>
       </ScrollReveal>
 
+      <ScrollReveal>
       <div className="flex flex-col items-center gap-8 mb-16">
         <section className="w-full flex flex-col gap-8 p-10 rounded-[3rem] bg-secondary dark:bg-black/40 text-white transition-all shadow-xl hover:shadow-2xl border-t-4 border-primary">
           <div className="w-14 h-14 bg-white/10 text-primary rounded-2xl flex items-center justify-center group text-center mx-auto">
@@ -481,6 +484,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
           </div>
         </section>
       </div>
+      </ScrollReveal>
 
       {/* Association Section migrated from Association Tab */}
       <ScrollReveal delay={0.1}>

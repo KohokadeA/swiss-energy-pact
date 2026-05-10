@@ -16,19 +16,21 @@ export default function MediaPage() {
 
   return (
     <div className="container mx-auto px-6 pt-32 pb-16 lg:pt-40 max-w-7xl min-h-screen">
-       <header className="text-center max-w-4xl mx-auto mb-20 relative">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
-         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 dark:bg-zinc-800 text-gray-500 rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm">
-           <Newspaper className="w-4 h-4" />
-           Press & Media
-         </div>
-         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
-           Media Center
-         </h1>
-         <p className="text-xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto">
-           Stay updated with shared content from outside regarding the Swiss Digital Pact.
-         </p>
-       </header>
+       <ScrollReveal>
+         <header className="text-center max-w-4xl mx-auto mb-20 relative">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
+           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 dark:bg-zinc-800 text-gray-500 rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm">
+             <Newspaper className="w-4 h-4" />
+             Press & Media
+           </div>
+           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
+             Media Center
+           </h1>
+           <p className="text-xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto">
+             Stay updated with shared content from outside regarding the Swiss Digital Pact.
+           </p>
+         </header>
+       </ScrollReveal>
 
        <div className="space-y-16 mb-20">
          {sections.map((section, idx) => (
