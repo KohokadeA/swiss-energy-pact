@@ -428,7 +428,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
            >
              <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 relative overflow-hidden rounded-3xl mx-auto">
                 <Image
-                  src="/new_logo_sdp.png"
+                  src="/swiss_digital_pact_logo.png"
                   alt="Swiss Digital Pact Logo"
                   fill
                   className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"

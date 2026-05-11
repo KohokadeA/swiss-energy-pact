@@ -64,7 +64,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           {/* Logo container */}
           <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300">
             <img
-              src="/new_logo.png"
+              src="/swiss_digital_pact_logo.png"
               alt="Swiss Digital Pact Logo"
               className="w-full h-full object-contain"
             />
