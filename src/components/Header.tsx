@@ -72,14 +72,14 @@ export const Header = ({ lang }: { lang: Locale }) => {
           </div> */}
 
           {/* Text */}
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <span className={clsx(
               "font-bold text-xl tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap",
               isScrolled ? "text-gray-900 dark:text-white" : "text-white"
             )}>
               {dict.associationTitle}
             </span>
-          </div>
+          </div> */}
 
         </Link>
 

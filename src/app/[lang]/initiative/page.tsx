@@ -11,7 +11,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 export default function InitiativePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = getDictionary(lang);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<'committee' | 'statuts' | 'join' | null>('committee');
+  const [activeTab, setActiveTab] = useState<'committee' | 'statuts' | 'join' | null>(null);
 
   const getCommitteeMembers = (lang: Locale) => [
     { name: "Gérald Vernez", role: lang === 'fr' ? "Président" : lang === 'de' ? "Präsident" : lang === 'it' ? "Presidente" : "President", initials: "GV" },
@@ -26,12 +26,12 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   const assocDict = {
     en: {
       membersLabel: "Members of the initiative:",
-      assocTitle: "The Association",
+      assocTitle: "The Swiss Digital Pact Association",
       assocDesc: "The Association supports the federal popular initiative “For Switzerland’s digital security,” which aims to strengthen the country’s digital security, sovereignty, and resilience.",
       btnCommittee: "Committee",
       btnStatuts: "Statuts",
       btnJoin: "Join as a member",
-      committeeTitle: "Members of the initiative",
+      committeeTitle: "Committee of the association",
       committeeDesc: "The dedicated team driving the initiative forward.",
       statutsTitle: "Statuts",
       statutsDesc: "The statuts will be provided shortly.",
@@ -45,12 +45,12 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     fr: {
       membersLabel: "Membres de l'initiative :",
-      assocTitle: "L'Association",
+      assocTitle: "L'Association du Pacte Numérique Suisse",
       assocDesc: "L'Association soutient l'initiative populaire fédérale « Pour la sécurité numérique de la Suisse », qui vise à renforcer la sécurité, la souveraineté et la résilience numériques du pays.",
       btnCommittee: "Comité",
       btnStatuts: "Statuts",
       btnJoin: "Devenir membre",
-      committeeTitle: "Membres de l'initiative",
+      committeeTitle: "Comité de l'association",
       committeeDesc: "L'équipe dévouée qui fait avancer l'initiative.",
       statutsTitle: "Statuts",
       statutsDesc: "Les statuts seront fournis prochainement.",
@@ -64,12 +64,12 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     de: {
       membersLabel: "Mitglieder der Initiative:",
-      assocTitle: "Der Verein",
+      assocTitle: "Der Verein Schweizer Digitalpakt",
       assocDesc: "Der Verein unterstützt die eidgenössische Volksinitiative „Für die digitale Sicherheit der Schweiz“, die darauf abzielt, die digitale Sicherheit, Souveränität und Widerstandsfähigkeit des Landes zu stärken.",
       btnCommittee: "Komitee",
       btnStatuts: "Statuten",
       btnJoin: "Mitglied werden",
-      committeeTitle: "Mitglieder der Initiative",
+      committeeTitle: "Ausschuss des Vereins",
       committeeDesc: "Das engagierte Team, das die Initiative vorantreibt.",
       statutsTitle: "Statuten",
       statutsDesc: "Die Statuten werden in Kürze zur Verfügung gestellt.",
@@ -83,12 +83,12 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     it: {
       membersLabel: "Membri dell'iniziativa:",
-      assocTitle: "L'Associazione",
+      assocTitle: "L'Associazione del Patto Digitale Svizzero",
       assocDesc: "L'Associazione sostiene l'iniziativa popolare federale “Per la sicurezza digitale della Svizzera”, che mira a rafforzare la sicurezza digitale, la sovranità e la resilienza del Paese.",
       btnCommittee: "Comitato",
       btnStatuts: "Statuti",
       btnJoin: "Diventa membro",
-      committeeTitle: "Membri dell'iniziativa",
+      committeeTitle: "Comitato dell'associazione",
       committeeDesc: "Il team dedicato che porta avanti l'iniziativa.",
       statutsTitle: "Statuti",
       statutsDesc: "Gli statuti saranno forniti a breve.",
@@ -159,12 +159,6 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     }
   };
 
-  const impactTitle = {
-    en: "Impact",
-    fr: "Impact",
-    de: "Auswirkung",
-    it: "Impatto"
-  };
 
   const longPillarsText = {
     en: {
@@ -281,19 +275,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     it: '"Il testo francese è il testo di riferimento depositato. Le altre versioni linguistiche saranno allineate alle traduzioni ufficiali."'
   };
 
-  const proposalText = {
-    en: "Constitutional Proposal v1.0",
-    fr: "Proposition Constitutionnelle v1.0",
-    de: "Verfassungsvorschlag v1.0",
-    it: "Proposta Costituzionale v1.0"
-  };
 
-  const downloadText = {
-    en: "Download full text",
-    fr: "Télécharger le texte intégral",
-    de: "Vollständigen Text herunterladen",
-    it: "Scarica il testo integrale"
-  };
 
   const wantsTitleText = {
     en: "What this initiative wants",
@@ -477,20 +459,69 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
             </div>
           </div>
 
-          <div className="mt-8 text-center max-w-3xl mx-auto">
-            <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
-              <span className="text-white font-bold">{assocDict[lang].membersLabel}</span> Jean-Charles Brandt (Zurich), Carl-Alexandre Brandt (Zurich), Alexandre Dimitrijevic (Geneva), Lazar Dimitrijevic, Daniel Fasel (Fribourg), Umberto Giardini (Neuchâtel), André Jolivet (Vaud), Diego Kuonen (Valais), Gilles Merrier (Geneva), Richard Pachon (Vaud), Marc Rigolet (Geneva), Andrea Rodella (Geneva), Massimo Rodella (Geneva), Gérald Vernez (Vaud)
-            </p>
-          </div>
+
         </section>
       </div>
       </ScrollReveal>
 
+
+      {/* Process Section */}
+      {/* <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -translate-y-20 translate-x-20 rounded-full" />
+          <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
+            <ChevronRight className="w-10 h-10 text-primary" /> {dict.pactDetails.s7.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+             <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-100 dark:bg-gray-800 hidden md:block" />
+             {dict.pactDetails.s7.steps.map((step, idx) => (
+                <div key={idx} className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
+                   <div className="w-6 h-6 rounded-full bg-primary text-white text-[10px] font-black flex items-center justify-center mb-6 ring-8 ring-white dark:ring-zinc-900">
+                      {idx + 1}
+                   </div>
+                   <h3 className="text-sm font-black mb-2 px-2">{step}</h3>
+                </div>
+             ))}
+          </div>
+      </section> */}
+
+      {/* Visual Pillars Section - Changed to Technical Sub-themes */}
+      <ScrollReveal>
+       <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">
+         {wantsTitleText[lang]}
+       </h2>
+       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 mb-16 bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
+          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-all duration-1000 -z-10" />
+
+          {(lang === 'en' ? [
+            { icon: Fingerprint, t: "Protect the people", d: "" },
+            { icon: Landmark, t: "Strengthen the country", d: "" },
+            { icon: Globe2, t: "Prepare the future", d: "" }
+          ] : lang === 'de' ? [
+            { icon: Fingerprint, t: "Die Menschen schützen", d: "" },
+            { icon: Landmark, t: "Das Land stärken", d: "" },
+            { icon: Globe2, t: "Die Zukunft vorbereiten", d: "" }
+          ] : lang === 'it' ? [
+            { icon: Fingerprint, t: "Proteggere le persone", d: "" },
+            { icon: Landmark, t: "Rafforzare il Paese", d: "" },
+            { icon: Globe2, t: "Preparare il futuro", d: "" }
+          ] : [
+            { icon: Fingerprint, t: "Protéger les personnes", d: "" },
+            { icon: Landmark, t: "Renforcer le pays", d: "" },
+            { icon: Globe2, t: "Préparer l'avenir", d: "" }
+          ]).map((p, i) => (
+            <div key={i} className="flex flex-col gap-4 text-center items-center py-2 px-4 border-r border-gray-200 dark:border-gray-800 last:border-0 border-dashed">
+               <div className="w-10 h-10 text-primary group-hover:scale-125 transition-all duration-500"><p.icon className="w-full h-full" /></div>
+               <h3 className="text-xl font-black text-secondary dark:text-white">{p.t}</h3>
+            </div>
+          ))}
+       </div>
+      </ScrollReveal>
+
       {/* Association Section migrated from Association Tab */}
-      <ScrollReveal delay={0.1}>
-       <section className="mb-24 p-8 md:p-12 bg-secondary dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-3xl overflow-hidden relative group text-center transition-all duration-500">
+      <ScrollReveal delay={0.1} className="mt-2">
+       <section className="mb-24 mt-0 p-8 md:p-12 bg-secondary dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-3xl overflow-hidden relative group text-center transition-all duration-500">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-          
+
           <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto gap-6">
              <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl text-primary mb-2">
                 <Target className="w-6 h-6" />
@@ -499,7 +530,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
              <p className="text-xl text-white/80 font-medium leading-relaxed max-w-3xl mx-auto">
                {assocDict[lang].assocDesc}
              </p>
-             
+
              <div className="flex flex-wrap justify-center gap-4 mt-6 mb-4">
                 <button onClick={() => setActiveTab(activeTab === 'committee' ? null : 'committee')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'committee' ? "bg-white text-secondary border-white" : "bg-white/10 hover:bg-white/20 text-white border-white/10")}>
                   {assocDict[lang].btnCommittee}
@@ -511,7 +542,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                   {assocDict[lang].btnJoin}
                 </button>
              </div>
- 
+
              {/* Expandable Tab Content */}
              <div className={cn("w-full transition-all duration-500 overflow-hidden", activeTab ? "max-h-[2000px] opacity-100 mt-8" : "max-h-0 opacity-0 mt-0")}>
                <div className="p-8 md:p-12 bg-white dark:bg-black/20 rounded-[2.5rem] text-left shadow-inner border border-white/5">
@@ -534,7 +565,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                      </div>
                    </div>
                  )}
- 
+
                  {activeTab === 'statuts' && (
                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center py-16">
                      <FileText className="w-16 h-16 text-primary mx-auto mb-6 opacity-80" />
@@ -542,7 +573,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                      <p className="text-gray-500 font-medium text-lg">{assocDict[lang].statutsDesc}</p>
                    </div>
                  )}
- 
+
                  {activeTab === 'join' && (
                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center max-w-2xl mx-auto">
                      <h2 className="text-3xl lg:text-4xl font-black mb-6 text-secondary dark:text-white">{assocDict[lang].joinTitle}</h2>
@@ -577,58 +608,6 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
              </div>
           </div>
        </section>
-      </ScrollReveal>
-
-      {/* Process Section */}
-      {/* <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -translate-y-20 translate-x-20 rounded-full" />
-          <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
-            <ChevronRight className="w-10 h-10 text-primary" /> {dict.pactDetails.s7.title}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-             <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-100 dark:bg-gray-800 hidden md:block" />
-             {dict.pactDetails.s7.steps.map((step, idx) => (
-                <div key={idx} className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
-                   <div className="w-6 h-6 rounded-full bg-primary text-white text-[10px] font-black flex items-center justify-center mb-6 ring-8 ring-white dark:ring-zinc-900">
-                      {idx + 1}
-                   </div>
-                   <h3 className="text-sm font-black mb-2 px-2">{step}</h3>
-                </div>
-             ))}
-          </div>
-      </section> */}
-
-      {/* Visual Pillars Section - Changed to Technical Sub-themes */}
-      <ScrollReveal>
-       <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">
-         {wantsTitleText[lang]}
-       </h2>
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-all duration-1000 -z-10" />
- 
-          {(lang === 'en' ? [
-            { icon: Fingerprint, t: "Protect the people", d: "" },
-            { icon: Landmark, t: "Strengthen the country", d: "" },
-            { icon: Globe2, t: "Prepare the future", d: "" }
-          ] : lang === 'de' ? [
-            { icon: Fingerprint, t: "Die Menschen schützen", d: "" },
-            { icon: Landmark, t: "Das Land stärken", d: "" },
-            { icon: Globe2, t: "Die Zukunft vorbereiten", d: "" }
-          ] : lang === 'it' ? [
-            { icon: Fingerprint, t: "Proteggere le persone", d: "" },
-            { icon: Landmark, t: "Rafforzare il Paese", d: "" },
-            { icon: Globe2, t: "Preparare il futuro", d: "" }
-          ] : [
-            { icon: Fingerprint, t: "Protéger les personnes", d: "" },
-            { icon: Landmark, t: "Renforcer le pays", d: "" },
-            { icon: Globe2, t: "Préparer l'avenir", d: "" }
-          ]).map((p, i) => (
-            <div key={i} className="flex flex-col gap-4 text-center items-center py-2 px-4 border-r border-gray-200 dark:border-gray-800 last:border-0 border-dashed">
-               <div className="w-10 h-10 text-primary group-hover:scale-125 transition-all duration-500"><p.icon className="w-full h-full" /></div>
-               <h3 className="text-xl font-black text-secondary dark:text-white">{p.t}</h3>
-            </div>
-          ))}
-       </div>
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
