@@ -3,29 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground: #2d3436;
-  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --background: #ffffff;
   --primary: #e30613; /* Swiss Red */
   --secondary: #2d3436;
   --accent: #0984e3;
-  --glass: rgba(255, 255, 255, 0.7);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #f8f9fa;
-    --background: #1a1a1a;
-    --primary: #ff4d4d;
-    --secondary: #ecf0f1;
-    --accent: #74b9ff;
-    --glass: rgba(22, 22, 22, 0.7);
-  }
+  --glass: rgba(255, 255, 255, 0.85);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: Helvetica;
   scroll-behavior: smooth;
 }
 
@@ -73,7 +62,7 @@ body {
 }
 
 .swiss-button {
-  @apply px-8 py-4 rounded-xl font-black transition-smooth hover-lift shadow-[0_20px_40px_-15px_rgba(227,6,19,0.3)] flex items-center justify-center gap-3 overflow-hidden relative;
+  @apply px-8 py-4 rounded-xl font-black transition-smooth hover-lift shadow-sm flex items-center justify-center gap-3 overflow-hidden relative;
   background-color: var(--primary);
   color: white;
 }
@@ -93,7 +82,7 @@ body {
 
 .swiss-button:hover {
   filter: brightness(1.1);
-  box-shadow: 0 25px 50px -12px rgba(227, 6, 19, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-link {
@@ -109,4 +98,16 @@ body {
 .scroll-blur.scrolled {
   backdrop-filter: blur(12px);
   @apply bg-white/80 dark:bg-zinc-900/80 border-b border-white/5;
+}
+
+/* Scroll Reveal Animation from reference file */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

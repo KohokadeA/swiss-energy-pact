@@ -45,7 +45,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     fr: {
       membersLabel: "Membres de l'initiative :",
-      assocTitle: "L'Association du Pacte Numérique Suisse",
+      assocTitle: "L'Association Swiss Digital Pact",
       assocDesc: "L'Association soutient l'initiative populaire fédérale « Pour la sécurité numérique de la Suisse », qui vise à renforcer la sécurité, la souveraineté et la résilience numériques du pays.",
       btnCommittee: "Comité",
       btnStatuts: "Statuts",
@@ -55,7 +55,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       statutsTitle: "Statuts",
       statutsDesc: "Les statuts seront fournis prochainement.",
       joinTitle: "Devenir membre",
-      joinDesc1: "Devenez officiellement membre de l'association et soutenez directement la mission du Pacte Digital Suisse pour sécuriser notre avenir numérique.",
+      joinDesc1: "Devenez officiellement membre de l'association et soutenez directement la mission du Swiss Digital Pact pour sécuriser notre avenir numérique.",
       joinDesc2: "L'adhésion est soumise à une cotisation annuelle, qui permet de financer nos activités, notre engagement public et l'avancement de l'initiative.",
       students: "Étudiants / réduit",
       individuals: "Individus",
@@ -64,7 +64,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     de: {
       membersLabel: "Mitglieder der Initiative:",
-      assocTitle: "Der Verein Schweizer Digitalpakt",
+      assocTitle: "Der Verein Swiss Digital Pact",
       assocDesc: "Der Verein unterstützt die eidgenössische Volksinitiative „Für die digitale Sicherheit der Schweiz“, die darauf abzielt, die digitale Sicherheit, Souveränität und Widerstandsfähigkeit des Landes zu stärken.",
       btnCommittee: "Komitee",
       btnStatuts: "Statuten",
@@ -74,7 +74,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       statutsTitle: "Statuten",
       statutsDesc: "Die Statuten werden in Kürze zur Verfügung gestellt.",
       joinTitle: "Mitglied werden",
-      joinDesc1: "Werden Sie offiziell Teil des Vereins und unterstützen Sie direkt die Mission des Schweizer Digitalpakts, unsere digitale Zukunft zu sichern.",
+      joinDesc1: "Werden Sie offiziell Teil des Vereins und unterstützen Sie direkt die Mission des Swiss Digital Pact, unsere digitale Zukunft zu sichern.",
       joinDesc2: "Die Mitgliedschaft ist mit einem Jahresbeitrag verbunden, der unsere Aktivitäten, unser öffentliches Engagement und die Förderung der Initiative finanziert.",
       students: "Studierende / ermäßigt",
       individuals: "Einzelpersonen",
@@ -83,7 +83,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     },
     it: {
       membersLabel: "Membri dell'iniziativa:",
-      assocTitle: "L'Associazione del Patto Digitale Svizzero",
+      assocTitle: "L'Associazione Swiss Digital Pact",
       assocDesc: "L'Associazione sostiene l'iniziativa popolare federale “Per la sicurezza digitale della Svizzera”, che mira a rafforzare la sicurezza digitale, la sovranità e la resilienza del Paese.",
       btnCommittee: "Comitato",
       btnStatuts: "Statuti",
@@ -93,7 +93,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       statutsTitle: "Statuti",
       statutsDesc: "Gli statuti saranno forniti a breve.",
       joinTitle: "Diventa membro",
-      joinDesc1: "Diventa ufficialmente parte dell'associazione e sostieni direttamente la missione del Patto Digitale Svizzero per garantire il nostro futuro digitale.",
+      joinDesc1: "Diventa ufficialmente parte dell'associazione e sostieni direttamente la missione del Swiss Digital Pact per garantire il nostro futuro digitale.",
       joinDesc2: "L'adesione è soggetta a una quota annuale, che contribuisce a finanziare le nostre attività, l'impegno pubblico e l'avanzamento dell'iniziativa.",
       students: "Studenti / ridotto",
       individuals: "Individui",
@@ -106,7 +106,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     fr: `"Art. 57a : Pour la sécurité numérique de la Suisse\n1 La Confédération détermine les règles de sécurité pour tous les acteurs publics et privés dans l’espace numérique de la Suisse et en assure l’application.\n2 Elle protège ses données et ses infrastructures numériques et soutient subsidiairement les opérateurs d’infrastructures critiques.\n3 Elle garantit la protection des données personnelles et l’intégrité numérique des personnes.\n4 Elle garantit que les infrastructures, les services et les ressources numériques et informationnelles essentiels pour l’État, l’économie et la société soient en toute circonstance indépendants de toute influence contraire à ses intérêts.\n5 Elle encourage le développement de la littératie des données et des compétences numériques de la société.\n6 Elle prend, en coordination avec les acteurs académiques et économiques, des dispositions permettant d’anticiper les risques et les opportunités et ainsi de maintenir la Suisse parmi les nations les plus avancées et sûres dans le domaine numérique."`,
     en: `"Art. 57a: For the digital security of Switzerland\n1 The Confederation determines the security rules for all public and private actors in the Swiss digital space and ensures their application.\n2 It protects its data and digital infrastructures and subsidiarily supports the operators of critical infrastructures.\n3 It guarantees the protection of personal data and the digital integrity of individuals.\n4 It ensures that the infrastructures, services, and digital and informational resources essential for the State, the economy, and society remain in all circumstances independent of any influence contrary to its interests.\n5 It encourages the development of data literacy and digital skills in society.\n6 In coordination with academic and economic actors, it takes measures to anticipate risks and opportunities, thereby keeping Switzerland among the most advanced and secure nations in the digital field."`,
     de: `"Art. 57a: Für die digitale Sicherheit der Schweiz\n1 Der Bund bestimmt die Sicherheitsregeln für alle öffentlichen und privaten Akteure im digitalen Raum der Schweiz und sorgt für deren Durchsetzung.\n2 Er schützt seine Daten und digitalen Infrastrukturen und unterstützt subsidiär die Betreiber kritischer Infrastrukturen.\n3 Er gewährleistet den Schutz personenbezogener Daten und die digitale Integrität der Personen.\n4 Er stellt sicher, dass die für Staat, Wirtschaft und Gesellschaft wesentlichen Infrastrukturen, Dienste, digitalen und informationellen Ressourcen unter allen Umständen unabhängig von Einflüssen bleiben, die seinen Interessen zuwiderlaufen.\n5 Er fördert die Entwicklung der Datenkompetenz und der digitalen Fähigkeiten in der Gesellschaft.\n6 Er ergreift in Abstimmung mit akademischen und wirtschaftlichen Akteuren Massnahmen, um Risiken und Chancen vorauszusehen und die Schweiz so unter den fortschrittlichsten und sichersten Nationen im digitalen Bereich zu halten."`,
-    it: `"Art. 57a: Per la sicurezza digitale della Svizzera\n1 La Confederazione determina le regole di sicurezza per tutti gli attori pubblici e privati nello spazio digitale svizzero e ne garantisce l'applicazione.\n2 Protegge i propri dati e le proprie infrastrutture digitali e sostiene in via sussidiaria gli operatori delle infrastrutture critiche.\n3 Garantisce la protezione dei dati personali e l'integrità digitale delle persone.\n4 Assicura che le infrastrutture, i servizi e le risorse digitali e informazionali essenziali per lo Stato, l'economia e la società siano in ogni circostanza indipendenti da qualsiasi influenza contraria ai propri interessi.\n5 Incoraggia lo sviluppo dell'alfabetizzazione dei dati e delle competenze digitali nella società.\n6 Adotta, in coordinamento con gli attori accademici ed economici, disposizioni che consentono di anticipare i rischi e le opportunità, mantenendo così la Svizzera tra le nazioni più avanzate e sicure nel settore digitale."`
+    it: `"Art. 57a: Per la sicurezza digitale della Svizzera\n1 La Confederazione determina le regole di sicurezza pour tutti gli attori pubblici e privati nello spazio digitale svizzero e ne garantisce l'applicazione.\n2 Protegge i propri dati e le proprie infrastrutture digitali e sostiene in via sussidiaria gli operatori delle infrastrutture critiche.\n3 Garantisce la protezione dei dati personali e l'integrità digitale delle persone.\n4 Assicura che le infrastrutture, i servizi e le risorse digitali e informazionali essenziali per lo Stato, l'economia e la società siano in ogni circostanza indipendenti da qualsiasi influenza contraria ai propri interessi.\n5 Incoraggia lo sviluppo dell'alfabetizzazione dei dati e delle competenze digitali nella società.\n6 Adotta, in coordinamento con gli attori accademici ed economici, disposizioni che consentono di anticipare i rischi e le opportunità, mantenendo così la Svizzera tra le nazioni più avanzate e sicure nel settore digitale."`
   };
 
   const structuralText = {
@@ -176,7 +176,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
         { t: "SÉCURITÉ", d: "Dans chaque domaine critique, des règles claires sont la norme – l'espace numérique ne doit pas faire exception. La Suisse doit définir et imposer des normes minimales de cybersécurité pour protéger les institutions, les entreprises et la population. Sans règles crédibles et appliquées, il n'y a ni confiance ni sécurité durables." },
         { t: "INFRASTRUCTURE", d: "La Suisse dépend d'infrastructures numériques essentielles à la vie quotidienne. Lorsqu'elles tombent en panne, tout s'arrête. Leur protection doit être traitée comme une mission centrale, avec des responsabilités claires et la capacité d'agir collectivement en cas de besoin." },
         { t: "DONNÉES & PERSONNES", d: "Les données personnelles sont le prolongement de l'individu. Les protéger signifie protéger les droits fondamentaux, la dignité et la liberté. La Suisse doit aller au-delà des garanties de base pour assurer une véritable intégrité numérique et protéger les personnes contre les abus et la perte de contrôle." },
-        { t: "SOUVERAINETÉ", d: "La Suisse doit rester ouverte, mais ne jamais perdre le contrôle sur ce qui est essentiel. La souveraineté signifie la capacité de choisir, de contrôler et de remplacer si nécessaire. La coopération est clé – mais la dépendance ne doit jamais compromettre notre capacité de décision." },
+        { t: "SOUVERAINETÉ", d: "La Suisse doit rester ouverte, mais ne jamais perdre le contrôle sur ce qui est essentiel. Souveraineté signifie la capacité de choisir, de contrôler et de remplacer si nécessaire. La coopération est clé – mais la dépendance ne doit jamais compromettre notre capacité de décision." },
         { t: "LITTÉRATIE & COMPÉTENCES", d: "La force numérique commence avec les personnes. Sans compréhension, il n'y a pas de vraie liberté. La Suisse doit investir dans l'éducation numérique, la littératie des données et les compétences numériques à tous les niveaux pour que chacun puisse agir avec confiance et responsabilité." },
         { t: "ANTICIPATION", d: "Dans un monde numérique qui évolue rapidement, attendre signifie prendre du retard. La Suisse doit anticiper les risques, soutenir l'innovation et renforcer la collaboration pour rester parmi les nations leaders et les plus sûres." }
       ]
@@ -252,7 +252,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       para3: "L'obiettivo è semplice: una Svizzera aperta, sicura e padrona del proprio futuro digitale.",
       boxTitle: "Una linea svizzera",
       points: [
-        "Per un approccio che promuove piuttosto che limitare",
+        "Per un approccio que promuove piuttosto che limitare",
         "Per una Svizzera innovativa e forte al servizio di tutti",
         "Per una popolazione informata che sfrutta al meglio le tecnologie digitali",
         "Per una maggiore fiducia e resilienza in tutta la società"
@@ -307,10 +307,10 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
   return (
     <>
-    <div className="container mx-auto px-6 pt-32 pb-16 max-w-7xl overflow-hidden min-h-screen">
+    <div className="container mx-auto px-6 pt-20 pb-6 max-w-7xl overflow-hidden">
       {/* Premium Banner Header */}
       <ScrollReveal>
-        <header className="mb-20 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
+        <header className="mb-10 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
           <div className="flex-1 flex flex-col gap-12">
 
             <div className="space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
@@ -324,8 +324,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
           </div>
 
-          <div className="lg:w-1/3 p-10 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-900/50 border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full translate-x-10 -translate-y-10 group-hover:scale-150 transition-all duration-1000" />
+          <div className="lg:w-1/3 p-10 bg-white border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative overflow-hidden group">
+
             <div className="absolute inset-0 bg-white/40 dark:bg-black/20 backdrop-blur-xl z-0" />
             <div className="relative z-10 flex flex-col gap-6">
               <ShieldCheck className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
@@ -350,8 +350,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       </ScrollReveal>
 
       {/* Impact Highlights */}
-      <ScrollReveal>
-       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+      {/* <ScrollReveal>
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <div className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
              <div className="flex items-center gap-4">
                <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -375,12 +375,11 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
              </p>
           </div>
        </div>
-      </ScrollReveal>
+      </ScrollReveal> */}
 
 
       {/* Grid of Content Sections */}
-      <ScrollReveal delay={0.1}>
-       <div className="relative mb-32 flex flex-col gap-8">
+       <ScrollReveal className="relative mb-16 flex flex-col gap-8">
              <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
                {structuralText[lang].title}
              </h2>
@@ -388,7 +387,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                {longPillarsText[lang].items.map((item, idx) => {
                   const Icon = [ShieldCheck, Landmark, Database, Globe2, Users, Network][idx];
                   return (
-                    <div key={idx} className="flex flex-col gap-4 p-8 rounded-3xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group">
+                    <div key={idx} className="flex flex-col gap-4 p-8 rounded-3xl bg-white dark:bg-black/20 border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-500 group h-full">
                       <div className="flex items-center gap-4">
                          <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                             <Icon className="w-6 h-6" />
@@ -402,72 +401,95 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                   );
                })}
              </div>
-       </div>
-      </ScrollReveal>
+       </ScrollReveal>
 
-      <ScrollReveal>
+      {/* <ScrollReveal>
        <section className="mb-24 p-12 lg:p-20 bg-secondary dark:bg-zinc-900 rounded-[4rem] text-white overflow-hidden relative group shadow-3xl">
-         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full translate-x-20 -translate-y-20 group-hover:scale-150 transition-all duration-1000" />
-         <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
-           <div className="w-24 h-24 bg-white/10 rounded-[2.5rem] flex items-center justify-center border border-white/10 shadow-2xl group-hover:scale-110 transition-all">
-             <Scale className="w-12 h-12 text-primary" />
-           </div>
-           <div className="flex-1 text-center lg:text-left">
-             <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight leading-tight">
-                Why a Constitutional Basis?
-             </h2>
-             <p className="text-white/60 text-xl font-medium leading-relaxed max-w-4xl">
-               Unlike temporary laws, the Constitution defines long-term responsibilities independent of political cycles. It provides maximum legal certainty and a clear signal to national and international partners about Switzerland's digital sovereignty.
-             </p>
-           </div>
-         </div>
-       </section>
-      </ScrollReveal>
 
-      <ScrollReveal>
-      <div className="flex flex-col items-center gap-8 mb-16">
-        <section className="w-full flex flex-col gap-8 p-10 rounded-[3rem] bg-secondary dark:bg-black/40 text-white transition-all shadow-xl hover:shadow-2xl border-t-4 border-primary">
-          <div className="w-14 h-14 bg-white/10 text-primary rounded-2xl flex items-center justify-center group text-center mx-auto">
-            <Scale className="w-7 h-7 group-hover:scale-110 transition-all" />
+          <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
+            <div className="w-24 h-24 bg-white/10 rounded-[2.5rem] flex items-center justify-center border border-white/10 shadow-2xl group-hover:scale-110 transition-all">
+              <Scale className="w-12 h-12 text-primary" />
+            </div>
+            <div className="flex-1 text-center lg:text-left">
+              <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight leading-tight">
+                 {dict.initiative.whyConstitutional.title}
+              </h2>
+              <p className="text-white/60 text-xl font-medium leading-relaxed max-w-4xl">
+                {dict.initiative.whyConstitutional.description}
+              </p>
+            </div>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-center">{articleTitle[lang]}</h2>
-          <div className="p-8 rounded-[2rem] bg-white/5 border border-white/10 font-serif italic text-xl leading-relaxed text-gray-300 shadow-inner whitespace-pre-wrap">
-             {articleText[lang].replace(/^"|"$/g, '').split('\n').map((line, idx) => (
-               <div
-                 key={idx}
-                 onMouseEnter={() => idx > 0 && setHoveredPoint(idx - 1)}
-                 onMouseLeave={() => setHoveredPoint(null)}
-                 className={cn(
-                   "transition-all duration-500 rounded-xl px-4 py-2 -mx-4",
-                   idx > 0 ? "cursor-help" : "mb-4 text-white not-italic font-black border-b border-white/5 pb-4",
-                   hoveredPoint === idx - 1 ? "text-primary bg-white/5 translate-x-4" : "opacity-80 hover:opacity-100"
-                 )}
-               >
-                 {line}
-               </div>
-             ))}
+       </section>
+      </ScrollReveal> */}
+
+      <div className="flex flex-col items-center gap-8 mb-8">
+        <section className="w-full flex flex-col gap-4 p-6 rounded-[2rem] bg-white text-secondary transition-all shadow-sm hover:shadow-md border-t-4 border-primary">
+          <div className="w-12 h-12 bg-gray-100 text-primary rounded-xl flex items-center justify-center group text-center mx-auto">
+            <Scale className="w-6 h-6 group-hover:scale-110 transition-all" />
           </div>
-          <div className="text-center mt-2 mb-8">
-            <p className="text-gray-400 text-xs italic">
+          <h2 className="text-2xl font-black tracking-tight text-center text-secondary">{articleTitle[lang]}</h2>
+          <div className="p-4 rounded-[1.5rem] bg-white border border-gray-200 font-serif italic text-base leading-relaxed text-gray-700 shadow-sm whitespace-pre-wrap">
+             <ScrollReveal>
+               {articleText[lang].replace(/^"|"$/g, '').split('\n').map((line, idx) => {
+                  const match = idx > 0 ? line.match(/^(\d+)\s+(.*)/) : null;
+                  return (
+                    <div
+                      key={idx}
+                      onMouseEnter={() => idx > 0 && setHoveredPoint(idx - 1)}
+                      onMouseLeave={() => setHoveredPoint(null)}
+                      className={cn(
+                        "transition-all duration-500 rounded-xl px-4 py-2 -mx-4",
+                        idx > 0 ? "cursor-help" : "mb-4 text-secondary not-italic font-black border-b border-gray-100 pb-4",
+                        hoveredPoint === idx - 1 ? "text-primary bg-gray-50 translate-x-4" : "opacity-80 hover:opacity-100"
+                      )}
+                    >
+                      {match ? (
+                        <>
+                          <span className="text-3xl font-black text-primary not-italic mr-2 align-baseline">{match[1]}</span>
+                          <span>{match[2]}</span>
+                        </>
+                      ) : line}
+                    </div>
+                  );
+                })}
+             </ScrollReveal>
+          </div>
+          <div className="text-center mt-2 mb-2">
+            <p className="text-gray-500 text-xs italic">
               {disclaimerText[lang]}
             </p>
           </div>
 
-          <div className="flex justify-center w-full mt-4">
-            <div className="relative shadow-2xl rounded-xl overflow-hidden bg-white max-w-3xl w-full">
-              <img src="/non_aux_f35_clear.png" alt="Official Document — Non aux F-35" className="w-full h-auto object-contain" />
-            </div>
+          <div className="flex justify-center w-full mt-2">
+            <a
+              href="/non_aux_f35_clear.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 p-6 bg-white hover:bg-gray-50 border border-gray-200 hover:border-primary/50 rounded-2xl transition-all duration-300 max-w-2xl w-full shadow-sm hover:shadow-md"
+            >
+              <div className="w-14 h-14 bg-white/10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all flex-shrink-0">
+                <img src="/non_aux_f35_clear.png" alt="Document Thumbnail" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">
+                  {dict.initiative.officialTextLink.title}
+                </h3>
+                <p className="text-gray-600 text-sm font-medium">
+                  {dict.initiative.officialTextLink.description}
+                </p>
+              </div>
+              <ChevronRight className="w-6 h-6 text-gray-500 group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
+            </a>
           </div>
 
 
         </section>
       </div>
-      </ScrollReveal>
 
 
       {/* Process Section */}
       {/* <section className="mb-24 p-12 bg-white dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden relative group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -translate-y-20 translate-x-20 rounded-full" />
+
           <h2 className="text-4xl font-black mb-12 flex items-center gap-4">
             <ChevronRight className="w-10 h-10 text-primary" /> {dict.pactDetails.s7.title}
           </h2>
@@ -486,10 +508,10 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
       {/* Visual Pillars Section - Changed to Technical Sub-themes */}
       <ScrollReveal>
-       <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] text-center mb-8">
+       <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.9] text-center mb-8">
          {wantsTitleText[lang]}
        </h2>
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 mb-16 bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
+       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 mb-8 bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 rounded-[3.5rem] group overflow-hidden relative">
           <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-all duration-1000 -z-10" />
 
           {(lang === 'en' ? [
@@ -519,40 +541,40 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
       {/* Association Section migrated from Association Tab */}
       <ScrollReveal delay={0.1} className="mt-2">
-       <section className="mb-24 mt-0 p-8 md:p-12 bg-secondary dark:bg-zinc-900 rounded-[3.5rem] border border-gray-100 dark:border-gray-800 shadow-3xl overflow-hidden relative group text-center transition-all duration-500">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+        <section className="mb-12 mt-0 p-8 md:p-12 bg-white rounded-[3.5rem] border border-gray-200 shadow-sm overflow-hidden relative group text-center transition-all duration-500">
+
 
           <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto gap-6">
-             <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl text-primary mb-2">
+             <div className="p-3 bg-white border border-gray-200 rounded-xl text-primary mb-2">
                 <Target className="w-6 h-6" />
              </div>
-             <h2 className="text-4xl md:text-5xl font-black text-white">{assocDict[lang].assocTitle}</h2>
-             <p className="text-xl text-white/80 font-medium leading-relaxed max-w-3xl mx-auto">
+             <h2 className="text-3xl md:text-4xl font-black text-secondary">{assocDict[lang].assocTitle}</h2>
+             <p className="text-xl text-gray-700 font-medium leading-relaxed max-w-3xl mx-auto">
                {assocDict[lang].assocDesc}
              </p>
 
              <div className="flex flex-wrap justify-center gap-4 mt-6 mb-4">
-                <button onClick={() => setActiveTab(activeTab === 'committee' ? null : 'committee')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'committee' ? "bg-white text-secondary border-white" : "bg-white/10 hover:bg-white/20 text-white border-white/10")}>
+                <button onClick={() => setActiveTab(activeTab === 'committee' ? null : 'committee')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-sm hover:scale-105 active:scale-95", activeTab === 'committee' ? "bg-secondary text-white border-secondary" : "bg-white hover:bg-gray-50 text-secondary border-gray-200")}>
                   {assocDict[lang].btnCommittee}
                 </button>
-                <button onClick={() => setActiveTab(activeTab === 'statuts' ? null : 'statuts')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'statuts' ? "bg-white text-secondary border-white" : "bg-white/10 hover:bg-white/20 text-white border-white/10")}>
+                <button onClick={() => setActiveTab(activeTab === 'statuts' ? null : 'statuts')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-sm hover:scale-105 active:scale-95", activeTab === 'statuts' ? "bg-secondary text-white border-secondary" : "bg-white hover:bg-gray-50 text-secondary border-gray-200")}>
                   {assocDict[lang].btnStatuts}
                 </button>
-                <button onClick={() => setActiveTab(activeTab === 'join' ? null : 'join')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-lg hover:scale-105 active:scale-95", activeTab === 'join' ? "bg-primary text-white border-primary shadow-[0_0_30px_rgba(227,6,19,0.3)]" : "bg-primary/80 hover:bg-primary text-white border-primary/50")}>
+                <button onClick={() => setActiveTab(activeTab === 'join' ? null : 'join')} className={cn("px-8 py-4 rounded-2xl font-bold transition-all border shadow-sm hover:scale-105 active:scale-95", activeTab === 'join' ? "bg-primary text-white border-primary shadow-sm" : "bg-primary/90 hover:bg-primary text-white border-primary/50")}>
                   {assocDict[lang].btnJoin}
                 </button>
              </div>
 
              {/* Expandable Tab Content */}
              <div className={cn("w-full transition-all duration-500 overflow-hidden", activeTab ? "max-h-[2000px] opacity-100 mt-8" : "max-h-0 opacity-0 mt-0")}>
-               <div className="p-8 md:p-12 bg-white dark:bg-black/20 rounded-[2.5rem] text-left shadow-inner border border-white/5">
+               <div className="p-8 md:p-12 bg-white rounded-[2.5rem] text-left shadow-sm border border-gray-200">
                  {activeTab === 'committee' && (
                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center">
                      <h2 className="text-3xl lg:text-4xl font-black mb-4 text-secondary dark:text-white">{assocDict[lang].committeeTitle}</h2>
                      <p className="text-gray-500 font-medium text-lg mb-10">{assocDict[lang].committeeDesc}</p>
                      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                        {committeeMembers.map((member, i) => (
-                         <div key={i} className="flex flex-col items-center gap-4 p-6 bg-gray-50 dark:bg-black/40 rounded-[2rem] border border-gray-100 dark:border-white/5 text-center hover:-translate-y-1 transition-transform">
+                         <div key={i} className="flex flex-col items-center gap-4 p-6 bg-white dark:bg-black/40 rounded-[2rem] border border-gray-100 dark:border-white/5 text-center hover:-translate-y-1 transition-transform">
                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-secondary/80 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center text-white shadow-lg border-2 border-white dark:border-zinc-700">
                              <User className="w-8 h-8 opacity-90" />
                            </div>
@@ -567,7 +589,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                  )}
 
                  {activeTab === 'statuts' && (
-                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center py-16">
+                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center py-6">
                      <FileText className="w-16 h-16 text-primary mx-auto mb-6 opacity-80" />
                      <h2 className="text-3xl lg:text-4xl font-black mb-4 text-secondary dark:text-white">{assocDict[lang].statutsTitle}</h2>
                      <p className="text-gray-500 font-medium text-lg">{assocDict[lang].statutsDesc}</p>
@@ -584,7 +606,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
                        <p className="text-gray-600 dark:text-white/70 text-base leading-relaxed">
                          {assocDict[lang].joinDesc2}
                        </p>
-                       <div className="flex flex-col gap-4 text-left bg-gray-50 dark:bg-white/5 p-6 rounded-2xl border border-gray-100 dark:border-white/10 mt-8">
+                       <div className="flex flex-col gap-4 text-left bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-100 dark:border-white/10 mt-8">
                          <div className="flex justify-between items-center border-b border-gray-200 dark:border-white/10 pb-4">
                            <span className="text-xs uppercase tracking-widest text-primary font-bold">{assocDict[lang].students}</span>
                            <span className="text-xl font-black text-secondary dark:text-white">CHF 50</span>
@@ -616,7 +638,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
            {futureText[lang]}
            <span className="text-primary italic">{anchorText[lang]}</span>
          </h3>
-         <Link href={`/${lang}/sign`} className="swiss-button mx-auto inline-flex items-center gap-4 py-4 px-12 text-xl font-black hover:scale-110 active:scale-95 group shadow-[0_0_80px_rgba(227,6,19,0.2)]">
+         <Link href={`/${lang}/sign`} className="swiss-button mx-auto inline-flex items-center gap-4 py-4 px-12 text-xl font-black hover:scale-105 active:scale-95 group">
             {signCtaText[lang]} <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth"/>
          </Link>
        </div>
@@ -625,4 +647,3 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   </>
   );
 }
-

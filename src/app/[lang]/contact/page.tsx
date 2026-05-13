@@ -6,8 +6,8 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Contactez-nous - Pacte Numérique Suisse',
-  description: 'Contacter le comité du Pacte Numérique Suisse pour des questions, des demandes des médias ou du soutien.',
+  title: 'Contact - Swiss Digital Pact',
+  description: 'Contact the Swiss Digital Pact committee for questions, media inquiries, or support.',
 };
 
 export default function ContactPage({ params: { lang } }: { params: { lang: Locale } }) {
@@ -46,7 +46,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       badge: "Accès Direct",
       title1: "PARLONS-",
       title2: "EN",
-      desc: '"Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l’esprit de cette initiative: sérieux, ouverture et sens du bien commun."',
+      desc: '"Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l\'esprit de cette initiative: sérieux, ouverture et sens du bien commun."',
       formTitle: "Envoyer une Demande",
       labelName: "Nom Complet",
       labelEmail: "Adresse Email",
@@ -131,148 +131,102 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
   const t = contactText[lang] || contactText.fr;
 
   return (
-    <div className="container mx-auto px-6 py-16 max-w-7xl overflow-hidden min-h-screen">
+    <div className="container mx-auto px-6 py-6 max-w-7xl overflow-hidden">
+      {/* Header Section */}
       <ScrollReveal>
-        <header className="mb-20 text-center max-w-4xl mx-auto relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
+        <div className="text-left max-w-4xl mx-auto mb-10 relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-4 shadow-sm border border-primary/5">
             <MessageCircle className="w-4 h-4 flex-shrink-0" />
             {t.badge}
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-secondary leading-[0.9] tracking-tighter">
              {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
           </h1>
-          <p className="text-xl text-gray-500 dark:text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 font-medium leading-relaxed max-w-2xl">
             {t.desc}
           </p>
-        </header>
+        </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10" />
-
-        {/* Contact Form Section - Premium Design */}
-        <ScrollReveal>
-         <section className="animate-in slide-in-from-left duration-1000">
-           <div className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-gray-800 p-10 lg:p-16 rounded-[3rem] shadow-xl shadow-gray-200/50 dark:shadow-none transition-all duration-700 hover:-translate-y-4 hover:shadow-4xl hover:border-primary/20 relative">
-             <h2 className="text-3xl font-black mb-10 tracking-tight">{t.formTitle}</h2>
-             <form className="space-y-8 group/form">
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                 <div className="space-y-3">
-                   <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelName}</label>
-                   <input
-                     type="text"
-                     placeholder="Muster Peter"
-                     className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 text-sm"
-                   />
-                 </div>
-                 <div className="space-y-3">
-                   <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelEmail}</label>
-                   <input
-                     type="email"
-                     placeholder="p.muster@email.ch"
-                     className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 text-sm"
-                   />
-                 </div>
-               </div>
-               <div className="space-y-3">
-                 <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelDept}</label>
-                 <div className="relative group/select">
-                    <select className="w-full px-6 py-4 rounded-[1.5rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold appearance-none text-sm">
-                      <option>{t.deptSupport}</option>
-                      <option>{t.deptMedia}</option>
-                      <option>{t.deptRegional}</option>
-                      <option>{t.deptTechnical}</option>
-                    </select>
-                    <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-400 rotate-90" />
-                 </div>
-               </div>
-               <div className="space-y-3">
-                 <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelMessage}</label>
-                 <textarea
-                   rows={4}
-                   placeholder={t.messagePlaceholder}
-                   className="w-full px-6 py-5 rounded-[2rem] bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:opacity-50 resize-none text-sm"
-                 />
-               </div>
-               <button
-                 type="submit"
-                 className="swiss-button w-full flex items-center justify-center gap-3 py-6 text-xl font-black group-hover/form:bg-primary transition-all shadow-lg active:scale-95"
-               >
-                 {t.sendBtn} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
-               </button>
-             </form>
-           </div>
-         </section>
-        </ScrollReveal>
-
-        {/* Contact Info Content Section */}
-        <ScrollReveal delay={0.2}>
-         <section className="flex flex-col gap-16 animate-in slide-in-from-right duration-1000 lg:sticky top-24">
-           <div className="flex flex-col gap-16">
-             <div>
-                <h2 className="text-3xl font-black mb-12 tracking-tight">{t.officeTitle}</h2>
-                <ul className="space-y-10">
-                  {[
-                    { icon: Mail, label: t.labelMail, value: "info@swissdigitalpact.ch" },
-                    { icon: Phone, label: t.labelPhone, value: "+41 22 000 00 00" },
-                    { icon: MapPin, label: t.labelAddress, value: "Marktgasse 55, 3011 Bern, Switzerland" },
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-6 group">
-                      <div className="w-14 h-14 bg-primary group-hover:bg-primary-dark rounded-[1.5rem] flex items-center justify-center text-white transition-all shadow-xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6">
-                        <item.icon className="w-7 h-7 flex-shrink-0" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[9px] font-black uppercase tracking-[4px] text-gray-500 dark:text-gray-400 mb-1">{item.label}</span>
-                        <span className="text-xl font-bold text-secondary dark:text-white group-hover:text-primary transition-all break-all tracking-tight leading-none">{item.value}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-             </div>
-
-             <div className="pt-12 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-3 p-6 bg-gray-100 dark:bg-black/60 rounded-[2.5rem] border border-gray-200 dark:border-gray-900 group hover:border-primary transition-all">
-                   <div className="flex items-center gap-3 text-primary">
-                     <Clock className="w-5 h-5" />
-                     <span className="font-black uppercase text-[9px] tracking-[4px]">{t.labelAccess}</span>
-                   </div>
-                   <p className="text-gray-500 font-bold text-xs leading-relaxed">{t.accessHours}</p>
+      {/* Info Section (Parallel) */}
+      <ScrollReveal>
+        <div className="max-w-4xl mx-auto mb-10">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {[
+              { icon: Mail, label: t.labelMail, value: "initiative@swissdigitalpact.ch" },
+              { icon: MapPin, label: t.labelAddress, value: "Marktgasse 55, 3011 Bern, Switzerland" },
+            ].map((item, idx) => (
+              <li key={idx} className="flex items-start gap-6 group">
+                <div className="w-14 h-14 bg-primary group-hover:bg-primary-dark rounded-[1.5rem] flex items-center justify-center text-white transition-all shadow-xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6">
+                  <item.icon className="w-7 h-7 flex-shrink-0" />
                 </div>
-                <div className="flex flex-col gap-3 p-6 bg-gray-100 dark:bg-black/60 rounded-[2.5rem] border border-gray-200 dark:border-gray-900 group hover:border-primary transition-all">
-                   <div className="flex items-center gap-3 text-primary">
-                     <ExternalLink className="w-5 h-5" />
-                     <span className="font-black uppercase text-[9px] tracking-[4px]">{t.labelMediaKit}</span>
-                   </div>
-                   <p className="text-gray-500 font-bold text-xs">{t.mediaKitDesc} &rarr;</p>
-                </div>
-             </div>
-
-             <div className="flex gap-6 p-8 bg-secondary dark:bg-black rounded-[3rem] text-white items-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-all duration-1000 -z-10" />
-                <ShieldCheck className="w-12 h-12 text-primary flex-shrink-0" />
                 <div className="flex flex-col">
-                   <h4 className="text-lg font-black">{t.secureTitle}</h4>
-                   <p className="text-white/40 text-xs font-medium leading-relaxed">{t.secureDesc}</p>
+                  <span className="text-[9px] font-black uppercase tracking-[4px] text-gray-600 mb-1">{item.label}</span>
+                  <span className="text-xl font-bold text-secondary group-hover:text-primary transition-all break-all tracking-tight leading-none">{item.value}</span>
                 </div>
-             </div>
-           </div>
-         </section>
-        </ScrollReveal>
-      </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ScrollReveal>
 
-      {/* <ScrollReveal delay={0.3}>
-       <div className="mt-20 py-16 border-t border-gray-100 dark:border-gray-800 text-center flex flex-col items-center gap-8">
-          <h3 className="text-3xl font-black">{t.socialTitle}</h3>
-          <div className="flex gap-6">
-             {[Linkedin, Instagram, Facebook].map((Icon, idx) => (
-               <Link key={idx} href="#" className="p-6 bg-gray-100 dark:bg-zinc-900 hover:bg-primary transition-all duration-500 rounded-[2rem] group border border-gray-200 dark:border-gray-800">
-                 <Icon className="w-8 h-8 text-gray-500 dark:text-gray-400 group-hover:text-white transition-all transform group-hover:scale-125" />
-               </Link>
-             ))}
+      {/* Bottom Section: Form */}
+      <ScrollReveal>
+        <section className="max-w-4xl mx-auto">
+          <div className="bg-white border border-gray-200 p-8 lg:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-700 hover:border-primary/20 relative">
+            <h2 className="text-2xl font-black mb-6 tracking-tight text-secondary">{t.formTitle}</h2>
+            <form action="mailto:initiative@swissdigitalpact.ch" method="get" className="space-y-6 group/form">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelName}</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Muster Peter"
+                    className="w-full px-6 py-4 rounded-[1.5rem] bg-white border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:text-gray-400 text-sm text-gray-900"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelEmail}</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="p.muster@email.ch"
+                    className="w-full px-6 py-4 rounded-[1.5rem] bg-white border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:text-gray-400 text-sm text-gray-900"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelDept}</label>
+                <div className="relative group/select">
+                   <select name="department" className="w-full px-6 py-4 rounded-[1.5rem] bg-white border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold appearance-none text-sm text-gray-900">
+                     <option>{t.deptSupport}</option>
+                     <option>{t.deptMedia}</option>
+                     <option>{t.deptRegional}</option>
+                     <option>{t.deptTechnical}</option>
+                   </select>
+                   <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 rotate-90" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] font-black uppercase tracking-[3px] text-gray-500 ml-1">{t.labelMessage}</label>
+                <textarea
+                  rows={4}
+                  name="body"
+                  placeholder={t.messagePlaceholder}
+                  className="w-full px-6 py-5 rounded-[2rem] bg-white border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-bold placeholder:text-gray-400 resize-none text-sm text-gray-900"
+                />
+              </div>
+              <button
+                type="submit"
+                className="swiss-button w-full flex items-center justify-center gap-3 py-6 text-xl font-black group-hover/form:bg-primary transition-all shadow-lg active:scale-95"
+              >
+                {t.sendBtn} <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-smooth" />
+              </button>
+            </form>
           </div>
-       </div>
-      </ScrollReveal> */}
+        </section>
+      </ScrollReveal>
     </div>
   );
 }

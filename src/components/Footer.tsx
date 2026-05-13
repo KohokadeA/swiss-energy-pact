@@ -13,8 +13,9 @@ export const Footer = ({ lang }: { lang: Locale }) => {
       explore: "Explore",
       legal: "Legal",
       privacy: "Privacy Policy",
-      terms: "Terms & Conditions",
-      mediaKit: "Press & Media Kit",
+      transparency: "Transparency",
+      funding: "Funding & Donations",
+      guidelines: "Participating Guidelines",
       copyright: `© ${new Date().getFullYear()} Swiss Digital Pact Committee`,
       madeFor: "Designed for Switzerland"
     },
@@ -23,8 +24,9 @@ export const Footer = ({ lang }: { lang: Locale }) => {
       explore: "Entdecken",
       legal: "Rechtliches",
       privacy: "Datenschutzrichtlinie",
-      terms: "Allgemeine Geschäftsbedingungen",
-      mediaKit: "Presse- und Medienkit",
+      transparency: "Transparenz",
+      funding: "Finanzierung & Spenden",
+      guidelines: "Teilnahmerichtlinien",
       copyright: `© ${new Date().getFullYear()} Komitee des Schweizer Digital-Pakts`,
       madeFor: "Für die Schweiz gemacht"
     },
@@ -33,8 +35,9 @@ export const Footer = ({ lang }: { lang: Locale }) => {
       explore: "Esplora",
       legal: "Legale",
       privacy: "Politica sulla privacy",
-      terms: "Termini e condizioni",
-      mediaKit: "Kit Stampa e Media",
+      transparency: "Trasparenza",
+      funding: "Finanziamenti & Donazioni",
+      guidelines: "Linee guida per la partecipazione",
       copyright: `© ${new Date().getFullYear()} Comitato del Patto Digitale Svizzero`,
       madeFor: "Progettato per la Svizzera"
     },
@@ -43,8 +46,9 @@ export const Footer = ({ lang }: { lang: Locale }) => {
       explore: "Explorer",
       legal: "Légal",
       privacy: "Politique de confidentialité",
-      terms: "Conditions générales",
-      mediaKit: "Kit Presse et Média",
+      transparency: "Transparence",
+      funding: "Financement & Dons",
+      guidelines: "Directives de participation",
       copyright: `© ${new Date().getFullYear()} Comité du Pacte Numérique Suisse`,
       madeFor: "Conçu pour la Suisse"
     }
@@ -53,18 +57,16 @@ export const Footer = ({ lang }: { lang: Locale }) => {
   const footerTexts = footerTextsMap[lang] || footerTextsMap.fr;
 
   return (
-    <footer className="bg-secondary text-white dark:bg-black py-8 mb-0 relative overflow-hidden border-t border-white/5">
-      {/* Abstract Background for Premium Feel */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary opacity-[0.02] rounded-full -mr-[10%] -mt-[10%] blur-3xl -z-10" />
+    <footer className="bg-white text-secondary py-8 mb-0 relative overflow-hidden border-t border-gray-200">
 
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
         <div className="flex flex-col gap-6">
-          <Link href={`/${lang}`} className="flex items-center gap-3 group">
+          <Link href={`/${lang}`} className="flex items-center group">
 
-          {/* Logo container */}
-          <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300">
+          {/* Logo container - wide to match landscape logo */}
+          <div className="w-48 h-14 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-all duration-300">
             <img
-              src="/swiss_digital_pact_logo.png"
+              src="/swiss_digital_pact_logo_new.png"
               alt="Swiss Digital Pact Logo"
               className="w-full h-full object-contain"
             />
@@ -86,46 +88,48 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           </div>
 
         </Link>
-          <p className="text-gray-400 max-w-xs leading-relaxed text-xs font-medium">
+          <p className="text-gray-600 max-w-xs leading-relaxed text-xs font-medium">
             {footerTexts.description}
           </p>
         </div>
 
         <div className="lg:pl-12">
           <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">{footerTexts.explore}</h3>
-          <ul className="flex flex-col gap-3 text-gray-400 text-xs font-bold uppercase tracking-wider">
-            <li><Link href={`/${lang}`} className="hover:text-white transition-colors">{dict.nav.home}</Link></li>
-            <li><Link href={`/${lang}/initiative`} className="hover:text-white transition-colors">{dict.nav.initiative}</Link></li>
-            <li><Link href={`/${lang}/sign`} className="hover:text-white transition-colors">{dict.nav.sign}</Link></li>
-            <li><Link href={`/${lang}/support`} className="hover:text-white transition-colors">{dict.nav.support}</Link></li>
+          <ul className="flex flex-col gap-3 text-gray-600 text-xs font-bold uppercase tracking-wider">
+            <li><Link href={`/${lang}`} className="hover:text-primary transition-colors">{dict.nav.home}</Link></li>
+            <li><Link href={`/${lang}/initiative`} className="hover:text-primary transition-colors">{dict.nav.initiative}</Link></li>
+            <li><Link href={`/${lang}/sign`} className="hover:text-primary transition-colors">{dict.nav.sign}</Link></li>
+            <li><Link href={`/${lang}/support`} className="hover:text-primary transition-colors">{dict.nav.support}</Link></li>
+            <li><Link href={`/${lang}/media`} className="hover:text-primary transition-colors">{dict.nav.media}</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">{footerTexts.legal}</h3>
-          <ul className="flex flex-col gap-3 text-gray-400 text-xs font-bold">
-            <li><Link href="#" className="hover:text-white transition-colors flex items-center gap-2">{footerTexts.privacy} <ExternalLink className="w-3 h-3 opacity-50"/></Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors flex items-center gap-2">{footerTexts.terms} <ExternalLink className="w-3 h-3 opacity-50"/></Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">{footerTexts.mediaKit}</Link></li>
+          <ul className="flex flex-col gap-3 text-gray-600 text-xs font-bold">
+            <li><Link href="#" className="hover:text-primary transition-colors flex items-center gap-2">{footerTexts.privacy} <ExternalLink className="w-3 h-3 opacity-50"/></Link></li>
+            <li><Link href="#" className="hover:text-primary transition-colors">{footerTexts.transparency}</Link></li>
+            <li><Link href="#" className="hover:text-primary transition-colors">{footerTexts.funding}</Link></li>
+            <li><Link href="#" className="hover:text-primary transition-colors">{footerTexts.guidelines}</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-black text-[10px] uppercase tracking-widest mb-4 text-primary">Contact</h3>
-          <ul className="flex flex-col gap-3 text-gray-400">
+          <ul className="flex flex-col gap-3 text-gray-600">
             <li className="flex items-center gap-4 group cursor-pointer">
               <Mail className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-all" />
-              <span className="text-gray-300 font-bold text-xs break-all tracking-tight">info@swissdigitalpact.ch</span>
+              <span className="text-secondary font-bold text-xs break-all tracking-tight">initiative@swissdigitalpact.ch</span>
             </li>
             <li className="flex items-center gap-4 group cursor-pointer">
               <MapPin className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-all" />
-              <span className="text-gray-300 font-bold text-xs">Marktgasse 55, 3011 Bern, Switzerland</span>
+              <span className="text-secondary font-bold text-xs">Marktgasse 55, 3011 Bern, Switzerland</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-600 text-[10px] font-black uppercase tracking-[3px]">
+      <div className="container mx-auto px-6 mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-[10px] font-black uppercase tracking-[3px]">
         <p>{footerTexts.copyright}</p>
         <p className="flex items-center gap-2">{footerTexts.madeFor} <span className="text-primary w-2 h-2 rounded-full bg-primary" /></p>
       </div>

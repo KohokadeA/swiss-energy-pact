@@ -93,7 +93,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
                     'nav-link relative font-medium text-sm whitespace-nowrap px-2 py-2 transition-colors',
                     pathname === link.href
                       ? 'text-primary font-bold'
-                      : (isHomePage && !isScrolled ? 'text-white/90 hover:text-white' : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white')
+                      : 'text-gray-600 hover:text-primary'
                   )}
                 >
                   {link.name}
@@ -106,14 +106,14 @@ export const Header = ({ lang }: { lang: Locale }) => {
 
           <div className="h-4 w-[1px] bg-gray-200 dark:bg-gray-800 mx-1 xl:mx-3" />
 
-          <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-900/80 p-1 rounded-lg border border-gray-200 dark:border-white/10">
+          <div className="flex items-center gap-1 bg-white dark:bg-gray-900/80 p-1 rounded-lg border border-gray-200 dark:border-white/10">
             {languages.map((l) => (
               <Link
                 key={l.code}
                 href={redirectedPathName(l.code)}
                 className={clsx(
                   'px-2.5 py-1.5 text-[10px] font-bold rounded-md transition-all',
-                  lang === l.code ? 'bg-white dark:bg-white text-black shadow-sm' : (isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white')
+                  lang === l.code ? 'bg-white text-black shadow-sm' : 'text-gray-500 hover:text-black'
                 )}
               >
                 {l.name}
@@ -128,7 +128,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+          className="lg:hidden p-2 rounded-lg hover:text-primary transition-all"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -145,7 +145,7 @@ export const Header = ({ lang }: { lang: Locale }) => {
                     href={link.href as string}
                     className={clsx(
                       'text-lg font-bold px-4 py-3 rounded-xl transition-all',
-                      pathname === link.href ? 'bg-primary/10 text-primary' : 'text-gray-600 hover:bg-gray-50'
+                      pathname === link.href ? 'bg-primary/10 text-primary' : 'text-gray-600 hover:text-primary'
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

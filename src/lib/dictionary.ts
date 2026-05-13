@@ -35,7 +35,15 @@ export const dictionaries = {
       p1: "Right to Digital Integrity and Self-Determination.",
       p2: "Sovereign control over critical national infrastructure.",
       p3: "Mandatory technical independence from foreign states.",
-      p4: "Protection against illegal foreign data processing."
+      p4: "Protection against illegal foreign data processing.",
+      whyConstitutional: {
+        title: "Why a Constitutional Basis?",
+        description: "Unlike temporary laws, the Constitution defines long-term responsibilities independent of political cycles. It provides maximum legal certainty and a clear signal to national and international partners about Switzerland's digital sovereignty."
+      },
+      officialTextLink: {
+        title: "Official text of the federal popular initiative",
+        description: "Click to view the PDF document"
+      }
     },
     sign: {
       h: "Participate in Direct Democracy",
@@ -77,8 +85,8 @@ export const dictionaries = {
     }
   },
   fr: {
-    title: "Pacte Numérique Suisse",
-    associationTitle: "Association du Pacte Numérique Suisse",
+    title: "Swiss Digital Pact",
+    associationTitle: "Association Swiss Digital Pact",
     subtitle: "Initiative populaire fédérale : Pour la sécurité numérique de la Suisse",
     hero: {
       title: "Pour une Suisse libre, sûre et maîtresse de son destin numérique",
@@ -108,11 +116,19 @@ export const dictionaries = {
     initiative: {
       h: "Changement Structurel",
       t: "L'Article Constitutionnel",
-      d: "Le Pacte Numérique Suisse vise à modifier la Constitution fédérale pour garantir l'indépendance numérique de notre nation.",
+      d: "Le Swiss Digital Pact vise à modifier la Constitution fédérale pour garantir l'indépendance numérique de notre nation.",
       p1: "Droit à l'intégrité numérique et à l'autodétermination.",
       p2: "Contrôle souverain de l'infrastructure nationale critique.",
       p3: "Indépendance technique obligatoire vis-à-vis des États tiers.",
-      p4: "Protection contre le traitement illicite de données étrangères."
+      p4: "Protection contre le traitement illicite de données étrangères.",
+      whyConstitutional: {
+        title: "Pourquoi une base constitutionnelle ?",
+        description: "Contrairement aux lois temporaires, la Constitution définit des responsabilités à long terme, indépendantes des cycles politiques. Elle offre une sécurité juridique maximale et un signal clair aux partenaires nationaux et internationaux concernant la souveraineté numérique de la Suisse."
+      },
+      officialTextLink: {
+        title: "Texte officiel de l'initiative populaire fédérale",
+        description: "Cliquez pour voir le document PDF"
+      }
     },
     sign: {
       h: "Participer à la Démocratie Directe",
@@ -154,8 +170,8 @@ export const dictionaries = {
     }
   },
   de: {
-    title: "Schweizer Digital-Pakt",
-    associationTitle: "Verein Schweizer Digital-Pakt",
+    title: "Swiss Digital Pact",
+    associationTitle: "Verein Swiss Digital Pact",
     subtitle: "Eidgenössische Volksinitiative: Für die digitale Sicherheit der Schweiz",
     hero: {
       title: "Für eine freie, sichere Schweiz, die ihr digitales Schicksal selbst bestimmt",
@@ -185,11 +201,19 @@ export const dictionaries = {
     initiative: {
       h: "Strukturwandel",
       t: "Der Verfassungsartikel",
-      d: "Der Schweizer Digital-Pakt strebt eine Änderung der Bundesverfassung an, um die digitale Unabhängigkeit unserer Nation zu sichern.",
+      d: "Der Swiss Digital Pact strebt eine Änderung der Bundesverfassung an, um die digitale Unabhängigkeit unserer Nation zu sichern.",
       p1: "Recht auf digitale Integrität und Selbstbestimmung.",
       p2: "Souveräne Kontrolle über kritische Infrastrukturen.",
       p3: "Technische Unabhängigkeit von ausländischen Staaten.",
-      p4: "Schutz vor missbräuchlicher Datenverarbeitung im Ausland."
+      p4: "Schutz vor missbräuchlicher Datenverarbeitung im Ausland.",
+      whyConstitutional: {
+        title: "Warum eine Verfassungsgrundlage?",
+        description: "Im Gegensatz zu befristeten Gesetzen definiert die Verfassung langfristige Verantwortlichkeiten unabhängig von politischen Zyklen. Sie bietet maximale Rechtssicherheit und ein klares Signal an nationale und internationale Partner über die digitale Souveränität der Schweiz."
+      },
+      officialTextLink: {
+        title: "Offizieller Text der eidgenössischen Volksinitiative",
+        description: "Klicken Sie hier, um das PDF-Dokument anzuzeigen"
+      }
     },
     sign: {
       h: "Direkte Demokratie erleben",
@@ -231,8 +255,8 @@ export const dictionaries = {
     }
   },
   it: {
-    title: "Patto Digitale Svizzero",
-    associationTitle: "Associazione Patto Digitale Svizzero",
+    title: "Swiss Digital Pact",
+    associationTitle: "Associazione Swiss Digital Pact",
     subtitle: "Iniziativa popolare federale: Per la sicurezza digitale della Svizzera",
     hero: {
       title: "Per una Svizzera libera, sicura e padrona del suo destino digitale",
@@ -262,11 +286,19 @@ export const dictionaries = {
     initiative: {
       h: "Cambiamento Strutturale",
       t: "L'Articolo Costituzionale",
-      d: "Il Patto Digitale Svizzero mira a modificare la Costituzione federale per garantire l'indipendenza digitale della nostra nazione.",
+      d: "Il Swiss Digital Pact mira a modificare la Costituzione federale per garantire l'indipendenza digitale della nostra nazione.",
       p1: "Diritto all'integrità digitale e autodeterminazione.",
       p2: "Controllo sovrano sulle infrastrutture critiche nazionali.",
       p3: "Indipendenza tecnica obbligatoria da stati esteri.",
-      p4: "Protezione dal trattamento illecito di dati all'estero."
+      p4: "Protezione dal trattamento illecito di dati all'estero.",
+      whyConstitutional: {
+        title: "Perché una base costituzionale?",
+        description: "A differenza delle leggi temporanee, la Costituzione definisce responsabilità a lungo termine indipendenti dai cicli politici. Fornisce la massima certezza giuridica e un chiaro segnale ai partner nazionali e internazionali sulla sovranità digitale della Svizzera."
+      },
+      officialTextLink: {
+        title: "Testo ufficiale dell'iniziativa popolare federale",
+        description: "Clicca per vedere il documento PDF"
+      }
     },
     sign: {
       h: "Partecipa alla Democrazia Diretta",

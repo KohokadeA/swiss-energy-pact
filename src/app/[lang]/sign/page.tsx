@@ -2,8 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Download, Printer, PenTool, Send, AlertTriangle, FileCheck, Landmark, ShieldCheck, ArrowDown, ChevronRight, Scale } from 'lucide-react';
+import { Download, Printer, PenTool, Send, FileCheck, ShieldCheck, ArrowDown } from 'lucide-react';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -126,15 +125,14 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
   const t = content[lang] || content['fr'];
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-16 lg:pt-40 max-w-7xl overflow-hidden min-h-screen">
+    <div className="container mx-auto px-6 pt-20 pb-6 lg:pt-24 max-w-7xl overflow-hidden">
       <ScrollReveal>
-        <header className="text-center max-w-4xl mx-auto mb-20 relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary opacity-[0.05] rounded-full blur-[100px] -z-10" />
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-100/50 dark:bg-red-900/20 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/5">
+        <header className="text-center max-w-4xl mx-auto mb-10 relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-8 shadow-sm border border-primary/20">
             <ShieldCheck className="w-4 h-4 flex-shrink-0" />
             {dict.common.howToSign}
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 text-secondary dark:text-white leading-[0.9] tracking-tighter">
              {t.title}
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-3xl mx-auto">
@@ -147,32 +145,14 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
 
 
       {/* Steps Visualizer */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.2
-            }
-          }
-        }}
-        className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full mb-24 relative"
-      >
+      <ScrollReveal className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full mb-12 relative">
         <div className="hidden lg:block absolute top-[20%] left-[10%] right-[10%] h-1 border-t-4 border-dashed border-gray-100 dark:border-gray-800 -z-10" />
         {steps.map((step, idx) => (
-          <motion.div
+          <div
             key={idx}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-            }}
-            className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white dark:bg-zinc-900/40 p-8 rounded-[3rem] border border-gray-50 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:border-primary/20 relative"
+            className="flex flex-col items-center text-center group translate-y-0 hover:-translate-y-4 transition-all duration-700 bg-white p-8 rounded-[3rem] border border-gray-200 shadow-xl hover:shadow-2xl hover:border-primary/20 relative"
           >
-            <div className="absolute top-0 right-0 p-4 font-black text-5xl text-gray-100/30 dark:text-gray-800/20 leading-none select-none group-hover:text-primary/10 transition-all">0{idx + 1}</div>
+            <div className="absolute top-0 right-0 p-4 font-black text-5xl text-gray-300 dark:text-gray-700 leading-none select-none group-hover:text-primary/20 transition-all">0{idx + 1}</div>
             <div className={`w-16 h-16 ${step.color} text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
               <step.icon className="w-8 h-8" />
             </div>
@@ -197,28 +177,32 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
                 <p className="text-[10px] font-black text-green-800 dark:text-green-300 uppercase tracking-wider">{step.address}</p>
               </div>
             )}
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </ScrollReveal>
 
       {/* Main Action Block */}
       <ScrollReveal>
-        <div className="w-full bg-secondary dark:bg-zinc-900 p-12 lg:p-24 rounded-[4rem] text-white flex flex-col lg:flex-row items-center gap-16 shadow-3xl relative overflow-hidden group">
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary opacity-[0.05] rounded-full translate-x-20 translate-y-20 blur-[100px] group-hover:scale-125 transition-all duration-1000" />
-
+        <div className="w-full bg-white p-12 lg:p-20 rounded-[4rem] text-secondary flex flex-col lg:flex-row items-center gap-16 shadow-sm border border-gray-200 relative overflow-hidden group">
           <div className="flex-1 flex flex-col gap-8 items-center lg:items-start text-center lg:text-left z-10">
-            <div className="w-20 h-20 bg-white/10 rounded-[2rem] flex items-center justify-center border border-white/10 group-hover:scale-110 transition-all duration-500">
+            <div className="w-20 h-20 bg-gray-100 rounded-[2rem] flex items-center justify-center border border-gray-200 group-hover:scale-110 transition-all duration-500">
                <FileCheck className="w-10 h-10 text-primary" />
             </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tighter">{t.form1} <br /> <span className="text-primary italic underline decoration-4 underline-offset-[12px]">{t.form2}</span>.</h2>
-            <p className="text-white/60 text-lg font-bold leading-relaxed max-w-xl">
+            <h2 className="text-3xl lg:text-5xl font-black leading-[0.9] tracking-tighter text-secondary">{t.form1} <span className="text-primary italic underline decoration-4 underline-offset-[12px]">{t.form2}</span>.</h2>
+            <p className="text-gray-600 text-lg font-bold leading-relaxed max-w-2xl">
                {t.formDesc}
             </p>
-            <Link href="/signature_form.pdf" download="Swiss_Digital_Pact_Signature_Form.pdf" className="swiss-button py-6 px-12 text-2xl font-black group-hover:scale-105 active:scale-95 transition-all shadow-[0_30px_60px_-12px_rgba(227,6,19,0.4)] flex items-center gap-4">
+            <Link href="/signature_form.pdf" download="Swiss_Digital_Pact_Signature_Form.pdf" className="swiss-button py-6 px-12 text-2xl font-black group-hover:scale-105 active:scale-95 transition-all shadow-sm flex items-center gap-4">
               <Download className="w-8 h-8" /> {t.download}
             </Link>
-            <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-[3px] text-white/30">
-               <ArrowDown className="w-3 h-3" /> {t.pdf} | 16 KB
+          </div>
+
+          <div className="hidden lg:flex flex-1 justify-center items-center z-10">
+            <div className="relative w-64 h-64 bg-white rounded-[3rem] flex items-center justify-center border border-gray-200 group-hover:scale-105 transition-all duration-700 shadow-sm">
+              <FileCheck className="w-32 h-32 text-primary opacity-80" />
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-md rotate-12">
+                <Download className="w-8 h-8 text-white" />
+              </div>
             </div>
           </div>
         </div>

@@ -180,16 +180,16 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center font-sans tracking-tight">
+    <div className="relative w-full h-screen bg-white overflow-hidden flex items-center justify-center font-sans tracking-tight">
       <div className="absolute inset-0 z-0">
         <Image
           src="/swiss_digital_pact_hero_v5.png"
           alt="Background"
           fill
           priority
-          className="object-cover object-center brightness-[0.2] scale-105"
+          className="object-cover object-center opacity-10 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-6xl px-10 flex flex-col items-center text-center">
@@ -206,7 +206,7 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
               initial={{ scale: 0 }}
               animate={{ scale: 1, rotate: [0, 5, 0] }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="p-8 bg-[#e30613]/20 rounded-full border border-[#e30613]/40 shadow-[0_0_60px_rgba(227,6,19,0.4)] mb-8"
+              className="p-8 bg-white rounded-full border border-gray-200 shadow-sm mb-8"
             >
               {React.createElement(slides[currentSlide].icon, { className: "w-24 h-24 text-[#e30613]" })}
             </motion.div>
@@ -224,7 +224,7 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-8 drop-shadow-2xl"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-secondary uppercase tracking-tighter leading-none mb-8"
             >
               {slides[currentSlide].title}
             </motion.h1>
@@ -233,7 +233,7 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 1 }}
-              className="text-2xl md:text-4xl text-white/80 font-semibold leading-relaxed max-w-4xl"
+              className="text-2xl md:text-4xl text-gray-700 font-semibold leading-relaxed max-w-4xl"
             >
               {slides[currentSlide].text}
             </motion.p>
@@ -244,7 +244,7 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
       {/* Progress Bar */}
       <div className="absolute bottom-10 left-10 right-10 flex gap-4 z-20">
         {slides.map((_, i) => (
-          <div key={i} className="h-2 flex-1 bg-white/10 rounded-full overflow-hidden">
+          <div key={i} className="h-2 flex-1 bg-gray-200 rounded-full overflow-hidden">
             {i === currentSlide && (
               <motion.div
                 initial={{ width: "0%" }}
@@ -264,8 +264,8 @@ export default function VideoPage({ params: { lang = 'fr' } }: { params: { lang?
             <Shield className="text-white w-6 h-6" />
           </div>
           <div>
-            <p className="text-white font-black text-xl leading-none">{(pactText[lang as keyof typeof pactText] || pactText['fr']).title}</p>
-            <p className="text-white/50 font-bold text-xs uppercase tracking-widest mt-1">{(pactText[lang as keyof typeof pactText] || pactText['fr']).sub}</p>
+            <p className="text-secondary font-black text-xl leading-none">{(pactText[lang as keyof typeof pactText] || pactText['fr']).title}</p>
+            <p className="text-gray-500 font-bold text-xs uppercase tracking-widest mt-1">{(pactText[lang as keyof typeof pactText] || pactText['fr']).sub}</p>
           </div>
         </div>
       </div>

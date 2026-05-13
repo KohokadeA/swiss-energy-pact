@@ -224,9 +224,9 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
   const visible = [0, 1, 2].map(offset => data.endorsements[(idx + offset) % len]);
 
   return (
-    <section className="container mx-auto px-6 py-12 overflow-hidden">
+    <section className="container mx-auto px-6 pt-0 pb-2 overflow-hidden">
       <ScrollReveal>
-        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-2">
           {data.sectionTitle}
         </h2>
       </ScrollReveal>
@@ -412,9 +412,8 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
   return (
     <div className="flex flex-col gap-14 pb-12 overflow-hidden selection:bg-primary selection:text-white">
       {/* Hero Section - Full Viewport & 100% Visibility */}
-      <section className="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-6">
+      <section className="relative flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] pt-8">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary opacity-[0.08] rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90 z-10" />
         </div>
 
@@ -424,11 +423,11 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0, scale: 0.8, y: 20 }}
              animate={{ opacity: 1, scale: 1, y: 0 }}
              transition={{ duration: 0.8, ease: "easeOut" }}
-             className="flex justify-center mb-2"
+             className="flex justify-center mb-6"
            >
-             <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 relative overflow-hidden rounded-3xl mx-auto">
+             <div className="h-28 w-[22rem] md:h-36 md:w-[30rem] lg:h-40 lg:w-[36rem] relative overflow-hidden mx-auto">
                 <Image
-                  src="/swiss_digital_pact_logo.png"
+                  src="/swiss_digital_pact_logo_new.png"
                   alt="Swiss Digital Pact Logo"
                   fill
                   className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
@@ -436,14 +435,14 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              </div>
            </motion.div>
 
-           <div className="flex justify-center mb-3">
+           <div className="flex justify-center mb-6">
              <motion.div
                initial={{ opacity: 0, y: 15 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.2 }}
-               className="inline-flex items-center gap-4 text-white text-sm md:text-base lg:text-xl font-black tracking-[0.2em] uppercase drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]"
+               className="inline-flex items-center gap-4 text-gray-600 text-sm md:text-base lg:text-xl font-black tracking-[0.2em] uppercase"
              >
-               <span className="flex h-3 w-3 rounded-full bg-primary shadow-[0_0_15px_rgba(227,6,19,1)] animate-pulse" />
+               <span className="flex h-3 w-3 rounded-full bg-primary animate-pulse" />
                <span>{dict.subtitle}</span>
              </motion.div>
            </div>
@@ -452,7 +451,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0, scale: 0.95 }}
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 0.7, delay: 0.3 }}
-             className="text-4xl md:text-5xl lg:text-[5.5rem] font-black tracking-tighter leading-[0.95] text-white mb-4 drop-shadow-2xl max-w-[90vw] xl:max-w-7xl mx-auto"
+             className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[0.95] text-secondary mb-8 max-w-[90vw] xl:max-w-7xl mx-auto"
            >
              {dict.hero.title.split(' ').map((word, i) => (
                <span key={i} className={word.toLowerCase() === 'sovereignty' || word.toLowerCase() === 'souveraineté' || word.toLowerCase() === 'souveränität' || word.toLowerCase() === 'sovranità' ? "text-primary italic" : ""}>
@@ -465,7 +464,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 0.2 }}
-             className="text-base md:text-xl text-white/90 leading-relaxed max-w-5xl mx-auto mb-6 font-bold drop-shadow-xl"
+             className="text-base md:text-xl text-gray-700 leading-relaxed max-w-5xl mx-auto mb-10 font-bold"
            >
              {dict.hero.description}
            </motion.p>
@@ -474,12 +473,12 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
              initial={{ opacity: 0, y: 15 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.4 }}
-             className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4"
+             className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2"
            >
-             <Link href={`/${lang}/initiative`} className="swiss-button px-12 py-6 text-2xl font-black shadow-[0_0_80px_rgba(227,6,19,0.3)] group inline-flex items-center justify-center gap-2">
+             <Link href={`/${lang}/initiative`} className="swiss-button px-12 py-6 text-2xl font-black group inline-flex items-center justify-center gap-2">
                {dict.hero.cta.toUpperCase()} <ArrowRight className="w-10 h-10 group-hover:translate-x-3 transition-smooth" />
              </Link>
-             <Link href={`/${lang}/sign`} className="px-12 py-6 rounded-[2rem] font-black text-xl text-white border-2 border-white/40 hover:bg-white hover:text-black transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] active:scale-95 duration-300">
+             <Link href={`/${lang}/sign`} className="px-12 py-6 rounded-[2rem] font-black text-xl text-secondary border-2 border-secondary/40 hover:bg-primary hover:text-white hover:border-primary transition-all hover:shadow-lg active:scale-95 duration-300">
                {dict.hero.learn.toUpperCase()}
              </Link>
            </motion.div>
@@ -487,62 +486,38 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
       </section>
 
       {/* Why This Initiative - Premium Text Section */}
-      <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-12 md:mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-secondary dark:text-white leading-[1.05]">
+      <section className="container mx-auto px-6 py-4 md:py-6">
+        <ScrollReveal className="max-w-4xl mx-auto">
+          <div className="mb-6 md:mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-secondary dark:text-white leading-[1.05]">
               {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).title1}{' '}
               <span className="text-primary italic">
                 {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).titleHighlight}
               </span>
             </h2>
             <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-primary to-primary/30" />
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
-          >
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-4">
             {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para1}
-          </motion.p>
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-10"
-          >
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium mb-4">
             {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para2}
-          </motion.p>
+          </p>
 
           {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para3 && (
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-              className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium"
-            >
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300/90 leading-[1.9] md:leading-[2] font-medium">
               {(whyInitiativeText[lang as keyof typeof whyInitiativeText] || whyInitiativeText['fr']).para3}
-            </motion.p>
+            </p>
           )}
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* The Vision Movie - REFINED SCALE & PREMIUM */}
       <section className="container mx-auto px-6">
         <ScrollReveal>
-         <div className="relative aspect-video max-w-5xl mx-auto rounded-[2rem] overflow-hidden group shadow-[0_40px_80px_rgba(0,0,0,0.4)] bg-zinc-950 border border-white/5">
+          <div className="relative aspect-video max-w-5xl mx-auto rounded-[2rem] overflow-hidden group shadow-xl bg-gray-100 border border-gray-200">
             <AnimatePresence mode="wait">
                {!isVisionPlaying ? (
                <motion.div
@@ -550,15 +525,15 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="relative w-full h-full cursor-pointer bg-black"
+                  className="relative w-full h-full cursor-pointer bg-gray-100"
                   onClick={() => setIsVisionPlaying(true)}
                >
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                     <div className="p-10 bg-white/10 backdrop-blur-3xl rounded-full group-hover:scale-110 transition-all duration-500 group-hover:bg-primary shadow-3xl border border-white/20 mb-8">
-                     <PlayCircle className="w-20 h-20 text-white" />
+                     <div className="p-10 bg-white rounded-full group-hover:scale-110 transition-all duration-500 group-hover:bg-primary shadow-lg border border-gray-200 mb-8">
+                     <PlayCircle className="w-20 h-20 text-secondary group-hover:text-white" />
                      </div>
 
-                     <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter drop-shadow-2xl">
+                     <h2 className="text-3xl md:text-5xl font-black text-secondary uppercase tracking-tighter">
                      {visionText[lang].watch}{" "}
                      <span className="text-primary italic">VISION</span>
                      </h2>
@@ -605,13 +580,13 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
         </ScrollReveal>
       </section>
 
-      <section className="container mx-auto px-6 py-12 text-center">
+      <section className="container mx-auto px-6 pt-2 pb-0 text-center">
         <ScrollReveal>
-         <h2 className="text-4xl md:text-5xl font-black tracking-tight text-secondary dark:text-white leading-[1] mb-6">
+         <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white leading-[1] mb-2">
             {visionText[lang].title}
          </h2>
 
-         <p className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto mb-10 italic">
+         <p className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto mb-2 italic">
             {visionText[lang].quote}
          </p>
         </ScrollReveal>
@@ -620,7 +595,7 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
       <EndorsementsSection lang={lang} />
 
       {/* Partners Section */}
-      <section className="container mx-auto px-6 py-12">
+      <section className="container mx-auto px-6 py-6">
        <ScrollReveal>
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white mb-4">
@@ -653,10 +628,10 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
             <div key={i} className="group relative flex items-center justify-center">
               {/* Tooltip */}
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:-translate-y-2 pointer-events-none z-20">
-                <div className="bg-[#0A1D37] text-white px-5 py-2.5 rounded-xl shadow-2xl whitespace-nowrap border border-white/10">
+                <div className="bg-white text-secondary px-5 py-2.5 rounded-xl shadow-2xl whitespace-nowrap border border-gray-200">
                   <span className="text-xs font-bold tracking-wide">{partner.name}</span>
                 </div>
-                <div className="w-2.5 h-2.5 bg-[#0A1D37] rotate-45 mx-auto -mt-1.5 border-r border-b border-white/10" />
+                <div className="w-2.5 h-2.5 bg-white rotate-45 mx-auto -mt-1.5 border-r border-b border-gray-200" />
               </div>
 
               <div className="w-full h-32 flex items-center justify-center transition-all duration-500 p-2 group-hover:-translate-y-1">
@@ -676,17 +651,15 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
       {/* FINAL CTA - Refined Scale & High-End Block */}
       <section className="container mx-auto px-6 mb-8">
        <ScrollReveal>
-         <div className="bg-primary p-10 lg:p-14 rounded-[2.5rem] text-white flex flex-col items-center text-center relative overflow-hidden shadow-xl shadow-primary/20 group max-w-5xl mx-auto">
-
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.02] rounded-full -mr-32 -mt-32 blur-3xl transition-all duration-1000 group-hover:scale-110" />
+         <div className="bg-white p-10 lg:p-14 rounded-[2.5rem] text-secondary flex flex-col items-center text-center relative overflow-hidden shadow-sm border border-gray-200 group max-w-5xl mx-auto">
 
             <div className="relative z-10 flex flex-col gap-5 items-center">
 
-               <div className="p-4 bg-white/10 rounded-xl backdrop-blur-3xl border border-white/20 shadow-xl">
-               <Download className="w-7 h-7" />
+               <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+               <Download className="w-7 h-7 text-primary" />
                </div>
 
-               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter leading-[1.1] max-w-3xl mx-auto drop-shadow-md mb-2">
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter leading-[1.1] max-w-3xl mx-auto mb-2 text-secondary">
                {ctaText[lang].desc}
                </h2>
 
@@ -694,14 +667,14 @@ export default function Home({ params: { lang } }: { params: { lang: Locale } })
 
                <Link
                   href={`/${lang}/sign`}
-                  className="px-12 py-5 bg-white text-primary rounded-xl font-black text-xl hover:scale-110 active:scale-95 transition-all shadow-xl"
+                  className="px-12 py-5 bg-primary text-white rounded-xl font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-sm"
                >
                   {ctaText[lang].sign}
                </Link>
 
                <Link
                   href={`/${lang}/support`}
-                  className="px-12 py-5 border-2 border-white/20 hover:bg-white/10 rounded-xl font-black text-xl transition-all backdrop-blur-2xl"
+                  className="px-12 py-5 border-2 border-secondary/20 hover:bg-secondary hover:text-white rounded-xl font-black text-xl transition-all text-secondary"
                >
                   {ctaText[lang].support}
                </Link>

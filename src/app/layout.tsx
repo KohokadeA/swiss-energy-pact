@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-import AtmosphericBackground from '@/components/AtmosphericBackground';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Swiss Digital Pact - Federal Popular Initiative',
@@ -46,8 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <AtmosphericBackground />
+      <body className="font-sans">
         {children}
       </body>
     </html>
