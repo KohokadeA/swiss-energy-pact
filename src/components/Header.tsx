@@ -3,9 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
-import Magnetic from '@/components/Magnetic';
 import { type Locale, getDictionary } from '@/lib/dictionary';
 
 const languages = [
@@ -53,9 +52,9 @@ export const Header = ({ lang }: { lang: Locale }) => {
   return (
     <header
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-smooth scroll-blur',
+        'fixed top-0 left-0 right-0 z-50 transition-smooth',
         isScrolled
-          ? 'bg-white/80 dark:bg-black/70 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] py-3 border-b border-white/10'
+          ? 'bg-white dark:bg-black shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] py-3 border-b border-gray-100 dark:border-white/10'
           : 'bg-transparent py-6'
       )}
     >
@@ -63,13 +62,13 @@ export const Header = ({ lang }: { lang: Locale }) => {
         <Link href={`/${lang}`} className="flex items-center gap-3 group">
 
           {/* Logo container */}
-          {/* <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300">
+          <div className="flex items-center justify-center group-hover:scale-105 transition-all duration-300">
             <img
-              src="/new_logo_sdp.png"
+              src="/swiss_digital_pact_logo_header.png"
               alt="Swiss Digital Pact Logo"
-              className="w-full h-full object-contain"
+              className="h-12 w-auto object-contain"
             />
-          </div> */}
+          </div>
 
           {/* Text */}
           {/* <div className="flex flex-col">

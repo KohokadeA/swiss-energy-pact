@@ -269,10 +269,10 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   };
 
   const disclaimerText = {
-    en: '"The French text is the submitted reference text. Other language versions will be aligned with official translations."',
-    fr: '"Le texte français est le texte de référence déposé. Les autres versions linguistiques seront alignées sur les traductions officielles."',
-    de: '"Der französische Text ist der eingereichte Referenztext. Andere Sprachversionen werden an die offiziellen Übersetzungen angeglichen."',
-    it: '"Il testo francese è il testo di riferimento depositato. Le altre versioni linguistiche saranno allineate alle traduzioni ufficiali."'
+    en: 'The French text is the submitted reference text. Other language versions will be aligned with official translations.',
+    fr: 'Le texte français est le texte de référence déposé. Les autres versions linguistiques seront alignées sur les traductions officielles.',
+    de: 'Der französische Text ist der eingereichte Referenztext. Andere Sprachversionen werden an die offiziellen Übersetzungen angeglichen.',
+    it: 'Il testo francese è il testo di riferimento depositato. Le altre versioni linguistiche saranno allineate alle traduzioni ufficiali.'
   };
 
 
@@ -298,6 +298,13 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     it: "Aiutate ad ancorarla nella Costituzione."
   };
 
+  const bannerBadgeText = {
+    en: "Securing Switzerland's Digital Future",
+    fr: "Assurer l'avenir numérique de la Suisse",
+    de: "Die digitale Zukunft der Schweiz sichern",
+    it: "Garantire il futuro digitale della Svizzera"
+  };
+
   const signCtaText = {
     en: "Sign the initiative now",
     fr: "Signer l'initiative maintenant",
@@ -310,19 +317,23 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
     <div className="container mx-auto px-6 pt-20 pb-6 max-w-7xl overflow-hidden">
       {/* Premium Banner Header */}
       <ScrollReveal>
-        <header className="mb-10 relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-start">
-          <div className="flex-1 flex flex-col gap-12">
-
-            <div className="space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
-               <p>{whyText[lang].para1}</p>
-               <p>{whyText[lang].para2}</p>
-               <p className="font-black text-primary text-2xl md:text-3xl tracking-tight leading-tight mt-10">
-                 {whyText[lang].para3}
-               </p>
+        <header className="mb-10 relative">
+          {/* Badge is now centered over the entire section like SIGN and SUPPORT pages */}
+          <div className="flex justify-center mt-6 mb-8 w-full">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase shadow-sm border border-primary/5 w-fit">
+              <ShieldCheck className="w-4 h-4 flex-shrink-0" />
+              {bannerBadgeText[lang]}
             </div>
-
-
           </div>
+
+          <div className="relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-center">
+            <div className="flex-1 space-y-6 text-xl md:text-2xl text-secondary dark:text-gray-300 max-w-3xl leading-relaxed font-medium">
+              <p>{whyText[lang].para1}</p>
+              <p>{whyText[lang].para2}</p>
+              <p className="font-black text-primary text-2xl md:text-3xl tracking-tight leading-tight mt-10">
+                {whyText[lang].para3}
+              </p>
+            </div>
 
           <div className="lg:w-1/3 p-10 bg-white border border-gray-200 dark:border-gray-800 rounded-[3rem] flex flex-col gap-6 shadow-2xl relative overflow-hidden group">
 
@@ -346,6 +357,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
               </Link>
             </div>
           </div>
+        </div>
         </header>
       </ScrollReveal>
 
@@ -379,7 +391,7 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
 
 
       {/* Grid of Content Sections */}
-       <ScrollReveal className="relative mb-16 flex flex-col gap-8">
+       <ScrollReveal className="relative mt-32 mb-16 flex flex-col gap-8">
              <h2 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight">
                {structuralText[lang].title}
              </h2>

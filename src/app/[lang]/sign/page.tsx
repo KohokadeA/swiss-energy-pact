@@ -58,7 +58,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
   const content = {
     en: {
       title: "To sign is to pave the way",
-      desc: '"A popular initiative begins with a simple gesture. By signing, you help to include the digital security and sovereignty of Switzerland in the national debate."',
+      desc: 'A popular initiative begins with a simple gesture. By signing, you help to include the digital security and sovereignty of Switzerland in the national debate.',
       form1: "Official",
       form2: "Form",
       formDesc: "Download the PDF form now. Remember that only Swiss citizens with the right to vote can participate.",
@@ -74,7 +74,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
     },
     fr: {
       title: "Signer, c'est ouvrir la voie",
-      desc: '"Une initiative populaire commence par un geste simple. En signant, vous aidez à inscrire dans le débat national la sécurité et la souveraineté numérique de la Suisse."',
+      desc: 'Une initiative populaire commence par un geste simple. En signant, vous aidez à inscrire dans le débat national la sécurité et la souveraineté numérique de la Suisse.',
       form1: "Formulaire",
       form2: "Officiel",
       formDesc: "Téléchargez le formulaire PDF maintenant. N'oubliez pas que seuls les citoyens suisses ayant le droit de vote peuvent participer.",
@@ -90,7 +90,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
     },
     de: {
       title: "Unterzeichnen heisst den Weg ebnen",
-      desc: '"Eine Volksinitiative beginnt mit einer einfachen Geste. Mit Ihrer Unterschrift tragen Sie dazu bei, die digitale Sicherheit und Souveränität der Schweiz in die nationale Debatte einzubringen."',
+      desc: 'Eine Volksinitiative beginnt mit einer einfachen Geste. Mit Ihrer Unterschrift tragen Sie dazu bei, die digitale Sicherheit und Souveränität der Schweiz in die nationale Debatte einzubringen.',
       form1: "Offizielles",
       form2: "Formular",
       formDesc: "Laden Sie das PDF-Formular jetzt herunter. Denken Sie daran, dass nur stimmberechtigte Schweizer Bürgerinnen und Bürger teilnehmen können.",
@@ -106,7 +106,7 @@ export default function SignPage({ params: { lang } }: { params: { lang: Locale 
     },
     it: {
       title: "Firmare è aprire la strada",
-      desc: '"Un\'iniziativa popolare inizia con un gesto semplice. Firmando, contribuite a inserire la sicurezza e la sovranità digitale della Svizzera nel dibattito nazionale."',
+      desc: 'Un\'iniziativa popolare inizia con un gesto semplice. Firmando, contribuite a inserire la sicurezza e la sovranità digitale della Svizzera nel dibattito nazionale.',
       form1: "Modulo",
       form2: "Ufficiale",
       formDesc: "Scaricate ora il modulo PDF. Ricordate che solo i cittadini svizzeri con diritto di voto possono partecipare.",

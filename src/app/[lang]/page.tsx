@@ -20,7 +20,7 @@ const visionText = {
     pillar: "Pillar",
     next: "Next",
     title: "Our Vision",
-    quote: '"We want a secure, sovereign, open, human, and ambitious Switzerland."',
+    quote: 'We want a secure, sovereign, open, human, and ambitious Switzerland.',
     words: ["secure", "sovereign", "open", "human", "ambitious"]
   },
   fr: {
@@ -31,7 +31,7 @@ const visionText = {
     pillar: "Pilier",
     next: "Suivant",
     title: "Notre vision",
-    quote: '"Nous voulons une Suisse sûre, souveraine, ouverte, humaine et ambitieuse."',
+    quote: 'Nous voulons une Suisse sûre, souveraine, ouverte, humaine et ambitieuse.',
     words: ["sûre", "souveraine", "ouverte", "humaine", "ambitieuse"]
   },
   de: {
@@ -42,7 +42,7 @@ const visionText = {
     pillar: "Pfeiler",
     next: "Weiter",
     title: "Unsere Vision",
-    quote: '"Wir wollen eine sichere, souveräne, offene, menschliche und ambitionierte Schweiz."',
+    quote: 'Wir wollen eine sichere, souveräne, offene, menschliche und ambitionierte Schweiz.',
     words: ["sicher", "souverän", "offen", "menschlich", "ambitioniert"]
   },
   it: {
@@ -53,7 +53,7 @@ const visionText = {
     pillar: "Pilastro",
     next: "Avanti",
     title: "La nostra visione",
-    quote: '"Vogliamo una Svizzera sicura, sovrana, aperta, umana e ambiziosa."',
+    quote: 'Vogliamo una Svizzera sicura, sovrana, aperta, umana e ambiziosa.',
     words: ["sicura", "sovrana", "aperta", "umana", "ambiziosa"]
   }
 };
@@ -226,7 +226,7 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
   return (
     <section className="container mx-auto px-6 pt-0 pb-2 overflow-hidden">
       <ScrollReveal>
-        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-2">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-8">
           {data.sectionTitle}
         </h2>
       </ScrollReveal>

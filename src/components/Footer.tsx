@@ -64,16 +64,16 @@ export const Footer = ({ lang }: { lang: Locale }) => {
           <Link href={`/${lang}`} className="flex items-center group">
 
           {/* Logo container - wide to match landscape logo */}
-          <div className="w-48 h-14 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-all duration-300">
+          <div className="flex items-center justify-center group-hover:scale-105 transition-all duration-300">
             <img
-              src="/swiss_digital_pact_logo_new.png"
+              src="/swiss_digital_pact_logo_header.png"
               alt="Swiss Digital Pact Logo"
-              className="w-full h-full object-contain"
+              className="h-12 w-auto object-contain"
             />
           </div>
 
           {/* Text */}
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <span className="font-bold text-lg lg:text-xl tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap">
               {dict.title.toUpperCase()}
             </span>
@@ -85,7 +85,7 @@ export const Footer = ({ lang }: { lang: Locale }) => {
                 </React.Fragment>
               ))}
             </span>
-          </div>
+          </div> */}
 
         </Link>
           <p className="text-gray-600 max-w-xs leading-relaxed text-xs font-medium">

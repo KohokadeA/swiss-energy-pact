@@ -18,7 +18,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       badge: "Direct Access",
       title1: "LET'S ",
       title2: "TALK",
-      desc: '"Do you have a question about the text, the collection of signatures, the committee, the campaign or the media? We answer you with clarity, in the spirit of this initiative: seriousness, openness and sense of the common good."',
+      desc: 'Do you have a question about the text, the collection of signatures, the committee, the campaign or the media? We answer you with clarity, in the spirit of this initiative: seriousness, openness and sense of the common good.',
       formTitle: "Send a Request",
       labelName: "Full Name",
       labelEmail: "Email Address",
@@ -46,7 +46,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       badge: "Accès Direct",
       title1: "PARLONS-",
       title2: "EN",
-      desc: '"Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l\'esprit de cette initiative: sérieux, ouverture et sens du bien commun."',
+      desc: 'Vous avez une question sur le texte, la récolte de signatures, le comité, la campagne ou les médias? Nous vous répondons avec clarté, dans l\'esprit de cette initiative: sérieux, ouverture et sens du bien commun.',
       formTitle: "Envoyer une Demande",
       labelName: "Nom Complet",
       labelEmail: "Adresse Email",
@@ -74,7 +74,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       badge: "Direkter Zugang",
       title1: "SPRECHEN WIR ",
       title2: "DARÜBER",
-      desc: '"Haben Sie eine Frage zum Text, zur Unterschriftensammlung, zum Komitee, zur Kampagne oder zu den Medien? Wir antworten Ihnen mit Klarheit, ganz im Geist dieser Initiative: Seriosität, Offenheit und Sinn für das Gemeinwohl."',
+      desc: 'Haben Sie eine Frage zum Text, zur Unterschriftensammlung, zum Komitee, zur Kampagne oder zu den Medien? Wir antworten Ihnen mit Klarheit, ganz im Geist dieser Initiative: Seriosität, Offenheit und Sinn für das Gemeinwohl.',
       formTitle: "Anfrage senden",
       labelName: "Vollständiger Name",
       labelEmail: "E-Mail-Adresse",
@@ -102,7 +102,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
       badge: "Accesso Diretto",
       title1: "PARLIAMONE",
       title2: "ORA",
-      desc: '"Avete una domanda sul testo, sulla raccolta delle firme, sul comitato, sulla campagna o sui media? Vi rispondiamo con chiarezza, nello spirito di questa iniziativa: serietà, apertura e senso del bene comune."',
+      desc: 'Avete una domanda sul testo, sulla raccolta delle firme, sul comitato, sulla campagna o sui media? Vi rispondiamo con chiarezza, nello spirito di questa iniziativa: serietà, apertura e senso del bene comune.',
       formTitle: "Invia una richiesta",
       labelName: "Nome completo",
       labelEmail: "Indirizzo e-mail",
@@ -131,7 +131,7 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
   const t = contactText[lang] || contactText.fr;
 
   return (
-    <div className="container mx-auto px-6 py-6 max-w-7xl overflow-hidden">
+    <div className="container mx-auto px-6 pt-28 pb-6 lg:pt-32 max-w-7xl overflow-hidden">
       {/* Header Section */}
       <ScrollReveal>
         <div className="text-left max-w-4xl mx-auto mb-10 relative">

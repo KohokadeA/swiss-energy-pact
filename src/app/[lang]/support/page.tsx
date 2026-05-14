@@ -124,10 +124,10 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
   };
 
   const supportDesc = {
-    en: '"This initiative champions smart security and smart sovereignty: open, demanding, and human. Your support helps bring this vision to the public debate."',
-    fr: '"Cette initiative défend une sécurité smart et une souveraineté smart: ouvertes, exigeantes et humaines. Votre soutien permet de porter cette vision dans le débat public."',
-    de: '"Diese Initiative setzt sich für eine kluge Sicherheit und eine kluge Souveränität ein: offen, anspruchsvoll und menschlich. Ihre Unterstützung hilft, diese Vision in die öffentliche Debatte zu bringen."',
-    it: '"Questa iniziativa difende una sicurezza smart e una sovranità smart: aperte, esigenti e umane. Il suo sostegno permette di portare questa visione nel dibattito pubblico."'
+    en: 'This initiative champions smart security and smart sovereignty: open, demanding, and human. Your support helps bring this vision to the public debate.',
+    fr: 'Cette initiative défend une sécurité smart et une souveraineté smart: ouvertes, exigeantes et humaines. Votre soutien permet de porter cette vision dans le débat public.',
+    de: 'Diese Initiative setzt sich für eine kluge Sicherheit und eine kluge Souveränität ein: offen, anspruchsvoll und menschlich. Ihre Unterstützung hilft, diese Vision in die öffentliche Debatte zu bringen.',
+    it: 'Questa iniziativa difende una sicurezza smart e una sovranità smart: aperte, esigenti e umane. Il suo sostegno permette di portare questa visione nel dibattito pubblico.'
   };
 
   const transparency = {
@@ -171,19 +171,19 @@ export default function SupportPage({ params: { lang } }: { params: { lang: Loca
 
   const finalCta = {
       en: {
-          title: '"A sovereign digital future is a collective responsibility."',
+          title: 'A sovereign digital future is a collective responsibility.',
           btn: "Sign the initiative now"
       },
       fr: {
-           title: '"Un avenir numérique souverain est une responsabilité collective."',
+           title: 'Un avenir numérique souverain est une responsabilité collective.',
            btn: "Signer l'initiative maintenant"
       },
       de: {
-           title: '"Eine souveräne digitale Zukunft ist eine kollektive Verantwortung."',
+           title: 'Eine souveräne digitale Zukunft ist eine kollektive Verantwortung.',
            btn: "Initiative jetzt unterzeichnen"
       },
       it: {
-           title: '"Un futuro digitale sovrano è una responsabilità collettiva."',
+           title: 'Un futuro digitale sovrano è una responsabilità collettiva.',
            btn: "Firma l'iniziativa ora"
       }
   };
