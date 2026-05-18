@@ -153,63 +153,55 @@ const whyInitiativeText = {
   }
 };
 
-const endorsementsData = {
-  en: {
-    sectionTitle: "They support the initiative",
-    endorsements: [
-      { name: "Dr. Anna Meier", title: "Digital Policy Expert", picture: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200", text: "This initiative is a vital step for our digital future. It protects critical infrastructures from foreign influence and secures our fundamental privacy rights, ensuring Switzerland remains resilient and fully independent." },
-      { name: "Marco Bernasconi", title: "IT Entrepreneur, Zürich", picture: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200", text: "This initiative is essential for economic resilience. By establishing clear rules to safeguard our autonomy, it fosters local innovation and ensures Switzerland confidently leads by example in global digital sovereignty." },
-      { name: "Prof. Sophie Durand", title: "University of Lausanne", picture: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200", text: "This initiative provides a robust framework to counter cyber threats. It empowers citizens through digital literacy and effectively protects our society in an increasingly complex and interconnected digital world." },
-      { name: "Lukas Weber", title: "Cybersecurity Analyst, Bern", picture: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200", text: "Protecting our digital borders is as critical as our physical ones. This initiative provides the constitutional mandate needed to ensure our national security networks remain invulnerable to external digital threats." },
-      { name: "Elena Rossi", title: "Data Privacy Advocate", picture: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200", text: "Our personal data is our most valuable digital asset. This initiative ensures that the right to digital integrity is firmly protected, setting a gold standard for citizen privacy in our deeply interconnected era." },
-      { name: "Dr. Thomas Keller", title: "Energy Systems Engineer", picture: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200", text: "Modern society runs on digital infrastructure. By securing these critical networks at the constitutional level, this initiative guarantees the uninterrupted functioning of our energy, transport, and financial sectors." },
-      { name: "Isabelle Blanc", title: "Tech Education Lead", picture: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=200&h=200", text: "A sovereign digital nation requires an educated public. This pact emphasizes the critical need for comprehensive digital literacy, empowering every citizen to navigate the technological landscape safely and confidently." },
-    ]
+const endorsementsList = [
+  {
+    name: "Gérald Vernez",
+    picture: "endorsements/Gérald Vernez.png",
+    title: "Founder of digiVolution Foundation, Former Chief Cyber Defense Swiss Federal Ministry of Defence",
+    text: {
+      en: "Data and the digital world are no longer mere conveniences. Mastering them and understanding our interests in order to protect them and benefit from their contributions is vital for our society, our democracy, and our companies. Without security, there is no sovereignty. And therefore, no freedom.",
+      fr: "La donnée et le monde numérique ne sont plus de simples commodités. Les maîtriser, comprendre nos intérêts afin de les préserver et de bénéficier de leur apports est vital pour notre société, notre démocratie et nos entreprises. Sans sécurité, pas de souveraineté. Et donc pas de liberté.",
+      de: "Daten und die digitale Welt sind längst mehr als nur Commodities. Sie zu beherrschen, unsere Interessen zu verstehen, um sie zu wahren und von ihren Vorteilen zu profitieren, ist für unsere Gesellschaft, unsere Demokratie und unsere Unternehmen von entscheidender Bedeutung. Ohne Sicherheit gibt es keine Souveränität. Und somit auch keine Freiheit.",
+      it: "I dati e il mondo digitale non sono più semplici strumenti. Padroneggiarli, capire i nostri interessi per tutelarli e trarne vantaggio è fondamentale per la nostra società, la nostra democrazia e le nostre imprese. Senza sicurezza, non c'è sovranità. E quindi non c'è libertà."
+    }
   },
-  fr: {
-    sectionTitle: "Ils soutiennent l'initiative",
-    endorsements: [
-      { name: "Dr. Anna Meier", title: "Experte en politique numérique", picture: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200", text: "Cette initiative est une étape vitale pour notre avenir numérique. Elle protège les infrastructures critiques de l'influence étrangère et sécurise nos droits fondamentaux, garantissant la résilience de la Suisse." },
-      { name: "Marco Bernasconi", title: "Entrepreneur IT, Zurich", picture: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200", text: "Cette initiative est essentielle à la résilience économique. En établissant des règles claires, elle favorise l'innovation locale et assure que la Suisse montre l'exemple en souveraineté numérique." },
-      { name: "Prof. Sophie Durand", title: "Université de Lausanne", picture: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200", text: "Cette initiative fournit un cadre solide pour contrer les cybermenaces. Elle autonomise les citoyens grâce à la littératie numérique et protège efficacement notre société dans un monde numérique de plus en plus complexe." },
-      { name: "Lukas Weber", title: "Analyste en cybersécurité, Berne", picture: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200", text: "Protéger nos frontières numériques est aussi critique que nos frontières physiques. Cette initiative fournit le mandat constitutionnel nécessaire pour assurer l'invulnérabilité de nos réseaux de sécurité nationale." },
-      { name: "Elena Rossi", title: "Défenseure de la vie privée", picture: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200", text: "Nos données personnelles sont notre atout numérique le plus précieux. Cette initiative garantit que le droit à l'intégrité numérique est fermement protégé, établissant une norme d'excellence pour la vie privée." },
-      { name: "Dr. Thomas Keller", title: "Ingénieur en systèmes énergétiques", picture: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200", text: "La société moderne repose sur l'infrastructure numérique. En sécurisant ces réseaux critiques au niveau constitutionnel, cette initiative garantit le fonctionnement ininterrompu de nos secteurs clés." },
-      { name: "Isabelle Blanc", title: "Responsable de l'éducation technologique", picture: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=200&h=200", text: "Une nation numérique souveraine exige un public éduqué. Ce pacte souligne le besoin critique d'une littératie numérique complète, permettant à chaque citoyen de naviguer dans le paysage technologique en toute sécurité." },
-    ]
+  {
+    name: "Daniel Fasel",
+    picture: "endorsements/Daniel Fasel.png",
+    title: "Founder & CEO of Navique",
+    text: {
+      en: "Switzerland has never relied on vast natural resources. Its strength has always been rooted in knowledge, quality, precision, and discipline. These are exactly the values we must carry into the digital age. We must prevent digitalization from remaining reserved for a digital elite and make it a fundamental asset for all citizens. Only then can Switzerland become a sovereign and globally leading digital nation.",
+      fr: "La Suisse n’a jamais eu de grandes ressources naturelles. Sa force a toujours résidé dans le savoir, la qualité, la précision et la discipline. Ce sont précisément ces valeurs que nous devons transposer dans l’ère numérique. Nous devons empêcher que la numérisation reste réservée à une élite numérique et en faire un bien fondamental pour toutes les citoyennes et tous les citoyens. C’est ainsi seulement que la Suisse pourra devenir une nation numérique souveraine et de référence à l’échelle mondiale.",
+      de: "Die Schweiz hatte nie grosse Rohstoffe. Ihre Stärke lag immer schon in Wissen, Qualität, Präzision und Disziplin. Genau diese Werte müssen wir ins digitale Zeitalter übertragen. Wir müssen verhindern, dass Digitalisierung einer digitalen Elite vorbehalten bleibt, und sie zu einem Grundgut für alle Bürgerinnen und Bürger machen. Nur so kann die Schweiz zu einer souveränen und weltweit führenden digitalen Nation werden.",
+      it: "La Svizzera non ha mai avuto grandi risorse naturali. La sua forza è sempre stata il sapere, la qualità, la precisione e la disciplina. Sono proprio questi i valori che dobbiamo portare nell’era digitale. Dobbiamo impedire che la digitalizzazione resti riservata a un’élite digitale e farne un bene fondamentale per tutte le cittadine e tutti i cittadini. Solo così la Svizzera potrà diventare una nazione digitale sovrana e leader a livello mondiale."
+    }
   },
-  de: {
-    sectionTitle: "Sie unterstützen die Initiative",
-    endorsements: [
-      { name: "Dr. Anna Meier", title: "Expertin für Digitalpolitik", picture: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200", text: "Diese Initiative ist ein wichtiger Schritt für unsere digitale Zukunft. Sie schützt kritische Infrastrukturen vor ausländischem Einfluss und sichert unsere grundlegenden Datenschutzrechte, damit die Schweiz widerstandsfähig bleibt." },
-      { name: "Marco Bernasconi", title: "IT-Unternehmer, Zürich", picture: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200", text: "Diese Initiative ist wichtig für die wirtschaftliche Resilienz. Indem sie klare Regeln aufstellt, fördert sie lokale Innovationen und stellt sicher, dass die Schweiz in der digitalen Souveränität mit gutem Beispiel vorangeht." },
-      { name: "Prof. Sophie Durand", title: "Universität Lausanne", picture: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200", text: "Diese Initiative bietet einen soliden Rahmen zur Abwehr von Cyberbedrohungen. Sie stärkt die Bürger durch digitale Kompetenz und schützt unsere Gesellschaft effektiv in einer zunehmend vernetzten digitalen Welt." },
-      { name: "Lukas Weber", title: "Cybersicherheitsanalyst, Bern", picture: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200", text: "Der Schutz unserer digitalen Grenzen ist so wichtig wie der unserer physischen. Diese Initiative bietet das verfassungsmäßige Mandat, um sicherzustellen, dass unsere nationalen Sicherheitsnetzwerke unverwundbar bleiben." },
-      { name: "Elena Rossi", title: "Verfechterin des Datenschutzes", picture: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200", text: "Unsere persönlichen Daten sind unser wertvollstes digitales Gut. Diese Initiative stellt sicher, dass das Recht auf digitale Integrität fest geschützt wird und setzt einen Goldstandard für die Privatsphäre." },
-      { name: "Dr. Thomas Keller", title: "Ingenieur für Energiesysteme", picture: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200", text: "Die moderne Gesellschaft beruht auf digitaler Infrastruktur. Durch die Absicherung dieser kritischen Netzwerke auf Verfassungsebene garantiert diese Initiative das ununterbrochene Funktionieren unserer Schlüsselsektoren." },
-      { name: "Isabelle Blanc", title: "Leiterin für Technologiebildung", picture: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=200&h=200", text: "Eine souveräne digitale Nation erfordert eine gebildete Öffentlichkeit. Dieser Pakt betont die kritische Notwendigkeit umfassender digitaler Kompetenz und befähigt jeden Bürger, sich sicher in der Technologielandschaft zu bewegen." },
-    ]
-  },
-  it: {
-    sectionTitle: "Sostengono l'iniziativa",
-    endorsements: [
-      { name: "Dr. Anna Meier", title: "Esperta di politica digitale", picture: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200", text: "Questa iniziativa è un passo vitale per il nostro futuro digitale. Protegge le infrastrutture critiche dall'influenza straniera e garantisce i nostri diritti fondamentali, assicurando che la Svizzera resti resiliente." },
-      { name: "Marco Bernasconi", title: "Imprenditore IT, Zurigo", picture: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200", text: "Questa iniziativa è essenziale per la resilienza economica. Stabilendo regole chiare, promuove l'innovazione locale e assicura che la Svizzera dia l'esempio nella sovranità digitale a livello globale." },
-      { name: "Prof. Sophie Durand", title: "Università di Losanna", picture: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200", text: "Questa iniziativa fornisce un solido quadro per contrastare le minacce informatiche. Dà potere ai cittadini attraverso l'alfabetizzazione digitale e protegge efficacemente la nostra società in un mondo sempre più complesso." },
-      { name: "Lukas Weber", title: "Analista di sicurezza informatica, Berna", picture: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200", text: "Proteggere i nostri confini digitali è critico quanto quelli fisici. Questa iniziativa fornisce il mandato costituzionale necessario per garantire che le nostre reti di sicurezza nazionale restino invulnerabili." },
-      { name: "Elena Rossi", title: "Sostenitrice della privacy dei dati", picture: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200", text: "I nostri dati personali sono la nostra risorsa digitale più preziosa. Questa iniziativa assicura che il diritto all'integrità digitale sia fermamente protetto, stabilendo uno standard d'eccellenza per la privacy." },
-      { name: "Dr. Thomas Keller", title: "Ingegnere di sistemi energetici", picture: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200", text: "La società moderna si basa sull'infrastruttura digitale. Assicurando queste reti critiche a livello costituzionale, questa iniziativa garantisce il funzionamento ininterrotto dei nostri settori chiave." },
-      { name: "Isabelle Blanc", title: "Responsabile dell'istruzione tecnologica", picture: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=200&h=200", text: "Una nazione digitale sovrana richiede un pubblico istruito. Questo patto sottolinea la necessità critica di un'alfabetizzazione digitale completa, consentendo a ogni cittadino di navigare con sicurezza nel panorama tecnologico." },
-    ]
+  {
+    name: "Diego Kuonen",
+    picture: "endorsements/Diego Kuonen.png",
+    title: "Professor at UNIGE and Founder & CEO at Statoo Consulting",
+    text: {
+      en: "We learned how to read and write. But we never learned data. That is exactly what this initiative aims to change: in future, the Confederation should promote data literacy across society. Because knowing how to deal with data is more important today than ever before. Those who do not understand data move through the digital world a bit like a tourist without a map.",
+      fr: "Nous avons appris à lire et à écrire. Mais nous n’avons jamais appris à comprendre les données. C’est précisément ce que cette initiative veut changer : à l’avenir, la Confédération devra promouvoir la littératie des données au sein de la société. Car savoir utiliser les données est aujourd’hui plus important que jamais. Celui qui ne comprend pas les données avance dans le monde numérique un peu comme un touriste sans plan de ville.",
+      de: "Wir haben Lesen und Schreiben gelernt. Aber wir haben nie Daten gelernt. Genau das soll sich ändern: Der Bund soll künftig die Datengrundbildung fördern. Denn zu wissen, wie man mit Daten umgeht, braucht es heute mehr denn je. Wer Daten nicht versteht, lebt digital ein bisschen wie ein Tourist ohne Stadtplan.",
+      it: "Abbiamo imparato a leggere e a scrivere. Ma non abbiamo mai imparato a capire i dati. È proprio questo che questa iniziativa vuole cambiare: in futuro, la Confederazione dovrà promuovere l’alfabetizzazione ai dati nella società. Perché sapere come utilizzare i dati è oggi più importante che mai. Chi non comprende i dati si muove nel mondo digitale un po’ come un turista senza una cartina."
+    }
   }
+];
+
+const endorsementsSectionTitle = {
+  en: "They support the initiative",
+  fr: "Ils soutiennent l'initiative",
+  de: "Sie unterstützen die Initiative",
+  it: "Sostengono l'iniziativa"
 };
 
 function EndorsementsSection({ lang }: { lang: Locale }) {
   const [idx, setIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const data = endorsementsData[lang] || endorsementsData.fr;
-  const [selectedEndorser, setSelectedEndorser] = useState<typeof data.endorsements[0] | null>(null);
-  const len = data.endorsements.length;
+  const sectionTitle = endorsementsSectionTitle[lang as keyof typeof endorsementsSectionTitle] || endorsementsSectionTitle.fr;
+  const [selectedEndorser, setSelectedEndorser] = useState<typeof endorsementsList[0] | null>(null);
+  const len = endorsementsList.length;
 
   const goPrev = () => setIdx((idx - 1 + len) % len);
   const goNext = () => setIdx((idx + 1) % len);
@@ -221,26 +213,26 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
   }, [len, isPaused]);
 
   // Get 3 visible endorsers starting from idx, wrapping around
-  const visible = [0, 1, 2].map(offset => data.endorsements[(idx + offset) % len]);
+  const visible = [0, 1, 2].map(offset => endorsementsList[(idx + offset) % len]);
 
   return (
-    <section className="container mx-auto px-6 pt-0 pb-2 overflow-hidden">
+    <section className="w-full mx-auto px-2 sm:px-4 md:px-8 lg:px-12 pt-0 pb-2 overflow-hidden">
       <ScrollReveal>
         <h2 className="text-3xl md:text-4xl font-black tracking-tight text-secondary dark:text-white text-center mb-8">
-          {data.sectionTitle}
+          {sectionTitle}
         </h2>
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
         <div
-          className="max-w-7xl mx-auto relative"
+          className="w-full max-w-[100rem] mx-auto relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
         {/* Left arrow */}
         <button
           onClick={goPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-40 p-3 md:p-4 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-40 p-2 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Previous endorsement"
         >
           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
@@ -249,7 +241,7 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
         {/* Right arrow */}
         <button
           onClick={goNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-40 p-3 md:p-4 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-40 p-2 rounded-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 shadow-xl hover:bg-primary hover:border-primary hover:text-white text-gray-500 dark:text-gray-400 transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Next endorsement"
         >
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -270,37 +262,38 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
                 key={`${idx}-${vi}`}
                 onClick={() => setSelectedEndorser(e)}
                 className={cn(
-                  "bg-white dark:bg-zinc-900 rounded-[1.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden flex flex-row cursor-pointer group/card hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
+                  "bg-white dark:bg-zinc-900 rounded-[1.5rem] border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden flex flex-col cursor-pointer group/card hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
                   vi === 1 && "hidden md:flex",
                   vi === 2 && "hidden lg:flex"
                 )}
               >
-                {/* Photo — left */}
-                <div className="w-28 md:w-32 flex-shrink-0 relative overflow-hidden bg-gray-100 dark:bg-zinc-800">
-                  {e.picture ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={e.picture} alt={e.name} className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-4xl font-black text-primary/20">{e.name.charAt(0)}</span>
-                    </div>
-                  )}
-                </div>
+                {/* Top row: Photo + Text side by side */}
+                <div className="flex flex-row flex-1">
+                  {/* Photo — left, full height */}
+                  <div className="w-32 md:w-40 xl:w-48 flex-shrink-0 relative overflow-hidden bg-gray-100 dark:bg-zinc-800/50 border-r border-gray-100 dark:border-gray-800">
+                    {e.picture ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={e.picture} alt={e.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover/card:scale-105 transition-transform duration-500" />
+                    ) : (
+                      <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-200 dark:bg-zinc-700">
+                        <span className="text-4xl font-black text-primary/20">{e.name.charAt(0)}</span>
+                      </div>
+                    )}
+                  </div>
 
-                {/* Content — right */}
-                <div className="flex-1 p-5 flex flex-col justify-between min-w-0">
-                  <div>
+                  {/* Text — right */}
+                  <div className="flex-1 p-5 min-w-0">
                     <Quote className="w-6 h-6 text-primary/20 mb-2 flex-shrink-0" />
-                    <p className="text-sm text-gray-600 dark:text-gray-300 font-medium italic leading-relaxed line-clamp-4">
-                      &ldquo;{e.text}&rdquo;
+                    <p className="text-sm text-gray-600 dark:text-gray-300 font-medium italic leading-relaxed">
+                      {e.text[lang as keyof typeof e.text]}
                     </p>
                   </div>
+                </div>
 
-                  {/* Name & title — bottom */}
-                  <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
-                    <p className="font-black text-secondary dark:text-white text-sm">{e.name}</p>
-                    <p className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-0.5">{e.title}</p>
-                  </div>
+                {/* Name & title — bottom, full width */}
+                <div className="px-5 py-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-zinc-800/10">
+                  <p className="font-black text-secondary dark:text-white text-base">{e.name}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-1">{e.title}</p>
                 </div>
               </div>
             ))}
@@ -311,7 +304,7 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
 
       {/* Dots */}
       <div className="flex justify-center gap-2 mt-8">
-        {data.endorsements.map((_, i) => (
+        {endorsementsList.map((_, i) => (
           <button
             key={i}
             onClick={() => setIdx(i)}
@@ -371,7 +364,7 @@ function EndorsementsSection({ lang }: { lang: Locale }) {
                   <div>
                     <Quote className="w-10 h-10 text-primary/15 mb-4" />
                     <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 font-medium italic leading-relaxed">
-                      &ldquo;{selectedEndorser.text}&rdquo;
+                      &ldquo;{selectedEndorser.text[lang as keyof typeof selectedEndorser.text]}&rdquo;
                     </p>
                   </div>
 
