@@ -105,8 +105,8 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   const articleText = {
     fr: `"Art. 57a : Pour la sécurité numérique de la Suisse\n1 La Confédération détermine les règles de sécurité pour tous les acteurs publics et privés dans l’espace numérique de la Suisse et en assure l’application.\n2 Elle protège ses données et ses infrastructures numériques et soutient subsidiairement les opérateurs d’infrastructures critiques.\n3 Elle garantit la protection des données personnelles et l’intégrité numérique des personnes.\n4 Elle garantit que les infrastructures, les services et les ressources numériques et informationnelles essentiels pour l’État, l’économie et la société soient en toute circonstance indépendants de toute influence contraire à ses intérêts.\n5 Elle encourage le développement de la littératie des données et des compétences numériques de la société.\n6 Elle prend, en coordination avec les acteurs académiques et économiques, des dispositions permettant d’anticiper les risques et les opportunités et ainsi de maintenir la Suisse parmi les nations les plus avancées et sûres dans le domaine numérique."`,
     en: `"Art. 57a: For the digital security of Switzerland\n1 The Confederation determines the security rules for all public and private actors in the Swiss digital space and ensures their application.\n2 It protects its data and digital infrastructures and subsidiarily supports the operators of critical infrastructures.\n3 It guarantees the protection of personal data and the digital integrity of individuals.\n4 It ensures that the infrastructures, services, and digital and informational resources essential for the State, the economy, and society remain in all circumstances independent of any influence contrary to its interests.\n5 It encourages the development of data literacy and digital skills in society.\n6 In coordination with academic and economic actors, it takes measures to anticipate risks and opportunities, thereby keeping Switzerland among the most advanced and secure nations in the digital field."`,
-    de: `"Art. 57a: Für die digitale Sicherheit der Schweiz\n1 Der Bund bestimmt die Sicherheitsregeln für alle öffentlichen und privaten Akteure im digitalen Raum der Schweiz und sorgt für deren Durchsetzung.\n2 Er schützt seine Daten und digitalen Infrastrukturen und unterstützt subsidiär die Betreiber kritischer Infrastrukturen.\n3 Er gewährleistet den Schutz personenbezogener Daten und die digitale Integrität der Personen.\n4 Er stellt sicher, dass die für Staat, Wirtschaft und Gesellschaft wesentlichen Infrastrukturen, Dienste, digitalen und informationellen Ressourcen unter allen Umständen unabhängig von Einflüssen bleiben, die seinen Interessen zuwiderlaufen.\n5 Er fördert die Entwicklung der Datenkompetenz und der digitalen Fähigkeiten in der Gesellschaft.\n6 Er ergreift in Abstimmung mit akademischen und wirtschaftlichen Akteuren Massnahmen, um Risiken und Chancen vorauszusehen und die Schweiz so unter den fortschrittlichsten und sichersten Nationen im digitalen Bereich zu halten."`,
-    it: `"Art. 57a: Per la sicurezza digitale della Svizzera\n1 La Confederazione determina le regole di sicurezza pour tutti gli attori pubblici e privati nello spazio digitale svizzero e ne garantisce l'applicazione.\n2 Protegge i propri dati e le proprie infrastrutture digitali e sostiene in via sussidiaria gli operatori delle infrastrutture critiche.\n3 Garantisce la protezione dei dati personali e l'integrità digitale delle persone.\n4 Assicura che le infrastrutture, i servizi e le risorse digitali e informazionali essenziali per lo Stato, l'economia e la società siano in ogni circostanza indipendenti da qualsiasi influenza contraria ai propri interessi.\n5 Incoraggia lo sviluppo dell'alfabetizzazione dei dati e delle competenze digitali nella società.\n6 Adotta, in coordinamento con gli attori accademici ed economici, disposizioni che consentono di anticipare i rischi e le opportunità, mantenendo così la Svizzera tra le nazioni più avanzate e sicure nel settore digitale."`
+    de: `"Art. 57a: Für die digitale Sicherheit der Schweiz\n1 Der Bund legt für alle öffentlichen und privaten Akteure im digitalen Raum der Schweiz Sicherheitsbestimmungen fest und gewährleistet deren Anwendung.\n2 Er schützt seine digitalen Daten und Infrastrukturen und unterstützt subsidiär die Betreiberinnen kritischer Infrastrukturen.\n3 Er gewährleistet den Schutz der Personendaten und die digitale Integrität von Personen.\n4 Er stellt sicher, dass die für Staat, Wirtschaft und Gesellschaft wesentlichen Infrastrukturen, Dienste, digitalen und informationellen Ressourcen unter allen Umständen unabhängig von Einflüssen bleiben, die seinen Interessen zuwiderlaufen.\n5 Er fördert die Entwicklung der Datenkompetenz und der digitalen Fähigkeiten in der Gesellschaft.\n6 Er ergreift in Abstimmung mit akademischen und wirtschaftlichen Akteuren Massnahmen, um Risiken und Chancen vorauszusehen und die Schweiz so unter den fortschrittlichsten und sichersten Nationen im digitalen Bereich zu halten."`,
+    it: `"Art. 57a: Per la sicurezza digitale della Svizzera\n1 La Confederazione determina le regole di sicurezza pour tutti gli attori pubblici e privati nello spazio digitale svizzero e ne garantisce l'applicazione.\n2 Protegge i propri dati e le proprie infrastrutture digitali e sostiene in via sussidiaria gli operatori delle infrastrutture critiche.\n3 Garantisce la protezione dei dati personali e l'integrità digitale delle persone.\n4 Er gewährleistet, dass die digitalen und informationsbezogenen Infrastrukturen, Dienste und Ressourcen, die für den Staat, die Wirtschaft und die Gesellschaft wesentlich sind, unter jeglichen Umständen unabhängig von jedem Einfluss sind, der seinen Interessen zuwiderläuft.\n5 Er fördert die Entwicklung der Datengrundbildung (Data Literacy) und der digitalen Kompetenzen der Gesellschaft.\n6 Er trifft in Koordination mit den akademischen Akteuren und den Akteuren der Wirtschaft Massnahmen, damit Risiken und Chancen antizipiert werden können und die Schweiz so eines der im digitalen Bereich fortschrittlichsten und sichersten Länder bleibt."`
   };
 
   const structuralText = {
@@ -299,6 +299,13 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
   };
 
   const bannerBadgeText = {
+    en: "A Clear Digital Direction",
+    fr: "Une direction numérique claire",
+    de: "Eine klare digitale Richtung",
+    it: "Una chiara direzione digitale"
+  };
+
+  const titleText = {
     en: "Securing Switzerland's Digital Future",
     fr: "Assurer l'avenir numérique de la Suisse",
     de: "Die digitale Zukunft der Schweiz sichern",
@@ -318,12 +325,14 @@ export default function InitiativePage({ params: { lang } }: { params: { lang: L
       {/* Premium Banner Header */}
       <ScrollReveal>
         <header className="mb-10 relative">
-          {/* Badge is now centered over the entire section like SIGN and SUPPORT pages */}
-          <div className="flex justify-center mt-6 mb-8 w-full">
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase shadow-sm border border-primary/5 w-fit">
+          <div className="flex flex-col items-center justify-center mt-6 mb-12 w-full">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase shadow-sm border border-primary/5 w-fit mb-6">
               <ShieldCheck className="w-4 h-4 flex-shrink-0" />
               {bannerBadgeText[lang]}
             </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-secondary leading-[0.9] tracking-tighter text-center max-w-4xl">
+              {titleText[lang]}
+            </h1>
           </div>
 
           <div className="relative text-center lg:text-left flex flex-col lg:flex-row gap-16 items-center">

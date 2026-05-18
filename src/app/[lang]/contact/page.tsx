@@ -134,15 +134,15 @@ export default function ContactPage({ params: { lang } }: { params: { lang: Loca
     <div className="container mx-auto px-6 pt-28 pb-6 lg:pt-32 max-w-7xl overflow-hidden">
       {/* Header Section */}
       <ScrollReveal>
-        <div className="text-left max-w-4xl mx-auto mb-10 relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-4 shadow-sm border border-primary/5">
+        <div className="text-center max-w-4xl mx-auto mb-10 relative flex flex-col items-center">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[9px] font-black tracking-[4px] uppercase mb-6 shadow-sm border border-primary/5 w-fit">
             <MessageCircle className="w-4 h-4 flex-shrink-0" />
             {t.badge}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-secondary leading-[0.9] tracking-tighter">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-secondary leading-[0.9] tracking-tighter">
              {t.title1}<span className="text-primary not-italic underline decoration-1 decoration-dashed underline-offset-[16px]">{t.title2}</span>.
           </h1>
-          <p className="text-lg text-gray-700 font-medium leading-relaxed max-w-2xl">
+          <p className="text-lg text-gray-700 font-medium leading-relaxed max-w-2xl text-center mx-auto">
             {t.desc}
           </p>
         </div>
